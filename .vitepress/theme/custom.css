@@ -5,20 +5,20 @@
   --vp-c-brand-dark: hsl(7, 43%, 42%);
   --vp-c-brand-darker: hsl(7, 43%, 42%);
   --vp-c-brand-darkest: hsl(7, 23%, 62%);
-  
+
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
     hsl(7, 43%, 42%),
     hsl(7, 23%, 62%)
-    );
-    --vp-home-hero-image-background-image: -webkit-linear-gradient(
+  );
+  --vp-home-hero-image-background-image: -webkit-linear-gradient(
     125deg,
     hsl(7, 43%, 42%),
     hsl(7, 23%, 62%)
-    );
-    
-    --vp-button-brand-border: hsl(7, 43%, 42%);
+  );
+
+  --vp-button-brand-border: hsl(7, 43%, 42%);
   --vp-home-hero-image-filter: blur(40px);
 }
 

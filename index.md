@@ -19,10 +19,14 @@ hero:
 features:
   - icon: 🔗
     title: Typescript
-    details: Everything is set up at compile time through type annotations. No runtime code needed!
+    details:
+      Everything is set up at compile time through type annotations. No runtime code
+      needed!
   - icon: 📦
     title: Static analyzer
-    details: Write functions and let us generate type safe routes for you.
+    details:
+      Imagine just writing business logic and letting we generate type safe routes for
+      you.
   - icon: ⚡
     title: Fastify serialization
     details: Transforming type annotations into Fastify serialization schemas.

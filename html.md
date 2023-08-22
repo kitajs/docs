@@ -16,7 +16,8 @@ const html: string = `<div>Hello World!<div>`;
 
 ## Installing
 
-This package just provides functions to transpile JSX to a HTML string, you can imagine doing something like this before, but now with type checking and intellisense:
+This package just provides functions to transpile JSX to a HTML string, you can imagine
+doing something like this before, but now with type checking and intellisense:
 
 ::: code-group
 
@@ -38,7 +39,8 @@ pnpm add @kitajs/html
 
 ## Getting Started
 
-Just import `html` from `@kitajs/html` and use it as you would use JSX. Remember to change your `tsconfig.json` to transpile JSX syntax.
+Just import `html` from `@kitajs/html` and use it as you would use JSX. Remember to change
+your `tsconfig.json` to transpile JSX syntax.
 
 ```jsonc
 // tsconfig.json
@@ -100,7 +102,8 @@ function Layout({ name, children }: html.PropsWithChildren<{ name: string }>) {
 
 ## Sanitization
 
-This package aims to be a HTML string builder, **_not an HTML sanitizer_**. This means that no children HTML content will be escaped by default.
+This package aims to be a HTML string builder, **_not an HTML sanitizer_**. This means
+that no children HTML content will be escaped by default.
 
 ::: code-group
 
@@ -116,7 +119,8 @@ This package aims to be a HTML string builder, **_not an HTML sanitizer_**. This
 
 :::
 
-We provide a custom attribute called **_`safe`_** that will sanitize everything inside of it:
+We provide a custom attribute called **_`safe`_** that will sanitize everything inside of
+it:
 
 ::: code-group
 
@@ -130,7 +134,8 @@ We provide a custom attribute called **_`safe`_** that will sanitize everything 
 
 :::
 
-You can also use the exported `html.escapeHtml` function to escape other contents arbitrarily:
+You can also use the exported `html.escapeHtml` function to escape other contents
+arbitrarily:
 
 ::: code-group
 
@@ -163,18 +168,21 @@ let untrusted = '<script>alert("hacked!")</script>';
 
 :::
 
-It's like if React's `dangerouslySetInnerHTML` was enabled by default. As we just renders JSX to raw strings, we cannot differentiate between JSX generated content and user input, we cannot escape it by default.
+It's like if React's `dangerouslySetInnerHTML` was enabled by default. As we just renders
+JSX to raw strings, we cannot differentiate between JSX generated content and user input,
+we cannot escape it by default.
 
 <br />
 
 ### The safe attribute
 
-You should always use the `safe` attribute when you are rendering user input. This will sanitize its contents and avoid XSS attacks.
+You should always use the `safe` attribute when you are rendering user input. This will
+sanitize its contents and avoid XSS attacks.
 
 ```jsx
 function UserCard({ name, description, date, about }) {
   return (
-    <div class='card'>
+    <div class="card">
       <h1 safe>{name}</h1>
       <br />
       <p safe>{description}</p>
@@ -188,15 +196,21 @@ function UserCard({ name, description, date, about }) {
 }
 ```
 
-Note that only at the very bottom of the HTML tree is where you should use the `safe` attribute, to only escape where its needed.
+Note that only at the very bottom of the HTML tree is where you should use the `safe`
+attribute, to only escape where its needed.
 
-👉 There's an open issue to integrate this within a typescript plugin to emit warnings and alerts to use the safe attribute everywhere a variable is used. Wanna help? Check [this issue](https://github.com/kitajs/html/issues/2).
+👉 There's an open issue to integrate this within a typescript plugin to emit warnings and
+alerts to use the safe attribute everywhere a variable is used. Wanna help? Check
+[this issue](https://github.com/kitajs/html/issues/2).
 
 <br />
 
 ## Migrating from HTML
 
-Migrating from plain HTML to JSX can be a pain to convert it all manually, as you will find yourself hand placing quotes and closing void elements. Luckily for us, there's a tool called [htmltojsx](https://magic.reactjs.net/htmltojsx.htm) that can help us with that.
+Migrating from plain HTML to JSX can be a pain to convert it all manually, as you will
+find yourself hand placing quotes and closing void elements. Luckily for us, there's a
+tool called [htmltojsx](https://magic.reactjs.net/htmltojsx.htm) that can help us with
+that.
 
 ::: code-group
 
@@ -212,9 +226,9 @@ Migrating from plain HTML to JSX can be a pain to convert it all manually, as yo
 ```jsx [output.jsx]
 <>
   {/* Hello world */}
-  <div className='awesome' style={{ border: '1px solid red' }}>
-    <label htmlFor='name'>Enter your name: </label>
-    <input type='text' id='name' />
+  <div className="awesome" style={{ border: '1px solid red' }}>
+    <label htmlFor="name">Enter your name: </label>
+    <input type="text" id="name" />
   </div>
   <p>Enter your HTML here</p>
 </>
@@ -226,7 +240,9 @@ Migrating from plain HTML to JSX can be a pain to convert it all manually, as yo
 
 ## Compiling html
 
-When you have static html, is simple to get amazing performances, just save it to a constant and reuse it. However, if you need to hydrate the html with dynamic values in a super fast way, you can use the `compile` property to compile the html and reuse it later.
+When you have static html, is simple to get amazing performances, just save it to a
+constant and reuse it. However, if you need to hydrate the html with dynamic values in a
+super fast way, you can use the `compile` property to compile the html and reuse it later.
 
 ::: code-group
 
@@ -240,7 +256,7 @@ const compiled = html.compile<['param1', 'param2']>(
     <div>$notFound</div>
   </div>,
   // or
-  <MyComponent param1='$param1' param2='$param2' />
+  <MyComponent param1="$param1" param2="$param2" />
 );
 
 const html = compiled({ param1: 'Hello', param2: 'World!' });
@@ -257,15 +273,19 @@ const html = compiled({ param1: 'Hello', param2: 'World!' });
 
 :::
 
-This makes the html generation around [**_1500_**](#performance) times faster than just using normal jsx.
+This makes the html generation around [**_1500_**](#performance) times faster than just
+using normal jsx.
 
-Variables that were not passed to the `compile` function are ignored **silently**, this way you can reuse the result into another `compile` function or just because the your _"`$val`"_ was supposed to be a static value.
+Variables that were not passed to the `compile` function are ignored **silently**, this
+way you can reuse the result into another `compile` function or just because the your
+_"`$val`"_ was supposed to be a static value.
 
 <br />
 
 ## Fragments
 
-JSX does not allow multiple root elements, but you can use a fragment to group multiple elements:
+JSX does not allow multiple root elements, but you can use a fragment to group multiple
+elements:
 
 ```jsx
 const html = (
@@ -287,13 +307,15 @@ All HTML elements and attributes should be supported.
 - [Supported html elements](https://html.spec.whatwg.org/multipage#toc-semantics)
 - [Supported html events](https://www.w3schools.com/tags/ref_eventattributes.asp)
 
-**Missing an element or attribute?** Please create an issue or a PR to add it. It's easy to add.
+**Missing an element or attribute?** Please create an issue or a PR to add it. It's easy
+to add.
 
 <br />
 
 ### The `tag` tag
 
-The `<tag of="">` tag is a custom internal tag that allows you to render any runtime selected tag you want. Possibly reasons to prefer this tag over extending types:
+The `<tag of="">` tag is a custom internal tag that allows you to render any runtime
+selected tag you want. Possibly reasons to prefer this tag over extending types:
 
 - You want to render a tag that is chosen at runtime.
 - You don't want to mess up with extending globally available types.
@@ -314,14 +336,17 @@ The `<tag of="">` tag is a custom internal tag that allows you to render any run
 
 :::
 
-We do recommend using [extending types](#extending-types) instead, as it will give you intellisense and type checking.
+We do recommend using [extending types](#extending-types) instead, as it will give you
+intellisense and type checking.
 
 <br />
 
 ## Async Components
 
-Sadly, we cannot allow async components in JSX and keep the same string type for everything else. Even though it should be possible to write async components you will have no real benefit from it, as you will always have to await the whole html generation
-to complete before you can render it.
+Sadly, we cannot allow async components in JSX and keep the same string type for
+everything else. Even though it should be possible to write async components you will have
+no real benefit from it, as you will always have to await the whole html generation to
+complete before you can render it.
 
 You should fetch async data in the following way:
 
@@ -339,9 +364,12 @@ async function render(name) {
 
 ## Extending types
 
-Just as exemplified above, you may also want to add custom properties to your elements. You can do this by extending the `JSX` namespace.
+Just as exemplified above, you may also want to add custom properties to your elements.
+You can do this by extending the `JSX` namespace.
 
-> ⚠️ Please follow the JSX convention and do not use `kebab-case` for your properties, use `camelCase` instead. We internally transform all `camelCase` properties to `kebab-case` to be compliant with the HTML and JSX standards.
+> ⚠️ Please follow the JSX convention and do not use `kebab-case` for your properties, use
+> `camelCase` instead. We internally transform all `camelCase` properties to `kebab-case`
+> to be compliant with the HTML and JSX standards.
 
 ```tsx
 declare global {
@@ -375,7 +403,9 @@ const element = (
 
 ## Performance
 
-This package is just a string builder on steroids, as you can see [how this works](#how-it-works). However we are running a benchmark with an JSX HTML with about 10K characters to see how it performs.
+This package is just a string builder on steroids, as you can see
+[how this works](#how-it-works). However we are running a benchmark with an JSX HTML with
+about 10K characters to see how it performs.
 
 You can run this yourself by running `pnpm bench`.
 
@@ -394,7 +424,9 @@ typed-html:
 
 ## How it works
 
-This package just aims to be a drop in replacement syntax for JSX, and it works because you [tell tsc to transpile](#getting-started) JSX syntax to calls to our own `html` namespace.
+This package just aims to be a drop in replacement syntax for JSX, and it works because
+you [tell tsc to transpile](#getting-started) JSX syntax to calls to our own `html`
+namespace.
 
 ```jsx
 <ol start={2}>
@@ -424,8 +456,10 @@ Which, when called, returns this string:
 
 ## Format HTML output
 
-This package emits HTML as a compact string, useful for over the wire environments. However, if your use case really needs the output
-HTML to be pretty printed, you can use an external JS library to do so, like [html-prettify](https://www.npmjs.com/package/html-prettify).
+This package emits HTML as a compact string, useful for over the wire environments.
+However, if your use case really needs the output HTML to be pretty printed, you can use
+an external JS library to do so, like
+[html-prettify](https://www.npmjs.com/package/html-prettify).
 
 ::: code-group
 
@@ -455,16 +489,22 @@ console.log(prettify(html));
 
 :::
 
-👉 There's an open PR to implement this feature natively, wanna work on it? Check [this PR](https://github.com/kitajs/html/pull/1).
+👉 There's an open PR to implement this feature natively, wanna work on it? Check
+[this PR](https://github.com/kitajs/html/pull/1).
 
 <br />
 
 ## Fork credits
 
-This repository was initially forked from [typed-html](https://github.com/nicojs/typed-html) and modified to add some features and increase performance.
+This repository was initially forked from
+[typed-html](https://github.com/nicojs/typed-html) and modified to add some features and
+increase performance.
 
-Initial credits to [nicojs](https://github.com/nicojs) and [contributors](https://github.com/nicojs/typed-html/graphs/contributors) for the amazing work.
+Initial credits to [nicojs](https://github.com/nicojs) and
+[contributors](https://github.com/nicojs/typed-html/graphs/contributors) for the amazing
+work.
 
-Licensed under the [Apache License, Version 2.0](https://github.com/kitajs/html/blob/master/LICENSE).
+Licensed under the
+[Apache License, Version 2.0](https://github.com/kitajs/html/blob/master/LICENSE).
 
 <br />
