@@ -1,0 +1,16 @@
+{
+  "name": "@kitajs/docs",
+  "private": true,
+  "version": "1.0.0",
+  "repository": "git@github.com:kitajs/docs.git",
+  "author": "arthurfiorette <arthur.fiorette@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.4"
+  }
+}
