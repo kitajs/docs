@@ -465,6 +465,6 @@ This repository was initially forked from [typed-html](https://github.com/nicojs
 
 Initial credits to [nicojs](https://github.com/nicojs) and [contributors](https://github.com/nicojs/typed-html/graphs/contributors) for the amazing work.
 
-Licensed under the [Apache License, Version 2.0](LICENSE).
+Licensed under the [Apache License, Version 2.0](https://github.com/kitajs/html/blob/master/LICENSE).
 
 <br />
