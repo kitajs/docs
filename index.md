@@ -13,7 +13,7 @@ hero:
       text: View on GitHub
       link: https://github.com/kitajs
   image:
-    src: /public/rounded.png
+    src: /rounded.png
     alt: Kita
 
 features:
