@@ -1,33 +1,83 @@
 import { defineConfig } from 'vitepress';
 
+const description = 'Performant and type safe Fastify router';
+const url = 'https://kita.js.org';
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'en-US',
   title: 'Kita',
-  description: 'Performant and type safe fastify router',
+  description,
+
+  cleanUrls: true,
+  appearance: true,
+  lastUpdated: true,
+
+  markdown: {
+    lineNumbers: false,
+    typographer: true
+  },
+
+  head: [['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }]],
 
   themeConfig: {
-    // logo: '/assets/logo.png',
+    logo: '/logo.svg',
 
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' }
+      { text: 'Guide', link: '/guide' },
+      { text: 'Learn', link: '/learn' },
+      { text: 'Reference', link: '/reference' },
+      { text: 'Templating', link: '/templating' },
+      { text: 'Integration', link: '/integration' }
     ],
+
+    search: {
+      provider: 'local',
+      options: {}
+    },
+
+    carbonAds: {
+      code: 'CEBDT27Y',
+      placement: 'vuejsorg'
+    },
+
+    footer: {
+      message: 'Made with ❤️',
+      copyright: 'Copyright (c) 2022-present Arthur Fiorette & Kita Contributors'
+    },
 
     sidebar: [
       {
         text: 'Guide',
-        items: [
-          { text: '🛠️ What is Kita', link: 'guide.md' },
-          { text: '🛠️ Getting started', link: 'guide/getting-started.md' }
-        ]
+        base: '/guide/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
       },
       {
-        text: 'Extensions',
-        items: [{ text: 'Jsx Html', link: 'html.md' }]
+        text: 'Learn',
+        base: '/learn/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
+      },
+      {
+        text: 'Reference',
+        base: '/reference/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
+      },
+      {
+        text: 'Templating',
+        base: '/templating/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
+      },
+      {
+        text: 'Integration',
+        base: '/integration/',
+        items: [
+          { text: 'Authentication', link: 'guide.md' },
+          { text: 'Database', link: 'guide.md' },
+          { text: 'Logging', link: 'guide.md' }
+        ]
       }
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/kitajs' }]
   }
 });
