@@ -78,6 +78,24 @@ const members = [
       { icon: 'instagram', link: 'https://instagram.com/arthurfiorette' }
     ]
   },
+  {
+    avatar: 'https://github.com/mesquitaviana.png',
+    name: 'Gabriel Mesquita',
+    title: 'Core Contributor',
+    links: [
+      { icon: 'github', link: 'https://github.com/mesquitaviana' },
+      { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/devzolo.png',
+    name: 'Devzolo',
+    title: 'Core Contributor',
+    links: [
+      { icon: 'github', link: 'https://github.com/devzolo' },
+      { icon: 'twitter', link: 'https://twitter.com/devzolo' }
+    ]
+  },
 ]
 </script>
 
