@@ -18,7 +18,12 @@ export default defineConfig({
     typographer: true
   },
 
-  head: [['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }]],
+  head: [
+    ['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }],
+
+    // Metrics are public! -> https://plausible.io/kita.js.org
+    ['script', { defer: '', 'data-domain': 'kita.js.org', src: 'https://plausible.io/js/script.js' }],
+  ],
 
   themeConfig: {
     logo: '/logo.svg',
