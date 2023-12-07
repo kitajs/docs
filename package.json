@@ -13,9 +13,11 @@
   },
   "devDependencies": {
     "@arthurfiorette/prettier-config": "^1.0.12",
+    "@vueuse/core": "^10.7.0",
     "husky": "^8.0.3",
     "prettier": "^3.1.0",
-    "vitepress": "1.0.0-rc.31"
+    "vitepress": "1.0.0-rc.31",
+    "vue": "^3.3.10"
   },
   "packageManager": "pnpm@8.6.11"
 }

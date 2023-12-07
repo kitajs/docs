@@ -66,22 +66,16 @@
   width: min(100%, 1152px);
   flex-wrap: wrap;
   margin: 0 24px;
+  padding: 24px;
 }
 
 #trusted-by a {
+  filter: contrast(0);
   width: 128px;
+  transition: all 0.2s ease-in;
 }
 
-#trusted-by img {
-  filter: grayscale(1);
-  transition: filter 0.5s ease-in-out;
-}
-
-#trusted-by img:hover,
-#trusted-by img:focus,
-#trusted-by img:active,
-#trusted-by img:visited,
-#trusted-by img:active {
+#trusted-by a:hover {
   filter: none;
 }
 

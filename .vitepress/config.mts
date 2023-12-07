@@ -34,6 +34,12 @@ export default defineConfig({
         src: 'https://plausible.io/js/script.js'
       },
       '/* This site metrics are public available at https://plausible.io/kita.js.org */'
+    ],
+
+    [
+      'script',
+      { id: 'restore-banner-preference' },
+      `(() => {const restore=(e,s,t=!1)=>{let n=localStorage.getItem(e);(n?"false"!==n&&new Date<n:t)&&document.documentElement.classList.add(s)};restore("header-banner","banner-dismissed");})();`
     ]
   ],
 
