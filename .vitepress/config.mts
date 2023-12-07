@@ -75,6 +75,11 @@ export default defineConfig({
           { text: 'Database', link: 'guide.md' },
           { text: 'Logging', link: 'guide.md' }
         ]
+      },
+      {
+        text: 'Other',
+        base: '/other/',
+        items: [{ text: 'Feature your company', link: 'feature-your-company.md' }]
       }
     ],
 

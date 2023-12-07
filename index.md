@@ -60,56 +60,72 @@ features:
 ---
 
 <script setup>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers
-} from 'vitepress/theme'
+  import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme';
 
- 
-const members = [
- {
-    avatar: 'https://github.com/arthurfiorette.png',
-    name: 'Arthur Fiorette',
-    title: 'Creator',
-    links: [
-      { icon: 'github', link: 'https://github.com/arthurfiorette' },
-      { icon: 'twitter', link: 'https://twitter.com/arthurfiorette' },
-      { icon: 'instagram', link: 'https://instagram.com/arthurfiorette' }
-    ]
-  },
-  {
-    avatar: 'https://github.com/mesquitaviana.png',
-    name: 'Gabriel Mesquita',
-    title: 'Core Contributor',
-    links: [
-      { icon: 'github', link: 'https://github.com/mesquitaviana' },
-      { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
-    ]
-  },
-  {
-    avatar: 'https://github.com/devzolo.png',
-    name: 'Devzolo',
-    title: 'Core Contributor',
-    links: [
-      { icon: 'github', link: 'https://github.com/devzolo' },
-      { icon: 'twitter', link: 'https://twitter.com/devzolo' }
-    ]
-  },
-]
+  const members = [
+    {
+      avatar: 'https://github.com/arthurfiorette.png',
+      name: 'Arthur Fiorette',
+      title: 'Creator',
+      links: [
+        { icon: 'github', link: 'https://github.com/arthurfiorette' },
+        { icon: 'twitter', link: 'https://twitter.com/arthurfiorette' },
+        { icon: 'instagram', link: 'https://instagram.com/arthurfiorette' }
+      ]
+    },
+    {
+      avatar: 'https://github.com/mesquitaviana.png',
+      name: 'Gabriel Mesquita',
+      title: 'Core Contributor',
+      links: [
+        { icon: 'github', link: 'https://github.com/mesquitaviana' },
+        { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
+      ]
+    },
+    {
+      avatar: 'https://github.com/devzolo.png',
+      name: 'Devzolo',
+      title: 'Core Contributor',
+      links: [
+        { icon: 'github', link: 'https://github.com/devzolo' },
+        { icon: 'twitter', link: 'https://twitter.com/devzolo' }
+      ]
+    }
+  ];
 </script>
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title>
-      Our Team
-    </template>
+    <template #title> Trusted by companies </template>
     <template #lead>
-      The Kita's development team is composed of a diverse group of people from all
-      over the world.
+      Kita is proudly powering a large ecosystem of organizations and products worldwide.
     </template>
   </VPTeamPageTitle>
-  <VPTeamMembers
-    :members="members"
-  />
+
+  <div id="trusted-by-wrapper">
+    <div id="trusted-by">
+      <a href="https://www.cargill.com" alt="Cargill" target="_blank">
+        <img src="/logos/cargill.svg" alt="Cargill logo" />
+      </a>
+      <a href="https://home.kascosys.com.br" alt="Kasco R&D" target="_blank">
+        <img src="/logos/kasco.svg" alt="Kasco logo" />
+      </a>
+    </div>
+    <small>
+      The logos displayed in this page are property of the respective organizations and they are not distributed under the same license as Kita (MIT).
+      <br />
+      <a href="other/feature-your-company">Learn how to be featured here.</a>
+    </small>
+  </div>
+</VPTeamPage>
+
+<VPTeamPage>
+  <VPTeamPageTitle>
+    <template #title> Our Team </template>
+    <template #lead>
+      The Kita's development team is composed of a diverse group of people from all over
+      the world.
+    </template>
+  </VPTeamPageTitle>
+  <VPTeamMembers :members="members" />
 </VPTeamPage>
