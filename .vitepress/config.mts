@@ -54,8 +54,12 @@ export default defineConfig({
     ],
 
     search: {
-      provider: 'local',
-      options: {}
+      provider: 'algolia',
+      options: {
+        appId: 'GK93WOWSB3',
+        apiKey: '3fd9b69d0de15fab0e443033cbd9c573',
+        indexName: 'kitajs-docs'
+      }
     },
 
     carbonAds: {
