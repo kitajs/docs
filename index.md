@@ -105,10 +105,10 @@ features:
   <div id="trusted-by-wrapper">
     <div id="trusted-by">
       <a href="https://www.cargill.com" alt="Cargill" target="_blank">
-        <img src="/logos/cargill.svg" alt="Cargill logo" />
+        <img src="/companies/cargill.svg" alt="Cargill logo" />
       </a>
       <a href="https://home.kascosys.com.br" alt="Kasco R&D" target="_blank">
-        <img src="/logos/kasco.svg" alt="Kasco logo" />
+        <img src="/companies/kasco.svg" alt="Kasco logo" />
       </a>
     </div>
     <small>

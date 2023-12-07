@@ -14,8 +14,12 @@ export default defineConfig({
   lastUpdated: true,
 
   markdown: {
-    lineNumbers: false,
-    typographer: true
+    lineNumbers: true,
+    typographer: true,
+    theme: {
+      dark: 'github-dark',
+      light: 'github-light'
+    }
   },
 
   head: [
@@ -32,7 +36,7 @@ export default defineConfig({
       '/* This site metrics are public available at https://plausible.io/kita.js.org */'
     ]
   ],
-  
+
   sitemap: {
     hostname: url,
     lastmodDateOnly: true
@@ -42,11 +46,11 @@ export default defineConfig({
     logo: '/logo.svg',
 
     nav: [
-      { text: 'Guide', link: '/guide' },
-      { text: 'Learn', link: '/learn' },
-      { text: 'Reference', link: '/reference' },
-      { text: 'Templating', link: '/templating' },
-      { text: 'Integration', link: '/integration' }
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Learn', link: '/learn/' },
+      { text: 'Reference', link: '/reference/' },
+      { text: 'Templating', link: '/templating/' },
+      { text: 'Integration', link: '/integration/' }
     ],
 
     search: {

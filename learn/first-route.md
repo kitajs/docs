@@ -26,17 +26,30 @@ even a stream, kita will handle it and document it properly.
 
 You can now run `pnpm build` and `pnpm start` again, and you should see the following:
 
-```bash
-pnpm build
-pnpm start
+::: code-group
 
-#> <build logs...>
+```bash {2,5} [Terminal 1]
+pnpm build
+#> <omitted build logs...>
+
+pnpm start
 #> Server listening on http://127.0.0.1:1228
 ```
 
-As you saw in the build logs, kita probably emmitted a output like this:
+```bash {2,5} [Terminal 2]
+curl http://localhost:1228
+#> {"hello":"world"}
 
-```txt
+curl http://localhost:1228/unexisting-route
+#> {"statusCode":404,"error":"Not Found","message":"Route GET /not-index not found"}
+```
+
+:::
+
+The server terminal should've logged `Hello world!` as well. In the build logs, `Kita`
+probably emitted a output like this:
+
+```log
 Warming up... Ready to build!
 Parsing sources... 1 routes / 1 schemas / 0 providers | 0 errors
 Generating @kitajs/runtime... 6 files written.
@@ -45,21 +58,10 @@ Generating @kitajs/runtime... 6 files written.
 This means kita found your `/` route and generated everything it needs inside the
 `@kitajs/runtime` package. Lets test it out:
 
-```bash
-# Another terminal
-
-curl http://localhost:1228
-#> {"hello":"world"}
-
-curl http://localhost:1228/unexisting-route
-#> {"statusCode":404,"error":"Not Found","message":"Route GET /not-index not found"}
-```
-
-The server terminal should've logged `Hello world!` as well.
-
-Running CURL or opening your browser is often hard to reproduce and debug, that's no problem for us, as
-kita automatically generates a [Swagger Spec](https://swagger.io/) and [Swagger UI](https://swagger.io/tools/swagger-ui/),
-you can access it at `http://localhost:1228/documentation`
+Running CURL or opening your browser is often hard to reproduce and debug, that's no
+problem for us, as kita automatically generates a [Swagger Spec](https://swagger.io/) and
+[Swagger UI](https://swagger.io/tools/swagger-ui/), you can access it at
+`http://localhost:1228/documentation`
 
 ::: details Swagger UI screenshot
 

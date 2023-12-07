@@ -3,9 +3,8 @@
 The best way to learn something is to build a project with it. So, let's build a Reddit
 clone with Kita!
 
-Kita is a framework designed to build restful APIs, so we will follow this path, but we
-also provide a frontend guide to help you build
-[HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) web applications.
+Kita is a framework designed to build restful APIs, so we will follow this path, but it
+also provides a awesome way to build backend-driven web applications.
 
 ::: details Swagger UI screenshot
 
@@ -46,9 +45,9 @@ will only focus on teaching Kita**, below is the tech stack we will use:
   database because it's easy to use and setup.
 - [SQLite](https://www.sqlite.org/index.html) - SQLite is a simple SQL database, its only
   being used because no extra setup aside from a file.db is required.
-- [Htmx](https://htmx.org/) - Htmx is a library that allows you to create HATEOAS web
-  applications, we will use it to create our frontend, if you also chose to follow the
+- [Htmx](https://htmx.org/) - Htmx is a library that allows you to create backend-driven
+  web applications, we will use it to create our frontend, if you also chose to follow the
   frontend steps.
 - [PicoCSS](https://picocss.com/) - PicoCSS is a tiny CSS framework, were not here to
-  teach or make beautiful UIs, Pico lets us just using raw html tags while keeping a
-  decent and consistent look.
+  teach or make beautiful UIs, Pico lets us just use html tags without `.classes` while
+  keeping a decent and consistent look.
