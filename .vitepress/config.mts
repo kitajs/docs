@@ -32,6 +32,11 @@ export default defineConfig({
       '/* This site metrics are public available at https://plausible.io/kita.js.org */'
     ]
   ],
+  
+  sitemap: {
+    hostname: url,
+    lastmodDateOnly: true
+  },
 
   themeConfig: {
     logo: '/logo.svg',
@@ -60,35 +65,39 @@ export default defineConfig({
     },
 
     sidebar: [
-      {
-        text: 'Guide',
-        base: '/guide/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
-      },
+      // {
+      //   text: 'Guide',
+      //   base: '/guide/',
+      //   items: [{ text: '🛠️', link: 'guide.md' }]
+      // },
       {
         text: 'Learn',
         base: '/learn/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
-      },
-      {
-        text: 'Reference',
-        base: '/reference/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
-      },
-      {
-        text: 'Templating',
-        base: '/templating/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
-      },
-      {
-        text: 'Integration',
-        base: '/integration/',
         items: [
-          { text: 'Authentication', link: 'guide.md' },
-          { text: 'Database', link: 'guide.md' },
-          { text: 'Logging', link: 'guide.md' }
+          { text: 'What we will build', link: 'index.md' },
+          { text: 'Setting things up', link: 'setup.md' },
+          { text: 'Creating our first route', link: 'first-route.md' }
         ]
       },
+      // {
+      //   text: 'Reference',
+      //   base: '/reference/',
+      //   items: [{ text: '🛠️', link: 'guide.md' }]
+      // },
+      // {
+      //   text: 'Templating',
+      //   base: '/templating/',
+      //   items: [{ text: '🛠️', link: 'guide.md' }]
+      // },
+      // {
+      //   text: 'Integration',
+      //   base: '/integration/',
+      //   items: [
+      //     { text: 'Authentication', link: 'guide.md' },
+      //     { text: 'Database', link: 'guide.md' },
+      //     { text: 'Logging', link: 'guide.md' }
+      //   ]
+      // },
       {
         text: 'Other',
         base: '/other/',
