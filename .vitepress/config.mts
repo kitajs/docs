@@ -21,8 +21,16 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }],
 
-    // Metrics are public! -> https://plausible.io/kita.js.org
-    ['script', { defer: '', 'data-domain': 'kita.js.org', src: 'https://plausible.io/js/script.js' }],
+    //
+    [
+      'script',
+      {
+        defer: '',
+        'data-domain': 'kita.js.org',
+        src: 'https://plausible.io/js/script.js'
+      },
+      '/* This site metrics are public available at https://plausible.io/kita.js.org */'
+    ]
   ],
 
   themeConfig: {
@@ -47,7 +55,7 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Made with ❤️',
+      message: 'Made with ❤️ by Arthur Fiorette',
       copyright: 'Copyright (c) 2022-present Arthur Fiorette & Kita Contributors'
     },
 
@@ -88,6 +96,10 @@ export default defineConfig({
       }
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/kitajs' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/kitajs' }],
+
+    editLink: {
+      pattern: 'https://github.com/kitajs/docs/edit/main/:path'
+    }
   }
 });
