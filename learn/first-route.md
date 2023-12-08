@@ -51,7 +51,7 @@ curl http://localhost:1228/unexisting-route
 The server terminal should display `Hello world!`, and the build logs may contain an
 output similar to:
 
-```log
+```sh
 Warming up... Ready to build!
 Parsing sources... 1 routes / 1 schemas / 0 providers | 0 errors
 Generating @kitajs/runtime... 6 files written.
