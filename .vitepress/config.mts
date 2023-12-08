@@ -17,8 +17,8 @@ export default defineConfig({
     lineNumbers: true,
     typographer: true,
     theme: {
-      dark: 'one-dark-pro',
-      light: 'light-plus'
+      dark: 'github-dark',
+      light: 'github-light'
     }
   },
 
