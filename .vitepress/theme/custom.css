@@ -39,7 +39,7 @@
   align-items: center;
 }
 
-#trusted-by-wrapper small {
+#small-text {
   font-size: 0.8rem;
   display: block;
   margin: 1rem;
@@ -47,12 +47,12 @@
   text-align: center;
 }
 
-#trusted-by-wrapper small a {
+#small-text a {
   color: var(--vp-c-text-1);
   text-decoration: underline;
 }
 
-#trusted-by-wrapper small a:hover {
+#small-text a:hover {
   text-decoration: none;
 }
 

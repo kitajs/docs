@@ -111,7 +111,7 @@ features:
         <img src="/companies/kasco.svg" alt="Kasco logo" />
       </a>
     </div>
-    <small>
+    <small id="small-text">
       The logos displayed in this page are property of the respective organizations and they are not distributed under the same license as Kita (MIT).
       <br />
       <a href="other/feature-your-company">Learn how to be featured here.</a>
@@ -128,4 +128,10 @@ features:
     </template>
   </VPTeamPageTitle>
   <VPTeamMembers :members="members" />
+
+  <small id="small-text">
+    You can be part of this team too!
+    <br />
+    Contributing to a feature to <a href="https://github.com/kitajs/kitajs" target="_blank">our repository</a> makes you eligible for a spotlight in this space.
+  </small>
 </VPTeamPage>
