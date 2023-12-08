@@ -8,14 +8,16 @@ based on their exports.
 Let's create our inaugural route by crafting a `src/routes/index.ts` file with the
 subsequent content:
 
-```ts
-// src/routes/index.ts
+::: code-group
 
+```ts [src/routes/index.ts]
 export function get() {
   console.log('Hello world!');
   return { hello: 'world' };
 }
 ```
+
+:::
 
 Kita can interpret the provided code snippet because we executed a `kita build` command
 before running `tsc` to transpile our TypeScript. This is necessary because Kita analyzes

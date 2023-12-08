@@ -135,7 +135,7 @@ const app = fastify({
 ```bash {3} [Terminal 1]
 pnpm dev
 
-#> {"level":30,"time":1702006043610,"pid":38391,"hostname":"hzk","msg":"Server listening at http://127.0.0.1:1228"}
+#> {"level":30,"time":1702006043610,"pid":38391,"hostname":"kita","msg":"Server listening at http://127.0.0.1:1228"}
 ```
 
 :::
@@ -175,10 +175,11 @@ Now, our logs will be pretty and colorful!
 
 ::: code-group
 
-```bash {3} [Terminal 1]
+```bash {4} [Terminal 1]
 pnpm dev
 
-#> [18:40:00.891] INFO (190875): Server listening at http://127.0.0.1:1228
+#> {"level":30,"time":1702006043610,"pid":38391,"hostname":"kita","msg":"Server listening at http://127.0.0.1:1228"}// [!code --]
+#> [18:40:00.891] INFO (190875): Server listening at http://127.0.0.1:1228// [!code ++]
 ```
 
 :::
