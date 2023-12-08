@@ -19,7 +19,7 @@ pnpm add @kitajs/runtime fastify
 
 :::
 
-Summary:
+::: details Dependencies explained
 
 - [`@kitajs/cli`](https://www.npmjs.com/package/@kitajs/cli) provides access to kita
   features as a CLI,
@@ -31,9 +31,20 @@ Summary:
   to run your app
 - [`fastify`](https://www.npmjs.com/package/fastify) is the web server.
 
-Typescript is also needed, so create a `tsconfig.json` file:
+:::
+
+Start by creating `package.json` and `tsconfig.json` file should be created.
 
 ::: code-group
+
+```jsonc [package.json]
+{
+  "scripts": {
+    "build": "kita build && tsc",
+    "start": "node --enable-source-maps dist/index.js"
+  }
+}
+```
 
 ```jsonc [tsconfig.json]
 {
@@ -49,21 +60,6 @@ Typescript is also needed, so create a `tsconfig.json` file:
     "plugins": [{ "name": "@kitajs/ts-plugin" }]
   },
   "include": ["src"]
-}
-```
-
-:::
-
-In your `package.json` file, add the following scripts:
-
-::: code-group
-
-```jsonc [package.json]
-{
-  "scripts": {
-    "build": "kita build && tsc",
-    "start": "node --enable-source-maps dist/index.js"
-  }
 }
 ```
 

@@ -90,7 +90,8 @@ export default defineConfig({
         items: [
           { text: 'What we will build', link: 'index.md' },
           { text: 'Setting things up', link: 'setup.md' },
-          { text: 'Creating our first route', link: 'first-route.md' }
+          { text: 'Creating our first route', link: 'first-route.md' },
+          { text: 'Improving the setup', link: 'improving-setup.md' }
         ]
       },
       // {
