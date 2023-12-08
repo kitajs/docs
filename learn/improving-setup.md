@@ -171,6 +171,18 @@ pnpm add -D pino-pretty
 
 :::
 
+Now, our logs will be pretty and colorful!
+
+::: code-group
+
+```bash {3} [Terminal 1]
+pnpm dev
+
+#> [18:40:00.891] INFO (190875): Server listening at http://127.0.0.1:1228
+```
+
+:::
+
 ## Environment Variables
 
 Environment variables are a great way to configure your application. Node.js has a
