@@ -1,7 +1,7 @@
 # Project setup
 
-Start by creating a new folder for your project, then run `pnpm init` to create a new
-`package.json` file.
+Start by creating a new folder for your project, then run `pnpm init` to create
+a new `package.json` file.
 
 ::: code-group
 
@@ -21,12 +21,12 @@ pnpm add @kitajs/runtime fastify
 
 ::: details Dependencies explained
 
-- [`@kitajs/cli`](https://www.npmjs.com/package/@kitajs/cli) provides access to kita
-  features as a CLI,
-- [`@kitajs/ts-plugin`](https://www.npmjs.com/package/@kitajs/ts-plugin) enables in-editor
-  type checking and auto-completion,
-- [`@kitajs/runtime`](https://www.npmjs.com/package/@kitajs/runtime) is everything you
-  need at runtime
+- [`@kitajs/cli`](https://www.npmjs.com/package/@kitajs/cli) provides access to
+  kita features as a CLI,
+- [`@kitajs/ts-plugin`](https://www.npmjs.com/package/@kitajs/ts-plugin) enables
+  in-editor type checking and auto-completion,
+- [`@kitajs/runtime`](https://www.npmjs.com/package/@kitajs/runtime) is
+  everything you need at runtime
   [(actually nothing)](https://github.com/kitajs/kitajs/blob/main/packages/runtime/index.js)
   to run your app
 - [`fastify`](https://www.npmjs.com/package/fastify) is the web server.
@@ -67,7 +67,8 @@ Start by creating `package.json` and `tsconfig.json` file should be created.
 
 ::: warning Please use Node.js v20 or higher!
 
-`--enable-source-maps` and other features you'll need are only stable on **Node.js 20+**.
+`--enable-source-maps` and other features you'll need are only stable on
+**Node.js 20+**.
 
 Check your version with `node -v` and install the latest version if needed.
 
@@ -109,8 +110,8 @@ pnpm start
 
 :::
 
-Opening your browser or using curl to access `http://127.0.0.1:1228` will return you a
-`404` error, this is because we haven't created any routes yet.
+Opening your browser or using curl to access `http://127.0.0.1:1228` will return
+you a `404` error, this is because we haven't created any routes yet.
 
 ::: code-group
 

@@ -25,7 +25,6 @@ export default defineConfig({
   head: [
     ['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }],
 
-    //
     [
       'script',
       {
@@ -79,41 +78,51 @@ export default defineConfig({
     },
 
     sidebar: [
-      // {
-      //   text: 'Guide',
-      //   base: '/guide/',
-      //   items: [{ text: '🛠️', link: 'guide.md' }]
-      // },
       {
+        collapsed: true,
+        text: 'Guide',
+        base: '/guide/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
+      },
+      {
+        collapsed: true,
         text: 'Learn',
         base: '/learn/',
         items: [
           { text: 'What we will build', link: 'index.md' },
           { text: 'Setting things up', link: 'setup.md' },
           { text: 'Creating our first route', link: 'first-route.md' },
-          { text: 'Improving the setup', link: 'improving-setup.md' }
+          { text: 'Improving the setup', link: 'improving-setup.md' },
+          { text: 'Modelling our data', link: 'modelling-data.md' },
+          { text: 'Adding authentication', link: 'authentication.md' }
         ]
       },
-      // {
-      //   text: 'Reference',
-      //   base: '/reference/',
-      //   items: [{ text: '🛠️', link: 'guide.md' }]
-      // },
-      // {
-      //   text: 'Templating',
-      //   base: '/templating/',
-      //   items: [{ text: '🛠️', link: 'guide.md' }]
-      // },
-      // {
-      //   text: 'Integration',
-      //   base: '/integration/',
-      //   items: [
-      //     { text: 'Authentication', link: 'guide.md' },
-      //     { text: 'Database', link: 'guide.md' },
-      //     { text: 'Logging', link: 'guide.md' }
-      //   ]
-      // },
       {
+        collapsed: true,
+        text: 'Reference',
+        base: '/reference/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
+      },
+      {
+        collapsed: true,
+        text: 'Templating',
+        base: '/templating/',
+        items: [{ text: '🛠️', link: 'guide.md' }]
+      },
+      {
+        collapsed: true,
+        text: 'Integration',
+        base: '/integration/',
+        items: [
+          { text: '🛠️', link: 'guide.md' }
+
+          // { text: 'Authentication', link: 'guide.md' },
+          // { text: 'Database', link: 'guide.md' },
+          // { text: 'Logging', link: 'guide.md' }
+        ]
+      },
+      {
+        collapsed: true,
         text: 'Other',
         base: '/other/',
         items: [{ text: 'Feature your company', link: 'feature-your-company.md' }]

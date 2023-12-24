@@ -2,9 +2,9 @@
 
 Is your organization using Kita? That's great!
 
-If you would like your organization to have its logo featured in this list, here's how you
-do it! You can submit your organization, your logo and other few relevant details by
-following these steps:
+If you would like your organization to have its logo featured in the main page list,
+here's how you do it! You can submit your organization, your logo and other few relevant
+details by following these steps:
 
 1. Fork the [Kita documentation repository](https://github.com/kitajs/docs) on GitHub.
 2. Add the logo in the `public/companies` folder.

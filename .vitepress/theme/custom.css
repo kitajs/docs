@@ -16,6 +16,10 @@
   );
 
   --vp-home-hero-image-filter: blur(40px);
+
+  --vp-button-brand-active-bg: var(--vp-c-brand-2);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-3);
+  --vp-button-brand-bg: var(--vp-c-brand-2);
 }
 
 @media (min-width: 640px) {
