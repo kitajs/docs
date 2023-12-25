@@ -1,20 +1,15 @@
 # Authentication
 
-The first thing I like to add to any project is authentication, so let's do it.
-
-## Providers
-
-The best way to add authentication to a Kita project is by using a provider,
-providers are a new concept introduced by Kita, they work by linking a type to a
-function that returns a value of that type, and can be automatically called
-simply by adding that type as a route parameter.
+Adding authentication is a crucial step in any web development project. In Kita,
+the preferred way to implement authentication is by using providers, a concept
+introduced by Kita. Providers link a type to a function that returns a value of
+that type and can be automatically called by simply adding that type as a route
+parameter.
 
 <!-- TODO: Add a link section to the provider docs -->
 
-Just to understand, lets create a simple provider that returns the `User-Agent`
-header value from a request and change our previous hello world route to use it:
-
-::: code-group
+Let's create a simple provider to retrieve the `User-Agent` header value from a
+request and modify our previous "Hello, World!" route to use it:
 
 ```ts [src/providers/user-agent.ts]
 import type { FastifyRequest } from 'fastify';
@@ -46,41 +41,29 @@ export function get(userAgent: UserAgent) {
 }
 ```
 
-:::
-
-Lets ensure its working as expected by spinning up our server and making a
+Let's ensure it's working as expected by spinning up our server and making a
 request:
 
-::: code-group
-
-```bash {2} [Terminal 1]
+```bash [Terminal 1]
 pnpm dev
 #> <omitted build logs...>
 ```
 
-```bash {2} [Terminal 2]
+```bash [Terminal 2]
 curl http://localhost:1228
 #> {"userAgent":"curl/7.68.0"}%
 ```
 
-:::
+```tip
+You can now delete the `src/providers/user-agent.ts` and `src/routes/index.ts` files.
+```
 
-::: tip
+## Creating the Authentication Provider
 
-You can now delete the `src/providers/user-agent.ts` and `src/routes/index.ts`
-files.
-
-:::
-
-## Creating the authentication provider
-
-Now that we understand how providers work, lets create our authentication
-workflow. To ensure security, `jwt` and `HttpOnly` cookies will be used through
-their respective `fastify` plugins. `@fastify/sensible` also should be added to
-provide error classes and we will also need to register them on our `app`
-instance:
-
-::: code-group
+Now that we understand how providers work, let's create our authentication
+workflow. To ensure security, we'll use JWT and HttpOnly cookies through their
+respective Fastify plugins. We'll also add `@fastify/sensible` to provide error
+classes, and we need to register them on our `app` instance:
 
 ```sh [Terminal 1]
 pnpm add @fastify/jwt @fastify/cookie @fastify/sensible argon2
@@ -93,20 +76,20 @@ if (!process.env.DATABASE_URL) {
   throw new Error('DATABASE_URL is not defined');
 }
 
-// [!code ++:4]
 if (!process.env.JWT_SECRET) {
   throw new Error('JWT_SECRET is not defined');
 }
 
 export const Env = Object.freeze({
+  HOST: String(process.env.HOST ?? '0.0.0.0'),
   PORT: Number(process.env.PORT || 1228),
   DATABASE_URL: process.env.DATABASE_URL,
-  JWT_SECRET: process.env.JWT_SECRET // [!code ++]
+  JWT_SECRET: process.env.JWT_SECRET
 });
 ```
 
 ```ts [src/index.ts]
-import fastifyCookie from '@fastify/cookie'; // [!code ++:10]
+import fastifyCookie from '@fastify/cookie';
 import fastifyJwt from '@fastify/jwt';
 import fastifySensible from '@fastify/sensible';
 
@@ -119,12 +102,8 @@ app.register(fastifyJwt, {
 });
 ```
 
-:::
-
-As you can see, mostly of the packages we will use are `fastify` plugins, this
-is because Kita is built on and for Fastify, and rarely you will need to use a
-package that is not created by fastify or compatible with it. We must also
-create a provider to return our prisma client instance.
+Most of the packages we'll use are Fastify plugins because Kita is built on and
+for Fastify. We'll also create a provider to return our Prisma client instance:
 
 ::: code-group
 
@@ -150,7 +129,7 @@ export default function (): PrismaClient {
 }
 
 // Providers can also have lifecycle hooks, this one connects and disconnects
-// from the database and also binds the prisma events to the fastify logger
+// from the database and also binds the prisma events to the Fastify logger
 export async function onReady(this: FastifyInstance) {
   prisma.$on('error', this.log.error.bind(this.log));
   prisma.$on('info', this.log.debug.bind(this.log));

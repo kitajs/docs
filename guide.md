@@ -1,4 +1,4 @@
-KitaJS is not production ready and its documentation is being built.
+Kita is not production ready and its documentation is being built.
 
 Thanks for the patience :)
 

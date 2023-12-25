@@ -12,7 +12,7 @@ but it also provides a awesome way to build backend-driven web applications.
 
 :::
 
-::: details Frontend build with KitaJS + Htmx
+::: details Frontend build with Kita + Htmx
 
 <video controls>
   <source src="/learn/keddit-preview.webm"  type="video/webm"  >

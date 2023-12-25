@@ -227,6 +227,7 @@ and updating your `app.listen` call.
 
 ```ts [src/env.ts]
 export const Env = Object.freeze({
+  HOST: String(process.env.HOST ?? '0.0.0.0'),
   PORT: Number(process.env.PORT || 1228)
 });
 ```
@@ -235,7 +236,7 @@ export const Env = Object.freeze({
 import { Env } from './env';// [!code ++]
 
 app.listen({ port: 1228 }, async (err) => {// [!code --]
-app.listen({ port: Env.PORT }, async (err) => {// [!code ++]
+app.listen({ port: Env.PORT, host: Env.HOST }, async (err) => {// [!code ++]
 ```
 
 :::

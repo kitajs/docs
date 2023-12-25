@@ -22,6 +22,8 @@ export default defineConfig({
     }
   },
 
+  
+
   head: [
     ['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }],
 
@@ -50,6 +52,8 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
 
+    outline: 'deep',
+
     nav: [
       { text: 'Guide', link: '/guide/' },
       { text: 'Learn', link: '/learn/' },
@@ -74,19 +78,34 @@ export default defineConfig({
 
     footer: {
       message: 'Made with ❤️ by Arthur Fiorette',
-      copyright: 'Copyright (c) 2022-present Arthur Fiorette & Kita Contributors'
+      copyright:
+        'Copyright (c) 2022-present Arthur Fiorette & Kita Contributors'
     },
 
     sidebar: [
       {
-        collapsed: true,
         text: 'Guide',
         base: '/guide/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
+        items: [
+          {
+            text: '🛠️',
+            link: 'guide.md'
+          }
+        ]
+      },
+      {
+        text: 'Routing',
+        base: '/routes/',
+        items: [
+          { text: 'Basics of routing', link: 'index.md' },
+          { text: 'Using parameters', link: 'parameters.md' },
+          { text: 'Serialization principles', link: 'serialization.md' },
+          { text: 'Identifying routes', link: 'identification.md' }
+        ]
       },
       {
         collapsed: true,
-        text: 'Learn',
+        text: 'Learn by building',
         base: '/learn/',
         items: [
           { text: 'What we will build', link: 'index.md' },
@@ -98,21 +117,13 @@ export default defineConfig({
         ]
       },
       {
-        collapsed: true,
-        text: 'Reference',
-        base: '/reference/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
-      },
-      {
-        collapsed: true,
         text: 'Templating',
         base: '/templating/',
         items: [{ text: '🛠️', link: 'guide.md' }]
       },
       {
-        collapsed: true,
-        text: 'Integration',
-        base: '/integration/',
+        text: 'Integrations',
+        base: '/integrations/',
         items: [
           { text: '🛠️', link: 'guide.md' }
 
@@ -125,7 +136,9 @@ export default defineConfig({
         collapsed: true,
         text: 'Other',
         base: '/other/',
-        items: [{ text: 'Feature your company', link: 'feature-your-company.md' }]
+        items: [
+          { text: 'Feature your company', link: 'feature-your-company.md' }
+        ]
       }
     ],
 

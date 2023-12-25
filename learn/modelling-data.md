@@ -72,6 +72,7 @@ if (!process.env.DATABASE_URL) {
 }
 
 export const Env = Object.freeze({
+  HOST: String(process.env.HOST ?? '0.0.0.0'),
   PORT: Number(process.env.PORT || 1228),
   DATABASE_URL: process.env.DATABASE_URL // [!code ++]
 });

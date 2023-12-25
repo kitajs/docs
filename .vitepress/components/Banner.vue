@@ -38,7 +38,7 @@ watchEffect(() => {
 const dismiss = () => {
   localStorage.setItem(
     'header-banner',
-    (Date.now() + 8.64e7 * 1).toString() // current time + 1 day
+    (Date.now() + 8.64e7 * 7).toString() // current time + 7 days
   );
   document.documentElement.classList.add('banner-dismissed');
 };
