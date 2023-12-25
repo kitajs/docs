@@ -44,6 +44,9 @@ export default defineConfig({
     ]
   ],
 
+  // FIXME: Remove when documentation is done
+  ignoreDeadLinks: true,
+
   sitemap: {
     hostname: url,
     lastmodDateOnly: true
