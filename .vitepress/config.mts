@@ -22,8 +22,6 @@ export default defineConfig({
     }
   },
 
-  
-
   head: [
     ['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }],
 
@@ -145,7 +143,10 @@ export default defineConfig({
       }
     ],
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/kitajs' }],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/kitajs' },
+      { icon: 'twitter', link: 'https://twitter.com/kitajsorg' }
+    ],
 
     editLink: {
       pattern: 'https://github.com/kitajs/docs/edit/main/:path'

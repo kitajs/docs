@@ -2,7 +2,7 @@
   <div ref="el" class="banner">
     <div class="text">
       ⚠️ <b>Kita</b> is currently in active development, with a projected release
-      candidate expected in Q1 2024 ⚠️
+      candidate expected in Q2 2024 ⚠️
     </div>
 
     <button type="button" @click="dismiss">
