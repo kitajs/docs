@@ -99,7 +99,7 @@ export default defineConfig({
         base: '/routes/',
         items: [
           { text: 'Basics of routing', link: 'index.md' },
-          { text: 'Using parameters', link: 'parameters.md' },
+          { text: 'Handling input data', link: 'handling-input.md' },
           { text: 'Serialization principles', link: 'serialization.md' },
           { text: 'Identifying routes', link: 'identification.md' }
         ]
