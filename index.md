@@ -26,29 +26,32 @@ features:
   - icon: 🩺
     title: Static analyzer
     details:
-      Kita is able to statically analyze your function types and generate routes, validate
-      input types and inject dependencies.
+      Kita is able to statically analyze your function types and generate
+      routes, validate input types and inject dependencies.
 
   - icon: 🛞
     title: No wheel reinvention
     details:
-      Kita uses industry standard libraries like Fastify, Ajv and OpenAPI to provide a
-      seamless experience.
+      Kita uses industry standard libraries like Fastify, Ajv and OpenAPI to
+      provide a seamless experience.
 
   - icon: 🧩
     title: Hassle free
-    details: Good defaults. No magic. Kita does not require any configuration whatsoever.
+    details:
+      Good defaults. No magic. Kita does not require any configuration
+      whatsoever.
 
   - icon: TS
     title: TypeScript!
     details:
-      Embrace the power of runtime type safety, meta programming and code generation.
+      Embrace the power of runtime type safety, meta programming and code
+      generation.
 
-  - icon:  🚀
+  - icon: 🚀
     title: Fastify serialization
     details:
-      All routes are automatically serialized using Fastify's super fast serialization and
-      deserialization flow.
+      All routes are automatically serialized using Fastify's super fast
+      serialization and deserialization flow.
 
   - icon: 📖
     title: Open API
@@ -56,7 +59,8 @@ features:
 
   - icon: 🏇
     title: Ready for your workflow!
-    details: Kita provides tutorials for integrating with loggers, databases and more.
+    details:
+      Kita provides tutorials for integrating with loggers, databases and more.
 ---
 
 <script setup>
