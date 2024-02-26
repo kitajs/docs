@@ -65,14 +65,16 @@ components inside the `@kitajs/runtime` package. Let's put it to the test:
 
 While using CURL or a browser for testing may be challenging to replicate and
 debug, Kita provides an automatic solution. It generates a
-[Swagger Spec](https://swagger.io/) and
-[Swagger UI](https://swagger.io/tools/swagger-ui/), accessible at
-`http://localhost:1228/documentation`.
+[Swagger Spec](https://swagger.io/) and [Scalar Ui](https://scalar.com/),
+accessible at `http://localhost:1228/reference`.
 
-::: details Swagger UI screenshot
+::: details Scala Ui example
 
-<img src="/learn/swagger-first-screenshot.png" />
+<iframe
+  src="https://keddit-production.up.railway.app/reference"
+  style="width: 100%; height: 500px; border: 0;"
+></iframe>
 
 :::
 
-From now on, we will use the Swagger UI to test our routes.
+From now on, we will use the Scala Ui to test our routes.

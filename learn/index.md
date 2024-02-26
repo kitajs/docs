@@ -6,13 +6,16 @@ Reddit clone with Kita!
 Kita is a framework designed to build restful APIs, so we will follow this path,
 but it also provides a awesome way to build backend-driven web applications.
 
-::: details Swagger UI screenshot
+::: details Scala Ui example
 
-<img src="/learn/keddit-swagger.png" />
+<iframe
+  src="https://keddit-production.up.railway.app/reference"
+  style="width: 100%; height: 512px; border: 0;"
+></iframe>
 
 :::
 
-::: details Frontend build with Kita + Htmx
+::: details Keddit example
 
 <video controls>
   <source src="/learn/keddit-preview.webm"  type="video/webm"  >
