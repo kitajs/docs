@@ -144,6 +144,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
+      { icon: 'discord', link: 'https://kita.js.org/discord' },
       { icon: 'github', link: 'https://github.com/kitajs' },
       { icon: 'twitter', link: 'https://twitter.com/kitajsorg' }
     ],
