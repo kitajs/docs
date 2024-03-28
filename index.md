@@ -55,7 +55,7 @@ features:
 
   - icon: 📖
     title: Open API
-    details: All your functions are automatically documented using Open API 3.0.
+    details: All your functions are automatically documented using Open API 3.1.
 
   - icon: 🏇
     title: Ready for your workflow!
@@ -71,28 +71,39 @@ features:
       avatar: 'https://github.com/arthurfiorette.png',
       name: 'Arthur Fiorette',
       title: 'Creator',
+      sponsor: 'https://github.com/sponsors/arthurfiorette',
       links: [
         { icon: 'github', link: 'https://github.com/arthurfiorette' },
         { icon: 'twitter', link: 'https://twitter.com/arthurfiorette' },
         { icon: 'instagram', link: 'https://instagram.com/arthurfiorette' }
       ]
-    },
-    {
-      avatar: 'https://github.com/mesquitaviana.png',
-      name: 'Gabriel Mesquita',
-      title: 'Core Contributor',
+    },{
+      avatar: 'https://github.com/JacopoPatroclo.png',
+      name: 'Jacopo Patroclo',
+      title: 'Core Member',
+      org: 'Kita/Html',
+      orgLink: 'https://github.com/kitajs/html',
       links: [
-        { icon: 'github', link: 'https://github.com/mesquitaviana' },
-        { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
+        { icon: 'github', link: 'https://github.com/JacopoPatroclo' },
+        { icon: 'twitter', link: 'https://twitter.com/JacoMartin1994' }
       ]
     },
     {
       avatar: 'https://github.com/devzolo.png',
       name: 'Devzolo',
-      title: 'Core Contributor',
+      title: 'Core Member',
       links: [
         { icon: 'github', link: 'https://github.com/devzolo' },
         { icon: 'twitter', link: 'https://twitter.com/devzolo' }
+      ]
+    },
+    {
+      avatar: 'https://github.com/mesquitaviana.png',
+      name: 'Gabriel Mesquita',
+      title: 'Contributor',
+      links: [
+        { icon: 'github', link: 'https://github.com/mesquitaviana' },
+        { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
       ]
     }
   ];
@@ -131,7 +142,8 @@ features:
       the world.
     </template>
   </VPTeamPageTitle>
-  <VPTeamMembers :members="members" />
+  
+  <VPTeamMembers :members="members" size="small" />
 
   <small id="small-text">
     You can be part of this team too!

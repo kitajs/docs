@@ -23,7 +23,7 @@ export default defineConfig({
   },
 
   head: [
-    ['link', { rel: 'icon', href: 'favicon.svg', type: 'image/x-icon' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/x-icon' }],
 
     [
       'script',
@@ -56,7 +56,7 @@ export default defineConfig({
     outline: 'deep',
 
     nav: [
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Guide', link: '/guide' },
       { text: 'Learn', link: '/learn/' },
       { text: 'Reference', link: '/reference/' },
       { text: 'Templating', link: '/templating/' },
@@ -89,8 +89,16 @@ export default defineConfig({
         base: '/guide/',
         items: [
           {
-            text: '🛠️',
-            link: 'guide.md'
+            text: 'What is Kita?',
+            link: '../guide.md'
+          },
+          {
+            text: 'Practical example',
+            link: 'practical-example.md'
+          },
+          {
+            text: 'Getting Started',
+            link: 'getting-started.md'
           }
         ]
       },
@@ -123,15 +131,9 @@ export default defineConfig({
         items: [{ text: '🛠️', link: 'guide.md' }]
       },
       {
-        text: 'Integrations',
-        base: '/integrations/',
-        items: [
-          { text: '🛠️', link: 'guide.md' }
-
-          // { text: 'Authentication', link: 'guide.md' },
-          // { text: 'Database', link: 'guide.md' },
-          // { text: 'Logging', link: 'guide.md' }
-        ]
+        text: 'Recipes',
+        base: '/recipes/',
+        items: [{ text: 'Migrating from other projects', link: 'migration.md' }]
       },
       {
         collapsed: true,
@@ -148,6 +150,8 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/kitajs' },
       { icon: 'twitter', link: 'https://twitter.com/kitajsorg' }
     ],
+
+    externalLinkIcon: true,
 
     editLink: {
       pattern: 'https://github.com/kitajs/docs/edit/main/:path'
