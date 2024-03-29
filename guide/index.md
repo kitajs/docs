@@ -5,9 +5,9 @@ router for Fastify.
 
 ::: tip
 
-Just want to try it out? Skip to the [Quickstart](./getting-started) or head
-over to our [Migration Guide](../recipes/migration.md) to migrate your existing
-project to Kita.
+Just want to try it out? Skip to the [Quickstart](./quickstart) or head over to
+our [Migration Guide](../recipes/migration.md) to migrate your existing project
+to Kita.
 
 :::
 

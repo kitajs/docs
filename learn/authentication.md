@@ -54,9 +54,8 @@ curl http://localhost:1228
 #> {"userAgent":"curl/7.68.0"}%
 ```
 
-::: tip
-You can now delete the `src/providers/user-agent.ts` and `src/routes/index.ts` files.
-:::
+::: tip You can now delete the `src/providers/user-agent.ts` and
+`src/routes/index.ts` files. :::
 
 ## Creating the Authentication Provider
 

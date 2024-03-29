@@ -2,6 +2,14 @@
 
 > A line of code is worth a thousand words.
 
+::: tip
+
+Just want to try it out? Skip to the [Quickstart](./quickstart) or head over to
+our [Migration Guide](../recipes/migration.md) to migrate your existing project
+to Kita.
+
+:::
+
 No matter how good we are at explaining, nothing is better than an example to
 prove to you how powerful Kita is in just a few lines of code.
 
@@ -90,23 +98,10 @@ $ curl http://localhost:1227
 **But wait, there's more!** Kita, along with [Scalar](https://scalar.com/),
 generates a graphical interface for you to visualize, edit, and test your API:
 
-<a href="/swagger/practical-example" target="_blank">Click here to launch the
-Scalar Editor</a>
+<a href="/swagger/practical-example" target="_blank" title="You won't be able to simulate requests">Click
+here to launch a STATIC DEMO of the Scalar Editor</a>
 
-::: details Or view it through an iframe:
-
-<iframe src="/swagger/practical-example.html" style="width: 100%; aspect-ratio: 3/4; resize: vertical;"></iframe>
-
-:::
-
-## OpenAPI Documentation
-
-Also, by default, everything that
-[@fastify/swagger](https://github.com/fastify/fastify-swagger) needs is defined
-and configured, which also automatically generates a valid OpenAPI json for your
-API.
-
-::: code-group
+::: details Or view the generated OpenAPI json
 
 ```json [OpenAPI Spec]
 {
@@ -145,3 +140,259 @@ API.
   }
 }
 ```
+
+:::
+
+## Let's change something!
+
+Life isn't perfect, and eventually, you'll receive new specifications to
+implement... _Let's do this?_ **Notice how simple it is to transform your routes
+into something more complex.**
+
+1. We'll change the method from `GET` to `POST`.
+
+2. We'll add a `Body` containing a `name: string` field _(which must have a
+   minimum of 5 characters)_ and an `age: number` field _(which must be greater
+   than 18)_.
+
+3. We'll also use the `Authorization` header to validate whether the user has
+   permission to create a new user.
+
+4. We'll also use a `Query` of `?fail=<boolean>` which has a default value of
+   `false`.
+
+5. Lets also return the newly created user with an automatically generated `id`.
+
+6. We can also return a `Forbidden` status if the Authorization is invalid and a
+   `400` error if the request comes with `?fail=true`.
+
+7. It's always recommended to add descriptions for the fields, so we'll do that
+   too.
+
+The final result will look like this:
+
+::: code-group
+
+```ts [src/routes/index.ts]
+import type { HttpErrors } from '@fastify/sensible';
+import type { Body, Header, Query } from '@kitajs/runtime';
+
+interface PostBody {
+  /** @minLength 5 */
+  name: string;
+
+  /** @minimum 18 */
+  age: number;
+}
+
+/**
+ * Creates a new user
+ *
+ * @operationId createUser
+ */
+export function post(
+  body: Body<PostBody>,
+  fail: Query<boolean> = false,
+  authorization: Header<'authorization'>,
+  errors: HttpErrors
+) {
+  if (authorization !== 'please let me in') {
+    throw errors.forbidden('Invalid Authorization');
+  }
+
+  if (fail) {
+    throw errors.badRequest('You asked for it');
+  }
+
+  return {
+    id: Math.floor(Math.random() * 1000),
+    name: body.name,
+    age: body.age
+  };
+}
+```
+
+:::
+
+**Yes, you read it right!** Just by using typing and annotations, your route is
+already **documented**, being **validated at runtime**, and **secure** against
+attacks like
+[Prototype Pollution](https://portswigger.net/web-security/prototype-pollution).
+
+## What happened here?
+
+I know you might not fully understand all the power that is now in your hands.
+Let me break down everything you just did:
+
+- By changing the function name from `get` to `post`, the route is automatically
+  changed to `POST`.
+
+- By adding a `body` parameter of type `Body<PostBody>`, Kita understands that
+  the request body needs to be passed there, as well as Kita reads the typing of
+  the `PostBody`, validates the body at runtime to ensure it's in the format of
+  `PostBody`, and generates the necessary documentation.
+
+- The `PostBody` interface has only 2 fields, `name` and `age`, so ONLY these
+  fields will be present at runtime, extra fields present in the `JSON` will be
+  ignored.
+
+- By annotating with `@minLength 5` and `@minimum 18` on the `name` and `age`
+  fields, respectively, Kita ensures that these conditions will be respected at
+  runtime.
+
+- By adding a `fail` parameter of type `Query<boolean>` and the default value of
+  `false`, Kita understands that it needs to extract the value from the query
+  string (`?fail=true`) and that if not specified, it should use the value
+  `false`.
+
+- By adding an `authorization` parameter of type `Header<'authorization'>`, Kita
+  understands that it needs to extract the value from the `Authorization` header
+  and that this value is mandatory.
+
+- Inside the function, by throwing any errors coming from the `errors`
+  parameter, Kita understands that it's an HTTP error and will return the
+  correct status as well as document it in OpenAPI.
+
+- By returning an object with the `id`, `name`, and `age` fields, Kita
+  understands that this is the return of the function and generates the
+  necessary documentation and validation.
+
+  Yes, if you return an object different from the specified typing, Kita will
+  throw an error at runtime because your clients expect a different signature
+  than what is being returned.
+
+## I want to see it in action!
+
+Sure, let's go! First, you need to run the Kita build to perform static analysis
+of your code and generate the necessary files:
+
+::: code-group
+
+```sh [Terminal]
+$ npx kita build
+$ npx ts-node src/index.ts
+```
+
+:::
+
+When running the server, you can already access the `POST` route. Since this is
+just an example, see the interface generated by Scalar:
+
+<a href="/swagger/practical-example" target="_blank" title="You won't be able to simulate requests">Click
+here to launch a STATIC DEMO of the Scalar Editor</a>
+
+::: details Or view the generated OpenAPI json
+
+```json [OpenAPI Spec]
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "API Reference",
+    "description": "Powered by [Scalar](https://scalar.com/) & Generated by [KitaJS](https://kita.js.org/)",
+    "version": "1.1.22"
+  },
+  "components": {
+    "schemas": {
+      "HttpError": {
+        "type": "object",
+        "properties": {
+          "statusCode": { "type": "number" },
+          "code": { "type": "string" },
+          "error": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      },
+      "CreateUserResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "age": { "type": "number" },
+          "id": { "type": "number" },
+          "name": { "type": "string" }
+        },
+        "required": ["id", "name", "age"],
+        "type": "object"
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "createUser",
+        "description": "Creates a new user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": {
+                  "age": { "minimum": 18, "type": "number" },
+                  "name": { "minLength": 5, "type": "string" }
+                },
+                "required": ["name", "age"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "parameters": [
+          {
+            "schema": { "type": "boolean" },
+            "in": "query",
+            "name": "fail",
+            "required": false
+          },
+          {
+            "schema": { "type": "string" },
+            "in": "header",
+            "name": "authorization",
+            "required": true
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HttpError" }
+              }
+            }
+          },
+          "403": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HttpError" }
+              }
+            }
+          },
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CreateUserResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::
+
+<br />
+
+---
+
+<br />
+
+**With Kita, backend development becomes easy!**
+
+<br />
+
+---
+
+<br />

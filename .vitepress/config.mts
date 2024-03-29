@@ -90,15 +90,15 @@ export default defineConfig({
         items: [
           {
             text: 'What is Kita?',
-            link: '../guide.md'
+            link: 'index.md'
           },
           {
             text: 'Practical example',
             link: 'practical-example.md'
           },
           {
-            text: 'Getting Started',
-            link: 'getting-started.md'
+            text: 'Quick start',
+            link: 'quickstart.md'
           }
         ]
       },
@@ -113,7 +113,6 @@ export default defineConfig({
         ]
       },
       {
-        collapsed: true,
         text: 'Learn by building',
         base: '/learn/',
         items: [
