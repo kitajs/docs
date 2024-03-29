@@ -46,8 +46,7 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   sitemap: {
-    hostname: url,
-    lastmodDateOnly: true
+    hostname: url
   },
 
   themeConfig: {
