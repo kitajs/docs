@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Write the FUTURE →
-      link: /guide
+      link: /guide/
     - theme: alt
       text: View on GitHub
       link: https://github.com/kitajs

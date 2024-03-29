@@ -90,6 +90,16 @@
                 }
               ],
               "responses": {
+                "2XX": {
+                  "description": "Default Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/CreateUserResponse"
+                      }
+                    }
+                  }
+                },
                 "400": {
                   "description": "Default Response",
                   "content": {
@@ -103,16 +113,6 @@
                   "content": {
                     "application/json": {
                       "schema": { "$ref": "#/components/schemas/HttpError" }
-                    }
-                  }
-                },
-                "2XX": {
-                  "description": "Default Response",
-                  "content": {
-                    "application/json": {
-                      "schema": {
-                        "$ref": "#/components/schemas/CreateUserResponse"
-                      }
                     }
                   }
                 }
