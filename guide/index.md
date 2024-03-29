@@ -3,11 +3,11 @@
 Kita (`/ˈkitə/`) is a [meta](https://en.wikipedia.org/wiki/Metaprogramming)
 router for Fastify.
 
-::: tip
+::: tip Just want to try it by yourself?
 
-Just want to try it out? Skip to the [Quickstart](./quickstart) or head over to
-our [Migration Guide](../recipes/migration.md) to migrate your existing project
-to Kita.
+Skip to the [Quickstart](./quickstart) or head over to our
+[Migration Guide](../recipes/migration.md) to migrate your existing project to
+Kita.
 
 :::
 

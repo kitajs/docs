@@ -1,12 +1,10 @@
 # Practical Example
 
-> A line of code is worth a thousand words.
+::: tip Just want to try it by yourself?
 
-::: tip
-
-Just want to try it out? Skip to the [Quickstart](./quickstart) or head over to
-our [Migration Guide](../recipes/migration.md) to migrate your existing project
-to Kita.
+Skip to the [Quickstart](./quickstart) or head over to our
+[Migration Guide](../recipes/migration.md) to migrate your existing project to
+Kita.
 
 :::
 
