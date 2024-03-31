@@ -69,9 +69,9 @@ export default defineConfig({
     search: {
       provider: 'algolia',
       options: {
-        appId: 'GK93WOWSB3',
-        apiKey: '3fd9b69d0de15fab0e443033cbd9c573',
-        indexName: 'kitajs-docs'
+        appId: 'M1H2IJBACA',
+        apiKey: '65899940aba852b54cb61fe118dee0d4',
+        indexName: 'kita-js'
       }
     },
 
@@ -110,8 +110,7 @@ export default defineConfig({
           { text: 'Routing', link: 'routing.md' },
           { text: 'Serialization', link: 'serialization.md' },
           { text: 'Exposing types', link: 'exposing-types.md' },
-          { text: 'JSDocs', link: 'jsdocs.md' },
-          { text: 'Handling input data', link: 'handling-input.md' }
+          { text: 'JSDocs', link: 'jsdocs.md' }
         ]
       },
       {
@@ -136,7 +135,11 @@ export default defineConfig({
             link: 'fastify.md'
           },
           {
-            text: 'Request & Reply',
+            text: 'FastifyRequest',
+            link: 'request-reply.md'
+          },
+          {
+            text: 'FastifyReply',
             link: 'request-reply.md'
           },
           {
