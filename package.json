@@ -9,6 +9,7 @@
     "build": "vitepress build",
     "dev": "vitepress dev",
     "format": "prettier --write .",
+    "postinstall": "husky install",
     "preview": "vitepress preview"
   },
   "devDependencies": {
