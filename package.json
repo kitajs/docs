@@ -4,7 +4,7 @@
   "private": true,
   "repository": "git@github.com:kitajs/docs.git",
   "license": "MIT",
-  "author": "arthurfiorette <arthur.fiorette@gmail.com>",
+  "author": "Arthur Fiorette <kita@arthur.place>",
   "scripts": {
     "build": "vitepress build",
     "dev": "vitepress dev",
@@ -20,5 +20,5 @@
     "vitepress": "1.0.1",
     "vue": "^3.4.21"
   },
-  "packageManager": "pnpm@8.6.11"
+  "packageManager": "pnpm@8.15.5"
 }
