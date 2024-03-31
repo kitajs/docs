@@ -14,11 +14,44 @@ parameter list.
 
 ::: code-group
 
-```ts {3} [routes/index.ts]
+```ts {3} [src/routes/index.ts]
 import type { Body } from '@kitajs/runtime';
 
 export function post(content: Body<{ name: string }>) {
   return `Hello ${content.name}!`;
+}
+```
+
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": { "name": { "type": "string" } },
+                "required": ["name"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -28,7 +61,7 @@ You can also use types and interfaces to define the format of the request body.
 
 ::: code-group
 
-```ts {7} [routes/index.ts]
+```ts {7} [src/routes/index.ts]
 import type { Body } from '@kitajs/runtime';
 
 interface CreateUserRequest {
@@ -40,7 +73,42 @@ export function post(content: Body<CreateUserRequest>) {
 }
 ```
 
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": { "name": { "type": "string" } },
+                "required": ["name"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 :::
+
+[Learn more about exposing types.](../concepts/exposing-types.md)
 
 ## Using `BodyProp`
 
@@ -59,11 +127,43 @@ straightforward types.
 
 ::: code-group
 
-```ts {3} [routes/index.ts]
+```ts {3} [src/routes/index.ts]
 import type { BodyProp } from '@kitajs/runtime';
 
 export function post(name: BodyProp<string>) {
   return `Hello ${name}!`;
+}
+```
+
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": { "name": { "type": "string" } },
+                "required": ["name"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -79,7 +179,7 @@ but it can also be explicitly defined.
 
 ::: code-group
 
-```ts {3} [routes/index.ts]
+```ts {3} [src/routes/index.ts]
 import type { BodyProp } from '@kitajs/runtime';
 
 export function post(anything: BodyProp<string, 'name'>) {
@@ -87,13 +187,47 @@ export function post(anything: BodyProp<string, 'name'>) {
 }
 ```
 
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": { "name": { "type": "string" } },
+                "required": ["name"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::
+
 ## Default values
 
 Default values can be used with `BodyProp` and `Body`.
 
 ::: code-group
 
-```ts {7,11} [routes/index.ts]
+```ts {7,11} [src/routes/index.ts]
 import type { Body, BodyProp } from '@kitajs/runtime';
 
 interface CreateUserRequest {
@@ -108,3 +242,60 @@ export function put(content: Body<CreateUserRequest> = { name: 'Arthur' }) {
   return `Hello ${content.name}!`;
 }
 ```
+
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": { "name": { "type": "string" } },
+                "required": [],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      },
+      "put": {
+        "operationId": "putIndex",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": false,
+                "properties": { "name": { "type": "string" } },
+                "required": ["name"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::

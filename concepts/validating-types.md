@@ -42,7 +42,7 @@ export interface Example {
 }
 ```
 
-```json [Generated schema]
+```json [Type Schema]
 {
   // ...
   "Example": {

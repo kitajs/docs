@@ -56,10 +56,6 @@ export default defineConfig({
 
     nav: [
       {
-        text: 'Docs',
-        link: '/guide/'
-      },
-      {
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/github/stars/kitajs/kitajs?style=flat&logo=github&label=Star%20us!&color=%23b58d88">',
         link: 'https://github.com/kitajs/kitajs',
         noIcon: true

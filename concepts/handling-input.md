@@ -26,7 +26,7 @@ Consider you have a route to fetch a user's profile based on their name and age:
 
 ::: code-group
 
-```ts [routes/[name]/[age]/[dash-case-name].ts]
+```ts [src/routes/[name]/[age]/[dash-case-name].ts]
 import type { Path } from '@kitajs/runtime';
 
 export function get(
@@ -64,7 +64,7 @@ export function get(
   age: Query<number>, // Captures 'age' query parameter as a number
   type: Query<string, 'custom name'> // Custom handling for a query parameter
 ) {
-  // Your implementation
+  return `Fetching users with name: ${name}, age: ${age}, and type: ${type}`;
 }
 ```
 

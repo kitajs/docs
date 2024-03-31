@@ -21,7 +21,7 @@ the potential error thrown in the OpenAPI schema of the route.
 
 ::: code-group
 
-```ts [routes/index.ts]
+```ts [src/routes/index.ts]
 import type { HttpErrors } from '@fastify/sensible';
 
 export function get(errors: HttpErrors) {
@@ -91,7 +91,9 @@ catch that error.
 Errors thrown that also don't come from a direct call of `HttpErrors#<error>`
 won't be captured.
 
-```ts [routes/index.ts]
+::: code-group
+
+```ts [src/routes/index.ts]
 import type { HttpErrors } from '@fastify/sensible';
 
 export function get(errors: HttpErrors) {
@@ -109,10 +111,47 @@ export function get(errors: HttpErrors) {
 }
 ```
 
+```json [Route Schema]
+{
+  "components": {
+    "schemas": {
+      "HttpError": {
+        "type": "object",
+        "properties": {
+          "statusCode": { "type": "number" },
+          "code": { "type": "string" },
+          "error": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getIndex",
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::
+
 Both cases above can be addressed using
 [`@throws`](../concepts/jsdocs.md#throws):
 
-```ts [routes/index.ts]
+::: code-group
+
+```ts [src/routes/index.ts]
 import type { HttpErrors } from '@fastify/sensible';
 
 /** @throws 500, 404 */
@@ -120,3 +159,57 @@ export function get(errors: HttpErrors) {
   return myFnThatThrows(errors);
 }
 ```
+
+```json [Route Schema]
+{
+  "components": {
+    "schemas": {
+      "HttpError": {
+        "type": "object",
+        "properties": {
+          "statusCode": { "type": "number" },
+          "code": { "type": "string" },
+          "error": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      },
+      "GetIndexResponse": {}
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getIndex",
+        "responses": {
+          "404": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HttpError" }
+              }
+            }
+          },
+          "500": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/HttpError" }
+              }
+            }
+          },
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GetIndexResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::

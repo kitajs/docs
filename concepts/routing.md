@@ -43,7 +43,7 @@ Kita works with all
 
 ::: code-group
 
-```ts [routes/users.ts]
+```ts [src/routes/users.ts]
 // GET /users
 export function get() {
   return { users: [] };

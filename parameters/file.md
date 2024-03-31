@@ -22,7 +22,7 @@ plugin options.
 
 ::: code-group
 
-```ts {5,15} [routes/index.ts]
+```ts {5,15} [src/routes/index.ts]
 import type { File } from '@kitajs/runtime';
 import { createWriteStream } from 'fs';
 import { createBrotliCompress } from 'zlib';
@@ -38,16 +38,92 @@ export async function post(file: File) {
 }
 ```
 
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["file"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "boolean" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::
+
 You can also use the `SavedFile` type to save the file to disk and return the
 path to the file.
 
 ::: code-group
 
-```ts {3} [routes/index.ts]
+```ts {3} [src/routes/index.ts]
 import type { SavedFile } from '@kitajs/runtime';
 
 export function post(file: SavedFile) {
   return `File saved at ${file.filepath}!`;
+}
+```
+
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["file"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 
@@ -59,14 +135,55 @@ You can also use dedicated names for the file and the field name.
 
 ::: code-group
 
-```ts {3} [routes/index.ts]
-import type { File } from '@kitajs/runtime';
+```ts {3} [src/routes/index.ts]
+import type { File, SavedFile } from '@kitajs/runtime';
 
 export function post(
   anything: File<'avatar'>,
   anythingElse: SavedFile<'background'>
 ) {
   return true;
+}
+```
+
+```json [Route Schema]
+{
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "postIndex",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "properties": {
+                  "avatar": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "background": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["avatar", "background"],
+                "type": "object"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "boolean" } }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 ```
 

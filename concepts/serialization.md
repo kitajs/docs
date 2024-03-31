@@ -55,7 +55,7 @@ export interface CreateUser {
 }
 ```
 
-```json [Schema]
+```json [Type Schema]
 {
   "CreateUserRequest": {
     "additionalProperties": false,
@@ -96,7 +96,7 @@ export function post(data: Body<CreateUser>) {
 }
 ```
 
-```json [Schema]
+```json [Route Schema]
 {
   "paths": {
     "/": {

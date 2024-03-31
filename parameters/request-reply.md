@@ -14,7 +14,7 @@ able to infer the input and output types correctly.
 
 ::: code-group
 
-```ts {3} [routes/index.ts]
+```ts {3} [src/routes/index.ts]
 import type { FastifyReply, FastifyRequest } from 'fastify';
 
 export function get(request: FastifyRequest, reply: FastifyReply) {
@@ -24,3 +24,40 @@ export function get(request: FastifyRequest, reply: FastifyReply) {
   };
 }
 ```
+
+```json [Route Schema]
+{
+  "components": {
+    "schemas": {
+      "GetIndexResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "method": { "type": "string" },
+          "status": { "type": "string" }
+        },
+        "required": ["method", "status"],
+        "type": "object"
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "getIndex",
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GetIndexResponse" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::
