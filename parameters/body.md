@@ -14,16 +14,11 @@ parameter list.
 
 ::: code-group
 
-```ts {8} [routes/index.ts]
+```ts {3} [routes/index.ts]
 import type { Body } from '@kitajs/runtime';
 
-/**
- * Creates a new user.
- *
- * @operationId createUser
- */
 export function post(content: Body<{ name: string }>) {
-  return true;
+  return `Hello ${content.name}!`;
 }
 ```
 
@@ -33,20 +28,15 @@ You can also use types and interfaces to define the format of the request body.
 
 ::: code-group
 
-```ts {12} [routes/index.ts]
+```ts {7} [routes/index.ts]
 import type { Body } from '@kitajs/runtime';
 
 interface CreateUserRequest {
   name: string;
 }
 
-/**
- * Creates a new user.
- *
- * @operationId createUser
- */
 export function post(content: Body<CreateUserRequest>) {
-  return true;
+  return `Hello ${content.name}!`;
 }
 ```
 
@@ -73,7 +63,7 @@ straightforward types.
 import type { BodyProp } from '@kitajs/runtime';
 
 export function post(name: BodyProp<string>) {
-  return true;
+  return `Hello ${name}!`;
 }
 ```
 
@@ -81,6 +71,8 @@ export function post(name: BodyProp<string>) {
 
 The example above is equivalent to the [previous example](#body), but with a
 simpler and more straightforward request body.
+
+## Custom names
 
 The parameter name is inferred from the variable name declared in the function,
 but it can also be explicitly defined.
@@ -91,6 +83,28 @@ but it can also be explicitly defined.
 import type { BodyProp } from '@kitajs/runtime';
 
 export function post(anything: BodyProp<string, 'name'>) {
-  return true;
+  return `Hello ${anything}!`;
+}
+```
+
+## Default values
+
+Default values can be used with `BodyProp` and `Body`.
+
+::: code-group
+
+```ts {7,11} [routes/index.ts]
+import type { Body, BodyProp } from '@kitajs/runtime';
+
+interface CreateUserRequest {
+  name: string;
+}
+
+export function post(name: BodyProp<string, 'name'> = 'Arthur') {
+  return `Hello ${name}!`;
+}
+
+export function put(content: Body<CreateUserRequest> = { name: 'Arthur' }) {
+  return `Hello ${content.name}!`;
 }
 ```

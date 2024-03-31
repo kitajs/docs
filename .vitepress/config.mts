@@ -91,7 +91,7 @@ export default defineConfig({
         items: [
           {
             text: 'What is Kita?',
-            link: 'index.md'
+            link: 'what-is-kita.md'
           },
           {
             text: 'Practical example',
@@ -112,6 +112,15 @@ export default defineConfig({
           { text: 'Exposing types', link: 'exposing-types.md' },
           { text: 'JSDocs', link: 'jsdocs.md' },
           { text: 'Handling input data', link: 'handling-input.md' }
+        ]
+      },
+      {
+        text: 'Routing',
+        link: '../concepts/routing.md',
+        base: '/routing/',
+        items: [
+          { text: 'Html Routes', link: 'html.md' },
+          { text: 'Configuration', link: 'configuration.md' }
         ]
       },
       {
@@ -137,8 +146,33 @@ export default defineConfig({
           {
             text: 'Cookie',
             link: 'cookie.md'
+          },
+          {
+            text: 'File',
+            link: 'file.md'
+          },
+          {
+            text: 'Header',
+            link: 'header.md'
+          },
+          {
+            text: 'Path',
+            link: 'path.md'
+          },
+          {
+            text: 'Query',
+            link: 'query.md'
           }
         ].sort((a, b) => a.text.localeCompare(b.text))
+      },
+      {
+        text: 'Providers',
+        base: '/providers/',
+        items: [
+          { text: 'What is a provider', link: 'index.md' },
+          { text: 'Provider Hooks', link: 'hooks.md' },
+          { text: 'Schema Provider', link: 'schema.md' }
+        ]
       },
       {
         text: 'Learn by building',

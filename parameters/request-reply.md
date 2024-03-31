@@ -14,10 +14,13 @@ able to infer the input and output types correctly.
 
 ::: code-group
 
-```ts {4} [routes/index.ts]
+```ts {3} [routes/index.ts]
 import type { FastifyReply, FastifyRequest } from 'fastify';
 
 export function get(request: FastifyRequest, reply: FastifyReply) {
-  return true;
+  return {
+    method: `Request method is ${request.method}`,
+    status: `Reply status is ${reply.statusCode}`
+  };
 }
 ```

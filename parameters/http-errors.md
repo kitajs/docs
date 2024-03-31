@@ -3,7 +3,7 @@
 When using the `HttpErrors` parameter, Kita reads through your route code
 searching for `throw` keywords.
 
-::: warning
+::: info
 
 This parameter automatically registers
 [`@fastify/sensible`](https://github.com/fastify/fastify-sensible) in your
@@ -29,7 +29,7 @@ export function get(errors: HttpErrors) {
     throw errors.notFound('Something went wrong');
   }
 
-  return true;
+  return 'Success!';
 }
 ```
 
@@ -105,7 +105,7 @@ export function get(errors: HttpErrors) {
     myFnThatThrows(errors);
   }
 
-  return true;
+  return 'Success!';
 }
 ```
 

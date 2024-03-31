@@ -14,10 +14,11 @@ to infer any type of interaction with the instance directly.
 
 ::: code-group
 
-```ts {4} [routes/index.ts]
+```ts {3} [routes/index.ts]
 import type { FastifyInstance } from 'fastify';
 
 export function get(instance: FastifyInstance) {
+  console.log(`Using Fastify version ${instance.version}!`);
   return true;
 }
 ```

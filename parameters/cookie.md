@@ -2,7 +2,7 @@
 
 To access cookies from your request, you can use the `Cookie` parameter.
 
-::: warning
+::: info
 
 This parameter automatically registers
 [`@fastify/cookie`](https://github.com/fastify/fastify-cookie) in your Fastify
@@ -21,11 +21,13 @@ Cookies are always of type `string`.
 import type { Cookie } from '@kitajs/runtime';
 
 export function get(cookie: Cookie) {
-  return true;
+  return `You used the header 'Cookie: cookie=${cookie}'!`;
 }
 ```
 
 :::
+
+## Custom name
 
 You can customize the name of the cookie you want to access by passing a string
 literal as an argument to the `Cookie` parameter.
@@ -37,7 +39,23 @@ import type { Cookie } from '@kitajs/runtime';
 
 // Access the cookie named 'token'
 export function get(anything: Cookie<'token'>) {
-  return true;
+  return `This is your token: ${anything}`;
+}
+```
+
+:::
+
+## Default values
+
+Default values can be used with `Cookie`.
+
+::: code-group
+
+```ts {3} [routes/index.ts]
+import type { Cookie } from '@kitajs/runtime';
+
+export function get(cookie: Cookie = 'Arthur') {
+  return `Hello ${cookie}!`;
 }
 ```
 
