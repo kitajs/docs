@@ -1,8 +1,10 @@
-# Identification
+# JSDoc
 
 While creating routes is straightforward, it is crucial to provide essential
-information about your routes. This is achieved by adding JSDoc comments to your
-route functions.
+information about your routes.
+
+This is achieved by adding [JSDoc](https://jsdoc.app/) comments to your route
+functions.
 
 ## Operation ID and Tags
 
@@ -24,10 +26,12 @@ export function post() {}
 ```
 
 Although it may seem like trivial information, it is crucial to ensure all
-generated code is meaningful and easily understandable. Additionally, providing
-this data is necessary to adhere to the OpenAPI specification.
+generated code is meaningful and easily understandable.
 
-## Other JSDoc tags
+Additionally, providing this data is necessary to adhere to the
+[OpenAPI Specification](https://swagger.io/specification/).
+
+## Additional tags
 
 ### `@security`
 
@@ -41,7 +45,8 @@ export function post() {}
 
 ::: tip
 
-Prefer using authentication through a Kita Provider instead of using this tag.
+Prefer using authentication through a Kita Provider and use this tag only to
+document it.
 
 :::
 
@@ -72,12 +77,15 @@ export function get() {}
 
 A more detailed description of the route.
 
+It defaults to the text description, but `@description` can be used to provide a
+more detailed explanation and hide the text description.
+
 ```ts
 /** Text description shown in the documentation */
 export function get() {}
 
 /**
- * Internal description of the code
+ * Internal description of the code that is not shown in the documentation
  *
  * Text description shown in the documentation
  */
@@ -89,19 +97,19 @@ export function post() {}
 Used to change the URL of the route, especially when deviating from a filesystem
 path structure.
 
+::: warning
+
+Using this tag is not recommended. Always follow the filesystem path for
+consistency.
+
+:::
+
 ::: code-group
 
 ```ts [src/routes/somehow-cannot-be-users.ts]
 /** @url /users */
 export function get() {}
 ```
-
-:::
-
-::: warning
-
-Using this tag is not recommended. Always follow the filesystem path for
-consistency.
 
 :::
 
@@ -116,7 +124,8 @@ export function get() {}
 
 ### `@internal`
 
-Marks a route as internal, making it appear in the generated documentation.
+Marks a route as internal, hiding it from the generated documentation but can
+still be used in the application.
 
 ```ts
 /** @internal */

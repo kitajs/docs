@@ -15,7 +15,7 @@ Below is the simplest Fastify server you've ever seen:
 
 ::: code-group
 
-```ts{6} [src/index.ts]
+```ts {6} [src/index.ts]
 import { Kita } from '@kitajs/runtime';
 import fastify from 'fastify';
 

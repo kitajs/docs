@@ -8,9 +8,9 @@ hero:
   actions:
     - theme: brand
       text: Write the FUTURE →
-      link: /guide/
+      link: /quickstart
     - theme: alt
-      text: View on GitHub
+      text: Star us on GitHub
       link: https://github.com/kitajs
   image:
     src: /logo.svg
@@ -111,10 +111,8 @@ features:
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title> Trusted by companies </template>
-    <template #lead>
-      Kita is proudly powering a large ecosystem of organizations and products worldwide.
-    </template>
+    <template #title id="asd">Trusted by companies</template>
+    <template #lead>Kita is proudly powering a large ecosystem of organizations and products worldwide.</template>
   </VPTeamPageTitle>
 
   <div id="trusted-by-wrapper">
@@ -136,11 +134,8 @@ features:
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title> Our Team </template>
-    <template #lead>
-      The Kita's development team is composed of a diverse group of people from all over
-      the world.
-    </template>
+    <template #title>Our Team</template>
+    <template #lead>The Kita's development team is composed of a diverse group of people from all over the world.</template>
   </VPTeamPageTitle>
   
   <VPTeamMembers :members="members" size="small" />

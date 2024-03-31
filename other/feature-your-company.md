@@ -1,6 +1,6 @@
-# How to be featured here
+# How to be featured in our main page 
 
-Is your organization using Kita? That's great!
+Is your organization using Kita? **That's great!**
 
 If you would like your organization to have its logo featured in the main page
 list, here's how you do it! You can submit your organization, your logo and

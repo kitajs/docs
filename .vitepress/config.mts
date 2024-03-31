@@ -55,11 +55,15 @@ export default defineConfig({
     outline: 'deep',
 
     nav: [
-      { text: 'Guide', link: '/guide' },
-      { text: 'Learn', link: '/learn/' },
-      { text: 'Reference', link: '/reference/' },
-      { text: 'Templating', link: '/templating/' },
-      { text: 'Integration', link: '/integration/' }
+      {
+        text: 'Docs',
+        link: '/guide/'
+      },
+      {
+        text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/github/stars/kitajs/kitajs?style=flat&logo=github&label=Star%20us!&color=%23b58d88">',
+        link: 'https://github.com/kitajs/kitajs',
+        noIcon: true
+      }
     ],
 
     search: {
@@ -84,8 +88,6 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Guide',
-        base: '/guide/',
         items: [
           {
             text: 'What is Kita?',
@@ -102,14 +104,20 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Routing',
-        base: '/routes/',
+        text: 'Principal concepts',
+        base: '/concepts/',
         items: [
-          { text: 'Basics of routing', link: 'index.md' },
-          { text: 'Handling input data', link: 'handling-input.md' },
-          { text: 'Serialization principles', link: 'serialization.md' },
-          { text: 'Identifying routes', link: 'identification.md' }
+          { text: 'Routing', link: 'routing.md' },
+          { text: 'Serialization', link: 'serialization.md' },
+          { text: 'Exposing types', link: 'exposing-types.md' },
+          { text: 'JSDocs', link: 'jsdocs.md' },
+          { text: 'Handling input data', link: 'handling-input.md' }
         ]
+      },
+      {
+        text: 'Parameters',
+        base: '/parameters/',
+        items: [{ text: 'Body', link: 'body.md' }]
       },
       {
         text: 'Learn by building',
@@ -134,7 +142,6 @@ export default defineConfig({
         items: [{ text: 'Migrating from other projects', link: 'migration.md' }]
       },
       {
-        collapsed: true,
         text: 'Other',
         base: '/other/',
         items: [
