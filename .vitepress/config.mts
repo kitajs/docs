@@ -59,6 +59,10 @@ export default defineConfig({
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/github/stars/kitajs/kitajs?style=flat&logo=github&label=Star%20us!&color=%23b58d88">',
         link: 'https://github.com/kitajs/kitajs',
         noIcon: true
+      },
+      {
+        text: '🇧🇷',
+        link: '/'
       }
     ],
 
@@ -112,9 +116,9 @@ export default defineConfig({
       },
       {
         text: 'Routing',
-        link: '../concepts/routing.md',
         base: '/routing/',
         items: [
+          { text: 'Rest Routes', link: 'index.md' },
           { text: 'Html Routes', link: 'html.md' },
           { text: 'Configuration', link: 'configuration.md' }
         ]
@@ -181,11 +185,6 @@ export default defineConfig({
           { text: 'Modelling our data', link: 'modelling-data.md' },
           { text: 'Adding authentication', link: 'authentication.md' }
         ]
-      },
-      {
-        text: 'Templating',
-        base: '/templating/',
-        items: [{ text: '🛠️', link: 'guide.md' }]
       },
       {
         text: 'Recipes',

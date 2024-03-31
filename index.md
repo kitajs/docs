@@ -69,7 +69,7 @@ import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme';
 const members = [
   {
     avatar: 'https://github.com/arthurfiorette.png',
-    name: 'Arthur Fiorette',
+    name: 'Arthur Fiorette 🇧🇷',
     title: 'Creator',
     sponsor: 'https://github.com/sponsors/arthurfiorette',
     links: [
@@ -79,7 +79,7 @@ const members = [
     ]
   },{
     avatar: 'https://github.com/JacopoPatroclo.png',
-    name: 'Jacopo Patroclo',
+    name: 'Jacopo Patroclo 🇮🇹',
     title: 'Core Member',
     org: 'Kita/Html',
     orgLink: 'https://github.com/kitajs/html',
@@ -90,7 +90,7 @@ const members = [
   },
   {
     avatar: 'https://github.com/devzolo.png',
-    name: 'Devzolo',
+    name: 'Devzolo 🇧🇷',
     title: 'Core Member',
     links: [
       { icon: 'github', link: 'https://github.com/devzolo' },
@@ -99,7 +99,7 @@ const members = [
   },
   {
     avatar: 'https://github.com/mesquitaviana.png',
-    name: 'Gabriel Mesquita',
+    name: 'Gabriel Mesquita 🇧🇷',
     title: 'Contributor',
     links: [
       { icon: 'github', link: 'https://github.com/mesquitaviana' },

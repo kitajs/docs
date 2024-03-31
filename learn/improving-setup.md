@@ -121,7 +121,7 @@ app.listen({ port: 1228 }, async (err) => {
 
 :::
 
-### Logging
+## Logging
 
 Logging is a crucial part of any application, helping you debug and understand
 what's happening, as well as providing a simple way to monitor it. The standard

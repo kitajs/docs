@@ -8,12 +8,6 @@ With Kita, _a filesystem routing framework_, the routing process is simplified
 by organizing TypeScript files within a specific folder structure that exports
 HTTP method-named functions.
 
-### Filesystem Organization:
-
-Routes are defined in TypeScript files within a folder named `routes`. Each
-TypeScript file may contain one or more functions that represent HTTP methods
-(e.g., `get`, `post`, `put`, `Delete`).
-
 This is a typical folder structure for a Kita application:
 
 ```sh
@@ -32,16 +26,8 @@ src/routes
         └── posts.ts      (/users/me/posts)
 ```
 
-### HTTP Methods and Functions:
-
-As Kita is only a connector between raw
-[TypeScript](https://www.typescriptlang.org/) files and
-[Fastify](https://fastify.dev).
-
-Kita works with all
-[supported methods by Fastify](https://github.com/fastify/fastify/blob/main/lib/httpMethods.js).
-
-::: code-group
+You can just export functions that represent HTTP methods (e.g., `get`,
+`post`...) in your route files.
 
 ```ts [src/routes/users.ts]
 // GET /users
@@ -62,16 +48,3 @@ export function Delete() {
 // Same for PUT, PATCH, HEAD, OPTIONS, PROPFIND, PROPPATCH,
 //  MKCOL, COPY, MOVE, LOCK, UNLOCK, TRACE, SEARCH ...
 ```
-
-:::
-
-::: tip
-
-Method keywords are case-insensitive, this is useful for methods like `delete`,
-that are reserved keywords in TypeScript.
-
-:::
-
-In fact, you can use any of the following method names: `get`, `GET`, `gET`,
-`geT`, `GEt`... and they will all be mapped to the same method, **although only
-one of them can be used at a time.**
