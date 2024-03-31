@@ -117,7 +117,28 @@ export default defineConfig({
       {
         text: 'Parameters',
         base: '/parameters/',
-        items: [{ text: 'Body', link: 'body.md' }]
+        items: [
+          {
+            text: 'Body',
+            link: 'body.md'
+          },
+          {
+            text: 'FastifyInstance',
+            link: 'fastify.md'
+          },
+          {
+            text: 'Request & Reply',
+            link: 'request-reply.md'
+          },
+          {
+            text: 'Http Errors',
+            link: 'http-errors.md'
+          },
+          {
+            text: 'Cookie',
+            link: 'cookie.md'
+          }
+        ].sort((a, b) => a.text.localeCompare(b.text))
       },
       {
         text: 'Learn by building',

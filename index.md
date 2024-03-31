@@ -64,49 +64,62 @@ features:
 ---
 
 <script setup>
-  import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme';
+import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme';
 
-  const members = [
-    {
-      avatar: 'https://github.com/arthurfiorette.png',
-      name: 'Arthur Fiorette',
-      title: 'Creator',
-      sponsor: 'https://github.com/sponsors/arthurfiorette',
-      links: [
-        { icon: 'github', link: 'https://github.com/arthurfiorette' },
-        { icon: 'twitter', link: 'https://twitter.com/arthurfiorette' },
-        { icon: 'instagram', link: 'https://instagram.com/arthurfiorette' }
-      ]
-    },{
-      avatar: 'https://github.com/JacopoPatroclo.png',
-      name: 'Jacopo Patroclo',
-      title: 'Core Member',
-      org: 'Kita/Html',
-      orgLink: 'https://github.com/kitajs/html',
-      links: [
-        { icon: 'github', link: 'https://github.com/JacopoPatroclo' },
-        { icon: 'twitter', link: 'https://twitter.com/JacoMartin1994' }
-      ]
-    },
-    {
-      avatar: 'https://github.com/devzolo.png',
-      name: 'Devzolo',
-      title: 'Core Member',
-      links: [
-        { icon: 'github', link: 'https://github.com/devzolo' },
-        { icon: 'twitter', link: 'https://twitter.com/devzolo' }
-      ]
-    },
-    {
-      avatar: 'https://github.com/mesquitaviana.png',
-      name: 'Gabriel Mesquita',
-      title: 'Contributor',
-      links: [
-        { icon: 'github', link: 'https://github.com/mesquitaviana' },
-        { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
-      ]
-    }
-  ];
+const members = [
+  {
+    avatar: 'https://github.com/arthurfiorette.png',
+    name: 'Arthur Fiorette',
+    title: 'Creator',
+    sponsor: 'https://github.com/sponsors/arthurfiorette',
+    links: [
+      { icon: 'github', link: 'https://github.com/arthurfiorette' },
+      { icon: 'twitter', link: 'https://twitter.com/arthurfiorette' },
+      { icon: 'instagram', link: 'https://instagram.com/arthurfiorette' }
+    ]
+  },{
+    avatar: 'https://github.com/JacopoPatroclo.png',
+    name: 'Jacopo Patroclo',
+    title: 'Core Member',
+    org: 'Kita/Html',
+    orgLink: 'https://github.com/kitajs/html',
+    links: [
+      { icon: 'github', link: 'https://github.com/JacopoPatroclo' },
+      { icon: 'twitter', link: 'https://twitter.com/JacoMartin1994' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/devzolo.png',
+    name: 'Devzolo',
+    title: 'Core Member',
+    links: [
+      { icon: 'github', link: 'https://github.com/devzolo' },
+      { icon: 'twitter', link: 'https://twitter.com/devzolo' }
+    ]
+  },
+  {
+    avatar: 'https://github.com/mesquitaviana.png',
+    name: 'Gabriel Mesquita',
+    title: 'Contributor',
+    links: [
+      { icon: 'github', link: 'https://github.com/mesquitaviana' },
+      { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
+    ]
+  }
+];
+
+const companies = [
+  {
+    name: 'Cargill',
+    logo: '/companies/cargill.svg',
+    link: 'https://www.cargill.com'
+  },
+  {
+    name: 'Kasco R&D',
+    logo: '/companies/kasco.svg',
+    link: 'https://home.kascosys.com.br'
+  }
+];
 </script>
 
 <VPTeamPage>
@@ -117,12 +130,11 @@ features:
 
   <div id="trusted-by-wrapper">
     <div id="trusted-by">
-      <a href="https://www.cargill.com" alt="Cargill" target="_blank">
-        <img src="/companies/cargill.svg" alt="Cargill logo" />
-      </a>
-      <a href="https://home.kascosys.com.br" alt="Kasco R&D" target="_blank">
-        <img src="/companies/kasco.svg" alt="Kasco logo" />
-      </a>
+      <template v-for="company in companies">
+        <a :href="company.link" :alt="company.name" target="_blank" :title="company.name">
+          <img :src="company.logo" :alt="`${company.name} logo`" />
+        </a>
+      </template>
     </div>
     <small id="small-text">
       The logos displayed in this page are property of the respective organizations and they are not distributed under the same license as Kita (MIT).

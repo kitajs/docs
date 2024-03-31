@@ -22,7 +22,7 @@ pnpm add @kitajs/runtime fastify
 ::: details Dependencies explained
 
 - [`@kitajs/cli`](https://www.npmjs.com/package/@kitajs/cli) provides access to
-  kita features as a CLI,
+  Kita features as a CLI,
 - [`@kitajs/ts-plugin`](https://www.npmjs.com/package/@kitajs/ts-plugin) enables
   in-editor type checking and auto-completion,
 - [`@kitajs/runtime`](https://www.npmjs.com/package/@kitajs/runtime) is
