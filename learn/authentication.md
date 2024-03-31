@@ -312,7 +312,7 @@ export async function post(
   { log }: FastifyRequest,
   // an integration with @fastify/sensible
   errors: HttpErrors,
-  // used to set the status code of the response
+  // used to set the status code of the reply
   reply: FastifyReply,
   // a Kita type responsible for extracting, validating and documenting the
   // request body

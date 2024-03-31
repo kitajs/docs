@@ -71,7 +71,7 @@ export function get(
 :::
 
 This code snippet showcases handling query parameters in a GET request, offering
-a way to filter or customize the response based on client input.
+a way to filter or customize the reply based on client input.
 
 ## Request Body (`Body` and `BodyProp`)
 
@@ -154,8 +154,8 @@ them directly in memory or by saving them to disk for later use.
 
 ## Headers (`Header`)
 
-Headers contain additional information about the request or response. In Kita,
-you can capture specific headers directly.
+Headers contain additional information about the request or reply. In Kita, you
+can capture specific headers directly.
 
 ### Example with `Header`
 
