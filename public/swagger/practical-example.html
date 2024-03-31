@@ -1,29 +1,31 @@
 <!doctype html>
 <html>
+  <head>
+    <title>Practial Example API</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/x-icon" />
 
-<head>
-  <title>Practial Example API</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/favicon.svg" type="image/x-icon" />
+    <!-- Custom KitaJS theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@kitajs/parser/assets/swagger.min.css"
+    />
 
-  <!-- Custom KitaJS theme -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@kitajs/parser/assets/swagger.min.css" />
-
-  <style>
-    .show-api-client-button {
-      /* 
+    <style>
+      .show-api-client-button {
+        /* 
           It would be awesome if we could host a server to let the user try out the API.
           However, I don't have enough resources to pay for a server. Would you like to sponsor me? 😄
           https://github.com/sponsors/arthurfiorette
          */
-      display: none !important;
-    }
-  </style>
-</head>
+        display: none !important;
+      }
+    </style>
+  </head>
 
-<body>
-  <script id="api-reference" type="application/json">
+  <body>
+    <script id="api-reference" type="application/json">
       {
         "openapi": "3.1.0",
         "info": {
@@ -64,12 +66,11 @@
       }
     </script>
 
-  <script>
-    var apiReference = document.getElementById('api-reference');
-    apiReference.dataset.configuration = JSON.stringify({ theme: 'none' });
-  </script>
+    <script>
+      var apiReference = document.getElementById('api-reference');
+      apiReference.dataset.configuration = JSON.stringify({ theme: 'none' });
+    </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+  </body>
 </html>

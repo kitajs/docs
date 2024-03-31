@@ -131,9 +131,10 @@ export function post(data: Body<CreateUser>) {
 
 :::
 
-The above schema is handled by [Fastify](https://fastify.dev/) & [Ajv](https://ajv.js.org/), ensuring that the request body
-matches the expected types as well as the constraints defined in the interface,
-such as `@minLength`, `@maxLength`, `@format`, `@minimum`, and `@maximum`.
+The above schema is handled by [Fastify](https://fastify.dev/) &
+[Ajv](https://ajv.js.org/), ensuring that the request body matches the expected
+types as well as the constraints defined in the interface, such as `@minLength`,
+`@maxLength`, `@format`, `@minimum`, and `@maximum`.
 
 Ajv, the library used underneath, is trusted by
 [millions of developers and multiple big companies](https://ajv.js.org/#who-uses-ajv)

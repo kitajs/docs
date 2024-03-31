@@ -60,8 +60,8 @@ parameter.
 /**
  * @throws 401
  * @throws 402
- * 
- * Or multiple errors at once
+ *
+ *   Or multiple errors at once
  * @throws 401, 402
  */
 export function get() {}
