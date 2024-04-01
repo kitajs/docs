@@ -7,7 +7,7 @@ useful too.
 
 - [Development Server](./dev-server.md)
 
-- [Environment Variables](./environment-variables.md)
+- [Environment Variables](./env-variables.md)
 
 - [Graceful Shutdown](./graceful-shutdown.md)
 
