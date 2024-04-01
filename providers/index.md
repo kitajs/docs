@@ -137,7 +137,7 @@ export function get(schema: RouteSchema) {
 
 :::
 
-## Using Parameters
+## Provider Generics
 
 By exporting the type of the provider, you can use generics with literal types
 to serve as parameters and access them via `ProviderGenerics`.
