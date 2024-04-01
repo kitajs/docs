@@ -17,8 +17,8 @@ export default defineConfig({
     lineNumbers: true,
     typographer: true,
     theme: {
-      dark: 'github-dark',
-      light: 'github-light'
+      dark: 'rose-pine-moon',
+      light: 'rose-pine-dawn'
     }
   },
 
@@ -227,11 +227,11 @@ export default defineConfig({
         base: '/clients/',
         items: [
           {
-            text: 'Documenting with Scalar Ui',
+            text: 'Api Reference',
             link: 'scalar.md'
           },
           {
-            text: 'Type safe client with Orval',
+            text: 'Type safe Clients',
             link: 'orval.md'
           }
         ]
