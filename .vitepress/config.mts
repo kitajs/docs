@@ -226,15 +226,9 @@ export default defineConfig({
         text: 'Clients',
         base: '/clients/',
         items: [
-          {
-            text: 'API Reference',
-            link: 'scalar.md'
-          },
-          {
-            text: 'Type safe HTTP client',
-            link: 'orval.md'
-          }
-        ].sort((a, b) => a.text.localeCompare(b.text))
+          { text: 'Type safe HTTP client', link: 'orval.md' },
+          { text: 'API Reference', link: 'scalar.md' }
+        ]
       },
       {
         text: 'Recipes',
