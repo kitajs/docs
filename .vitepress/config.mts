@@ -39,7 +39,46 @@ export default defineConfig({
       'script',
       { id: 'restore-banner-preference' },
       `(() => {const restore=(e,s,t=!1)=>{let n=localStorage.getItem(e);(n?"false"!==n&&new Date<n:t)&&document.documentElement.classList.add(s)};restore("header-warning","banner-dismissed");})();`
-    ]
+    ],
+
+    ['meta', { name: 'theme-color', content: '#1B1B1F' }],
+    ['meta', { charset: 'utf-8' }],
+    ['meta', { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
+    [
+      'meta',
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, viewport-fit=cover'
+      }
+    ],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'title', content: 'Kita' }],
+    ['meta', { name: 'description', content: description }],
+    [
+      'meta',
+      {
+        name: 'keywords',
+        content:
+          'nodejs, api, fast, framework, typescript, generator, backend, minimal, code, open, fastify'
+      }
+    ],
+
+    // Open Graph / Facebook
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: url }],
+    ['meta', { property: 'og:title', content: 'Kita' }],
+    ['meta', { property: 'og:site_name', content: 'Kita' }],
+    ['meta', { property: 'og:description', content: description }],
+    ['meta', { property: 'og:image', content: `${url}/banner.png` }],
+
+    // Twitter
+    ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { property: 'twitter:url', content: url }],
+    ['meta', { property: 'twitter:title', content: 'Kita' }],
+    ['meta', { property: 'twitter:site', content: 'Kita' }],
+    ['meta', { property: 'twitter:site', content: 'Kita' }],
+    ['meta', { property: 'twitter:description', content: description }],
+    ['meta', { property: 'twitter:image', content: `${url}/banner.png` }]
   ],
 
   sitemap: {
@@ -208,7 +247,9 @@ export default defineConfig({
         text: 'Other',
         base: '/other/',
         items: [
-          { text: 'Feature your company', link: 'feature-your-company.md' }
+          { text: 'Feature your company', link: 'feature-your-company.md' },
+          { text: 'Analytics', link: 'analytics.md' },
+          { text: 'Branding', link: 'branding.md' }
         ]
       }
     ],
