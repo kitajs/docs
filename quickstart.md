@@ -2,9 +2,9 @@
 
 ::: warning
 
-É melhor recomendado para iniciar um projeto com o comando `npm create kita`,
-uma vez que ele gera um boilerplate com graceful shutdown, monitoramento de
-recursos, e outras coisas úteis.
+It's best recommended to start a project with the `npm create kita` command, as
+it generates a boilerplate with graceful shutdown, resource monitoring, and
+other useful features.
 
 :::
 
@@ -24,7 +24,7 @@ Currently, you can choose between two templates:
   [Fastify](https://fastify.dev/) and
   [@kitajs/html](https://github.com/kitajs/html)
 
-Once done, you should see the nwely created folder in your directory.
+Once done, you should see the newly created folder in your directory.
 
 ```bash
 cd project
@@ -43,10 +43,10 @@ OpenAPI documentation.
 
 ## Minimal Installation
 
-Caso você já tenha algum projeto existente e quer apenas adicionar o Kita, aqui
-está como você pode fazer isso da forma menos intrusiva possível.
+If you already have an existing project and just want to add Kita, here's how
+you can do it in the least intrusive way possible.
 
-1. Primeiramente, instale as dependências necessárias:
+1. First, install the necessary dependencies:
 
 ::: code-group
 
@@ -57,8 +57,7 @@ npm i @kitajs/runtime fastify
 
 :::
 
-2. Adicione no seu `tsconfig.json` o plugin do Kita para você ter a melhor
-   experiência possível:
+2. Add the Kita plugin to your `tsconfig.json` for the best possible experience:
 
 ::: code-group
 
@@ -72,13 +71,13 @@ npm i @kitajs/runtime fastify
 
 :::
 
-3. **Caso você esteja usando o VSCode**, por padrão ele não utiliza o typescript
-   instalado no seu node_modules. Para fazer isso, crie um arquivo
-   `.vscode/settings.json` e adicione o seguinte conteúdo:
+3. **If you're using VSCode**, by default it doesn't use the TypeScript
+   installed in your `node_modules`. To do so, create a `.vscode/settings.json`
+   file and add the following content:
 
-   Leia a
-   [documentação oficial](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)
-   do VSCode para mais informações.
+   Refer to the
+   [official documentation](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)
+   for more information.
 
 ::: code-group
 
@@ -91,8 +90,8 @@ npm i @kitajs/runtime fastify
 
 :::
 
-4. Atualize os scripts de `build` no seu `package.json` para rodar o
-   `kita build` antes de transpilar o código:
+4. Update the `build` scripts in your `package.json` to run `kita build` before
+   transpiling the code:
 
 ::: code-group
 
@@ -107,7 +106,7 @@ npm i @kitajs/runtime fastify
 
 :::
 
-5. Adicione o arquivo `src/index.ts` com o seguinte conteúdo:
+5. Add the `src/index.ts` file with the following content:
 
 ::: code-group
 
@@ -127,11 +126,12 @@ app.listen({ port: 3000 });
 
 :::
 
-Caso você tenha algum formatter ou linter configurado que não lide bem com o
-`globalThis.KITA_PROJECT_ROOT ??= __dirname;` no root do seu arquivo principal.
+If you have a formatter or linter configured that doesn't handle
+`globalThis.KITA_PROJECT_ROOT ??= __dirname;` well at the root of your main
+file.
 
-Recomendamos que você mova essa linha para o `src/prelude.ts` e importe ele no
-seu arquivo principal:
+We recommend that you move this line to `src/prelude.ts` and import it into your
+main file:
 
 ::: code-group
 
@@ -150,7 +150,7 @@ globalThis.KITA_PROJECT_ROOT ??= __dirname; // [!code ++]
 
 :::
 
-5. Crie sua primeira rota em `src/routes/hello.ts`:
+5. Create your first route in `src/routes/hello.ts`:
 
 ::: code-group
 
@@ -164,7 +164,7 @@ export function get() {
 
 6. 🎉
 
-Você está pronto para rodar o seu servidor:
+You're ready to run your server:
 
 ```bash
 npm run build
@@ -173,15 +173,15 @@ npm start
 
 ### Test it out!
 
-Visite `http://localhost:3000/reference` no seu navegador para ver a
-documentação
+Visit `http://localhost:3000/reference` in your browser to see the
+documentation.
 
 ::: tip
 
-Esta instalação é minima e não inclui recursos como monitoramento de recursos e
-graceful shutdown que são essenciais para um servidor de produção.
+This minimal installation does not include features like resource monitoring and
+graceful shutdown that are essential for a production server.
 
-Gere um template com o comando `npm kita create` para ter um projeto completo e
-faça a sua migração parcial a partir dele, caso necessário.
+Generate a template with the `npm kita create` command to have a complete
+project and perform your partial migration from there if necessary.
 
 :::

@@ -74,11 +74,12 @@ globalThis.KITA_PROJECT_ROOT ??= __dirname;
 
 :::
 
-Caso você tenha algum formatter ou linter configurado que não lide bem com o
-`globalThis.KITA_PROJECT_ROOT ??= __dirname;` no root do seu arquivo principal.
+If you have a formatter or linter configured that doesn't handle
+`globalThis.KITA_PROJECT_ROOT ??= __dirname;` well at the root of your main
+file.
 
-Recomendamos que você mova essa linha para o `src/prelude.ts` e importe ele no
-seu arquivo principal:
+We recommend that you move this line to `src/prelude.ts` and import it into your
+main file:
 
 ::: code-group
 
