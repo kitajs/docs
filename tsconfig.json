@@ -4,5 +4,6 @@
     "module": "CommonJS",
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
-  }
+  },
+  "include": ["**/*.ts"]
 }
