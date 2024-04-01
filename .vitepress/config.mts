@@ -221,8 +221,9 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Learn by building',
+        text: 'Learn by building (OUTDATED)',
         base: '/learn/',
+        collapsed: true,
         items: [
           { text: 'What we will build', link: 'index.md' },
           { text: 'Setting things up', link: 'setup.md' },

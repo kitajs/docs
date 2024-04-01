@@ -2,8 +2,9 @@
 
 ::: warning
 
-The `npm create kita` cli command is recommended for most users, since it sets
-up a lot of good defaults for you.
+É melhor recomendado para iniciar um projeto com o comando `npm create kita`,
+uma vez que ele gera um boilerplate com graceful shutdown, monitoramento de
+recursos, e outras coisas úteis.
 
 :::
 
@@ -40,284 +41,116 @@ npm dev
 Visit `http://localhost:1227/reference` in your browser to see the generated
 OpenAPI documentation.
 
-## Manual Installation
+## Minimal Installation
 
-You can always manually install Kita by following these steps:
+Caso você já tenha algum projeto existente e quer apenas adicionar o Kita, aqui
+está como você pode fazer isso da forma menos intrusiva possível.
 
-Initialize a new Node.js project:
+1. Primeiramente, instale as dependências necessárias:
 
-In a new folder, run:
+::: code-group
 
-```bash
-npm init -y
-```
-
-Then, install Kita:
-
-These are all the basic packages you'll need:
-
-```bash
-npm i -D typescript @kitajs/cli @kitajs/ts-plugin @types/node
-npm i @kitajs/runtime fastify @fastify/helmet @fastify/under-pressure dotenv close-with-grace concurrently
-```
-
-Init your typescript project
-
-::: details tsconfig.json
-
-```json
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    /* Visit https://aka.ms/tsconfig to read more about this file */
-
-    /* Projects */
-    "incremental": true,
-    // "composite": true,
-    // "tsBuildInfoFile": "./.tsbuildinfo",
-    // "disableSourceOfProjectReferenceRedirect": true,
-    // "disableSolutionSearching": true,
-    // "disableReferencedProjectLoad": true,
-
-    /* Language and Environment */
-    "target": "ESNext",
-    // "lib": [],
-    // "jsx": "preserve",
-    // "experimentalDecorators": true,
-    // "emitDecoratorMetadata": true,
-    // "jsxFactory": "",
-    // "jsxFragmentFactory": "",
-    // "jsxImportSource": "",
-    // "reactNamespace": "",
-    // "noLib": true,
-    // "useDefineForClassFields": true,
-    // "moduleDetection": "auto",                        ,
-    "preserveWatchOutput": true,
-
-    /* Modules */
-    "module": "CommonJS",
-    // "rootDir": "./",
-    "moduleResolution": "Node10",
-    // "baseUrl": "./",
-    // "paths": {},
-    // "rootDirs": [],
-    // "typeRoots": [],
-    // "types": [],
-    // "allowUmdGlobalAccess": true,
-    // "moduleSuffixes": [],
-    // "allowImportingTsExtensions": true,
-    // "resolvePackageJsonExports": true,
-    // "resolvePackageJsonImports": true,
-    // "customConditions": [],
-    // "resolveJsonModule": true,
-    // "allowArbitraryExtensions": true,
-    // "noResolve": true,
-
-    /* JavaScript Support */
-    // "allowJs": true,
-    // "checkJs": true,
-    // "maxNodeModuleJsDepth": 1,
-
-    /* Emit */
-    // "declaration": true,
-    // "declarationMap": true,
-    // "emitDeclarationOnly": true,
-    "sourceMap": true,
-    // "inlineSourceMap": true,
-    // "outFile": "./",
-    "outDir": "./dist",
-    // "removeComments": true,
-    // "noEmit": true,
-    "importHelpers": true,
-    // "importsNotUsedAsValues": "remove",
-    // "downlevelIteration": true,
-    // "sourceRoot": "",
-    // "mapRoot": "",
-    // "inlineSources": true,
-    // "emitBOM": true,
-    // "newLine": "crlf",
-    // "stripInternal": true,
-    // "noEmitHelpers": true,
-    // "noEmitOnError": true,
-    // "preserveConstEnums": true,
-    // "declarationDir": "./",
-    // "preserveValueImports": true,
-
-    /* Interop Constraints */
-    "isolatedModules": true,
-    "verbatimModuleSyntax": false,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "preserveSymlinks": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Type Checking */
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "useUnknownInCatchVariables": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-    // "noPropertyAccessFromIndexSignature": true,
-    // "allowUnusedLabels": true,
-    // "allowUnreachableCode": true,
-
-    /* Completeness */
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "plugins": [{ "name": "@kitajs/ts-plugin" }]
-  },
-  "include": ["src"]
-}
+```sh [Terminal]
+npm i -D @kitajs/cli @kitajs/ts-plugin
+npm i @kitajs/runtime fastify
 ```
 
 :::
 
-Add basic `build` and `start` scripts to your `package.json`:
+2. Adicione no seu `tsconfig.json` o plugin do Kita para você ter a melhor
+   experiência possível:
 
 ::: code-group
 
-```json [package.json]
+```json {3} [tsconfig.json]
 {
-  "scripts": {
-    "build": "kita build && tsc",
-    "start": "node --enable-source-maps dist/index.js",
-    "dev": "concurrently --raw --restart-tries 0 \"npm:dev:*\"",
-    "dev:kita": "kita watch",
-    "dev:server": "node --env-file=.env --enable-source-maps --watch dist/index.js",
-    "dev:tsc": "tsc --watch --preserveWatchOutput"
+  "compilerOptions": {
+    "plugins": [{ "name": "@kitajs/ts-plugin" }]
   }
 }
 ```
 
-In development mode, we're using `--raw` to avoid adding prefixes for each
-command, and `--restart-tries 0` to avoid infinite restart loops. `npm:dev:*` is
-a special syntax that runs all scripts that start with `dev:`. We're using it to
-run `dev:kita`, `dev:server` and `dev:tsc` at the same time.
+:::
+
+3. **Caso você esteja usando o VSCode**, por padrão ele não utiliza o typescript
+   instalado no seu node_modules. Para fazer isso, crie um arquivo
+   `.vscode/settings.json` e adicione o seguinte conteúdo:
+
+   Leia a
+   [documentação oficial](https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript)
+   do VSCode para mais informações.
+
+::: code-group
+
+```json {2,3} [.vscode/settings.json]
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
+```
 
 :::
 
-::: warning Please use Node.js v20 or higher!
+4. Atualize os scripts de `build` no seu `package.json` para rodar o
+   `kita build` antes de transpilar o código:
 
-Node's `--enable-source-maps`, `--watch` and other features you'll need are only
-stable on **Node.js 20+**.
+::: code-group
 
-Check your version with `node -v` and install the latest version if needed.
+```json {3,4} [package.json]
+{
+  "scripts": {
+    "build": "kita build && tsc",
+    "start": "node dist/index.js"
+  }
+}
+```
 
 :::
 
-Add these main files:
+5. Adicione o arquivo `src/index.ts` com o seguinte conteúdo:
 
 ::: code-group
 
 ```ts [src/index.ts]
-import { ajvFilePlugin } from '@fastify/multipart';
-import fastify from 'fastify';
-import { isMainThread } from 'node:worker_threads';
-import backendPlugin from './plugin';
-
-// Ensures this file is not executed in test context
-if (process.env.NODE_TEST_CONTEXT) {
-  throw new Error('This file should not be executed in test context');
-}
-
-// Ensures this file is not executed in worker context
-if (!isMainThread) {
-  throw new Error('This file should not be executed in worker context');
-}
-
-// Ensures PORT are set
-if (!process.env.PORT) {
-  throw new Error('PORT must be set');
-}
-
-fastify({
-  logger: { transport: { target: 'pino-pretty' } },
-  ajv: { plugins: [ajvFilePlugin] }
-})
-  // Registers our backend
-  .register(backendPlugin)
-  // Starts the server
-  .listen({
-    port: +process.env.PORT,
-    host: process.env.HOST || ''
-  });
-```
-
-```ts [src/plugin.ts]
-import './prelude';
-
-import fastifyHelmet from '@fastify/helmet';
-import fastifyUnderPressure from '@fastify/under-pressure';
-import { Kita } from '@kitajs/runtime';
-import closeWithGrace from 'close-with-grace';
-import fp from 'fastify-plugin';
-
-export default fp(async (app) => {
-  // Registers the generated kita plugin
-  app.register(Kita);
-
-  // Measures process load with automatic handling of "Service Unavailable"
-  app.register(fastifyUnderPressure, {
-    maxEventLoopDelay: 1000,
-    maxHeapUsedBytes: 1000000000,
-    maxRssBytes: 1000000000,
-    maxEventLoopUtilization: 0.98
-  });
-
-  // Important security headers for Fastify
-  app.register(fastifyHelmet, {
-    global: true
-  });
-
-  // Add your custom stuff here
-  // app.register(myPlugin)
-  // ...
-
-  // Delay is the number of milliseconds for the graceful close to finish
-  const closeListeners = closeWithGrace({ delay: 500 }, async ({ err }) => {
-    if (err) {
-      app.log.error(err);
-    }
-
-    await app.close();
-  });
-
-  // Cancelling the close listeners
-  app.addHook('onClose', async () => {
-    closeListeners.uninstall();
-  });
-});
-```
-
-```ts [src/prelude.ts]
-// This tells kita where to find the root of your project
+// This is required to be executed before any import or require // [!code focus:2]
 globalThis.KITA_PROJECT_ROOT ??= __dirname;
+
+import { Kita } from '@kitajs/runtime'; // [!code focus]
+import fastify from 'fastify';
+
+const app = fastify();
+
+app.register(Kita); // [!code focus]
+
+app.listen({ port: 3000 });
 ```
 
 :::
 
-Create a `.env` file:
+Caso você tenha algum formatter ou linter configurado que não lide bem com o
+`globalThis.KITA_PROJECT_ROOT ??= __dirname;` no root do seu arquivo principal.
+
+Recomendamos que você mova essa linha para o `src/prelude.ts` e importe ele no
+seu arquivo principal:
 
 ::: code-group
 
-```js [.env]
-PORT = 1227;
+```ts [src/index.ts]
+// This is required to be executed before any import or require // [!code --:2] // [!code focus:3]
+globalThis.KITA_PROJECT_ROOT ??= __dirname;
+import './prelude'; // [!code ++]
+
+// ...
+```
+
+```ts [src/prelude.ts]
+// This is required to be executed before any import or require // [!code ++]
+globalThis.KITA_PROJECT_ROOT ??= __dirname; // [!code ++]
 ```
 
 :::
 
-Create your first route:
+5. Crie sua primeira rota em `src/routes/hello.ts`:
 
 ::: code-group
 
@@ -327,19 +160,11 @@ export function get() {
 }
 ```
 
-Run your server:
+:::
 
-Firstly, run `build` for the first time, then run:
+6. 🎉
 
-```bash
-npm run build
-```
-
-```bash
-npm run dev
-```
-
-Or build and run your server:
+Você está pronto para rodar o seu servidor:
 
 ```bash
 npm run build
@@ -348,5 +173,15 @@ npm start
 
 ### Test it out!
 
-Visit `http://localhost:1227/reference` in your browser to see the generated
-OpenAPI documentation.
+Visite `http://localhost:3000/reference` no seu navegador para ver a
+documentação
+
+::: tip
+
+Esta instalação é minima e não inclui recursos como monitoramento de recursos e
+graceful shutdown que são essenciais para um servidor de produção.
+
+Gere um template com o comando `npm kita create` para ter um projeto completo e
+faça a sua migração parcial a partir dele, caso necessário.
+
+:::

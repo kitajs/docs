@@ -48,3 +48,51 @@ export function Delete() {
 // Same for PUT, PATCH, HEAD, OPTIONS, PROPFIND, PROPPATCH,
 //  MKCOL, COPY, MOVE, LOCK, UNLOCK, TRACE, SEARCH ...
 ```
+
+## `KITA_PROJECT_ROOT`
+
+The error below is pretty common to happen when you're migrating an existing
+project to Kita:
+
+> Please define KITA_PROJECT_ROOT before importing any routes.
+
+This error happens because Kita needs to know the root of your project to
+resolve the routes correctly before any import or require statement in your
+application gets executed.
+
+To fix this error, you need to define the `KITA_PROJECT_ROOT` global variable in
+the root of your application.
+
+::: code-group
+
+```ts [src/index.ts]
+// This is required to be executed before any import or require // [!code focus:2]
+globalThis.KITA_PROJECT_ROOT ??= __dirname;
+
+//...
+```
+
+:::
+
+Caso você tenha algum formatter ou linter configurado que não lide bem com o
+`globalThis.KITA_PROJECT_ROOT ??= __dirname;` no root do seu arquivo principal.
+
+Recomendamos que você mova essa linha para o `src/prelude.ts` e importe ele no
+seu arquivo principal:
+
+::: code-group
+
+```ts [src/index.ts]
+// This is required to be executed before any import or require // [!code --:2] // [!code focus:3]
+globalThis.KITA_PROJECT_ROOT ??= __dirname;
+import './prelude'; // [!code ++]
+
+// ...
+```
+
+```ts [src/prelude.ts]
+// This is required to be executed before any import or require // [!code ++]
+globalThis.KITA_PROJECT_ROOT ??= __dirname; // [!code ++]
+```
+
+:::

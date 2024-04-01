@@ -20,6 +20,31 @@ plugin options.
 
 :::
 
+## Prerequisites
+
+Before using the `File` parameter, you need to add the `ajvFilePlugin` from
+`@fastify/multipart` into when creating your Fastify instance.
+
+```ts
+import { ajvFilePlugin } from '@fastify/multipart';
+import fastify from 'fastify';
+
+const app = fastify({
+  ajv: { plugins: [ajvFilePlugin] } // [!code ++]
+});
+```
+
+The above plugin register the `isFile` keyword in the AJV instance, which is
+used to validate the file parameter.
+
+If you encounter the following error, its because the `ajvFilePlugin` was not
+registered in your Fastify instance:
+
+> FastifyError \[Error]: Failed building the validation schema for `<METHOD>`:
+> `<URL>`, due to error strict mode: unknown keyword: "isFile"
+
+## Usage
+
 ::: code-group
 
 ```ts {5,15} [src/routes/index.ts]
