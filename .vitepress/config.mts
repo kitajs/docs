@@ -38,12 +38,9 @@ export default defineConfig({
     [
       'script',
       { id: 'restore-banner-preference' },
-      `(() => {const restore=(e,s,t=!1)=>{let n=localStorage.getItem(e);(n?"false"!==n&&new Date<n:t)&&document.documentElement.classList.add(s)};restore("header-banner","banner-dismissed");})();`
+      `(() => {const restore=(e,s,t=!1)=>{let n=localStorage.getItem(e);(n?"false"!==n&&new Date<n:t)&&document.documentElement.classList.add(s)};restore("header-warning","banner-dismissed");})();`
     ]
   ],
-
-  // FIXME: Remove when documentation is done
-  ignoreDeadLinks: true,
 
   sitemap: {
     hostname: url
@@ -56,13 +53,19 @@ export default defineConfig({
 
     nav: [
       {
+        link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just found @kitajsorg, a performant and type safe Fastify router!\n\nYou should check it out at:\n${url}`)}`,
+        text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/twitter/follow/ktiajsorg?style=flat&logo=x&label=Tweet%20about%20us&labelColor=black">',
+        noIcon: true
+      },
+      {
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/github/stars/kitajs/kitajs?style=flat&logo=github&label=Star%20us!&color=%23b58d88">',
         link: 'https://github.com/kitajs/kitajs',
         noIcon: true
       },
       {
         text: '🇧🇷',
-        link: '/'
+        link: 'https://github.com/arthurfiorette',
+        noIcon: true
       }
     ],
 
@@ -192,7 +195,13 @@ export default defineConfig({
       {
         text: 'Recipes',
         base: '/recipes/',
-        items: [{ text: 'Migrating from other projects', link: 'migration.md' }]
+        items: [
+          { text: 'Prisma', link: 'prisma.md' },
+          { text: 'Authentication', link: 'authentication.md' },
+          { text: 'Env variables', link: 'env-variables.md' },
+          { text: 'Graceful shutdown', link: 'graceful-shutdown.md' },
+          { text: 'Migrating existing projects', link: 'migration.md' }
+        ]
       },
       {
         text: 'Other',

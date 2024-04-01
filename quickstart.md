@@ -20,14 +20,22 @@ Start a development server with:
 npm dev
 ```
 
-Visit `http://localhost:3000/reference` in your browser to see the generated
+### Test it out!
+
+Visit `http://localhost:1227/reference` in your browser to see the generated
 OpenAPI documentation.
 
 ## Manual Installation
 
+::: warning
+
+The `npm create kita` cli command
+
+:::
+
 You can always manually install Kita by following these steps:
 
-### Initialize a new Node.js project:
+Initialize a new Node.js project:
 
 In a new folder, run:
 
@@ -35,7 +43,7 @@ In a new folder, run:
 npm init -y
 ```
 
-### Install Kita:
+Then, install Kita:
 
 These are all the basic packages you'll need:
 
@@ -44,7 +52,7 @@ npm i -D typescript @kitajs/cli @kitajs/ts-plugin @types/node
 npm i @kitajs/runtime fastify @fastify/helmet @fastify/under-pressure dotenv close-with-grace concurrently
 ```
 
-### Init your typescript project
+Init your typescript project
 
 ::: details tsconfig.json
 
@@ -166,7 +174,7 @@ npm i @kitajs/runtime fastify @fastify/helmet @fastify/under-pressure dotenv clo
 
 :::
 
-### Add basic `build` and `start` scripts to your `package.json`:
+Add basic `build` and `start` scripts to your `package.json`:
 
 ::: code-group
 
@@ -199,7 +207,7 @@ Check your version with `node -v` and install the latest version if needed.
 
 :::
 
-### Add these main files:
+Add these main files:
 
 ::: code-group
 
@@ -290,17 +298,17 @@ globalThis.KITA_PROJECT_ROOT ??= __dirname;
 
 :::
 
-### Create a `.env` file:
+Create a `.env` file:
 
 ::: code-group
 
-```env [.env]
-PORT=3000
+```js [.env]
+PORT = 1227;
 ```
 
 :::
 
-### Create your first route:
+Create your first route:
 
 ::: code-group
 
@@ -310,7 +318,7 @@ export function get() {
 }
 ```
 
-### Run your server:
+Run your server:
 
 Firstly, run `build` for the first time, then run:
 
@@ -331,5 +339,5 @@ npm start
 
 ### Test it out!
 
-Visit `http://localhost:3000/reference` in your browser to see the generated
+Visit `http://localhost:1227/reference` in your browser to see the generated
 OpenAPI documentation.

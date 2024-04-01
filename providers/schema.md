@@ -72,67 +72,9 @@ console.log(KitaSchemas);
 
 This is pretty useful for when you need json schemas of your types at runtime.
 
-## Env example
+## Example
 
-A good example to demonstrate how the Schema provider can be used is with
-Environment variables and the package
-[env-schema](https://www.npmjs.com/package/env-schema).
+A good example to demonstrate how the provider schema can be used is using type
+checked environment variables.
 
-::: code-group
-
-```ts [src/providers/schema.ts]
-export interface Environment {
-  /**
-   * @minimum 1000
-   * @maximum 65535
-   */
-  PORT: number;
-
-  NODE_ENV: 'development' | 'production';
-
-  /** @format email */
-  EMAIL: string;
-}
-```
-
-:::
-
-Which can be later used in a separated file:
-
-::: code-group
-
-```ts [src/env.ts]
-import { KitaSchemas } from '@kitajs/runtime';
-import envSchema from 'env-schema';
-import type { Environment } from './providers/schema';
-
-export const Env = envSchema<Environment>({
-  schema: KitaSchemas.Environment,
-  dotenv: true
-});
-```
-
-:::
-
-Simply doing the above, you have type checked environment variables.
-
-::: code-group
-
-```ts [src/index.ts]
-import Kita from '@kitajs/runtime';
-import fastify from 'fastify';
-import { Env } from './env';
-
-const app = fastify();
-
-app.register(Kita);
-
-app
-  .listen({
-    // type checking works here
-    port: Env.PORT
-  })
-  .then(console.log);
-```
-
-:::
+[View the example here](../recipes/env-variables.md)

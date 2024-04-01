@@ -13,9 +13,9 @@ Make sure to read all previous documentation to understand how Kita works.
 
 :::
 
-Warning: This guide is not a step-by-step guide yet, want to help us to improve
-this page? Share the technical details of your migration to Kita and we will add
-it here. Mail us `kita@arthur.place` or Open a Pull Request.
+**This guide is not a step-by-step guide yet**, want to help us to improve this
+page? Share the technical details of your migration to Kita and we will add it
+here. Mail us `kita@arthur.place` or Open a Pull Request.
 
 ## Migrating from Fastify
 
@@ -36,7 +36,7 @@ app.listen({ port: 1227 });
 ```
 
 You can later start to migrate your routes to Kita routes, following the
-[Routing](../routing.md) documentation.
+[Routing](../routing/index.md) documentation.
 
 Just move each of your routes to their respective path inside `src/routes` and
 use the correct I/O types.
