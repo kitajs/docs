@@ -6,8 +6,8 @@ example of how to implement authentication in a web application using
 
 Firstly, install the required packages:
 
-```bash
-npm install @fastify/jwt argon2
+```sh
+npm i @fastify/jwt argon2
 ```
 
 Then, create a provider that will handle the authentication logic and also a

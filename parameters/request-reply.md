@@ -1,4 +1,4 @@
-# Fastify
+# Request and Reply
 
 Since Kita uses Fastify under the hood, the request and reply types can be
 accessed directly using `FastifyRequest` and `FastifyReply`.

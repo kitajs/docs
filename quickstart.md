@@ -12,7 +12,7 @@ other useful features.
 
 You can start a new Kita project with a single command:
 
-```bash
+```sh
 npm create kita
 ```
 
@@ -26,13 +26,13 @@ Currently, you can choose between two templates:
 
 Once done, you should see the newly created folder in your directory.
 
-```bash
+```sh
 cd project
 ```
 
 Start a development server with:
 
-```bash
+```sh
 npm dev
 ```
 
@@ -40,6 +40,8 @@ npm dev
 
 Visit `http://localhost:1227/reference` in your browser to see the generated
 OpenAPI documentation.
+
+[Read our code recipes for more information on how to customize your project.](./recipes/index.md)
 
 ## Minimal Installation
 
@@ -166,7 +168,7 @@ export function get() {
 
 You're ready to run your server:
 
-```bash
+```sh
 npm run build
 npm start
 ```
@@ -175,6 +177,8 @@ npm start
 
 Visit `http://localhost:3000/reference` in your browser to see the
 documentation.
+
+[Read our code recipes for more information on how to customize your project.](./recipes/index.md)
 
 ::: tip
 

@@ -235,14 +235,16 @@ export default defineConfig({
       },
       {
         text: 'Recipes',
+        link: '/',
         base: '/recipes/',
         items: [
           { text: 'Prisma', link: 'prisma.md' },
           { text: 'Authentication', link: 'authentication.md' },
-          { text: 'Env variables', link: 'env-variables.md' },
+          { text: 'Environment variables', link: 'env-variables.md' },
           { text: 'Graceful shutdown', link: 'graceful-shutdown.md' },
-          { text: 'Migrating existing projects', link: 'migration.md' }
-        ]
+          { text: 'Migrating existing projects', link: 'migration.md' },
+          { text: 'Development server', link: 'dev-server.md' }
+        ].sort((a, b) => a.text.localeCompare(b.text))
       },
       {
         text: 'Other',

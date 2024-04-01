@@ -53,7 +53,7 @@ To use the `@kitajs/html` package, follow these steps:
    and run:
 
    ```sh
-   npm install @kitajs/html @kitajs/ts-html-plugin
+   npm i @kitajs/html @kitajs/ts-html-plugin
    ```
 
 2. Configure your TypeScript project to transpile TSX/JSX into JavaScript and
