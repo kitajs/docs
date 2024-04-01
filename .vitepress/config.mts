@@ -168,6 +168,7 @@ export default defineConfig({
       {
         text: 'Parameters',
         base: '/parameters/',
+        collapsed: true,
         items: [
           {
             text: 'Body',
@@ -214,6 +215,7 @@ export default defineConfig({
       {
         text: 'Providers',
         base: '/providers/',
+        collapsed: true,
         items: [
           { text: 'What is a provider', link: 'index.md' },
           { text: 'Provider Hooks', link: 'hooks.md' },
@@ -221,16 +223,17 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Learn by building (OUTDATED)',
-        base: '/learn/',
-        collapsed: true,
+        text: 'Clients',
+        base: '/clients/',
         items: [
-          { text: 'What we will build', link: 'index.md' },
-          { text: 'Setting things up', link: 'setup.md' },
-          { text: 'Creating our first route', link: 'first-route.md' },
-          { text: 'Improving the setup', link: 'improving-setup.md' },
-          { text: 'Modelling our data', link: 'modelling-data.md' },
-          { text: 'Adding authentication', link: 'authentication.md' }
+          {
+            text: 'Documenting with Scalar Ui',
+            link: 'scalar.md'
+          },
+          {
+            text: 'Type safe client with Orval',
+            link: 'orval.md'
+          }
         ]
       },
       {
@@ -253,6 +256,20 @@ export default defineConfig({
           { text: 'Feature your company', link: 'feature-your-company.md' },
           { text: 'Analytics', link: 'analytics.md' },
           { text: 'Branding', link: 'branding.md' }
+        ]
+      },
+
+      {
+        text: 'Learn by building (OUTDATED)',
+        base: '/learn/',
+        collapsed: true,
+        items: [
+          { text: 'What we will build', link: 'index.md' },
+          { text: 'Setting things up', link: 'setup.md' },
+          { text: 'Creating our first route', link: 'first-route.md' },
+          { text: 'Improving the setup', link: 'improving-setup.md' },
+          { text: 'Modelling our data', link: 'modelling-data.md' },
+          { text: 'Adding authentication', link: 'authentication.md' }
         ]
       }
     ],
