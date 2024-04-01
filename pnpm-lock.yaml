@@ -18,8 +18,8 @@ devDependencies:
     specifier: ^3.2.5
     version: 3.2.5
   vitepress:
-    specifier: 1.0.1
-    version: 1.0.1(@algolia/client-search@4.19.1)(search-insights@2.7.0)(typescript@5.1.6)
+    specifier: 1.0.2
+    version: 1.0.2(@algolia/client-search@4.19.1)(search-insights@2.7.0)(typescript@5.1.6)
   vue:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.1.6)
@@ -2484,10 +2484,10 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.0.1(@algolia/client-search@4.19.1)(search-insights@2.7.0)(typescript@5.1.6):
+  /vitepress@1.0.2(@algolia/client-search@4.19.1)(search-insights@2.7.0)(typescript@5.1.6):
     resolution:
       {
-        integrity: sha512-eNr5pOBppYUUjEhv8S0S2t9Tv95LQ6mMeHj6ivaGwfHxpov70Vduuwl/QQMDRznKDSaP0WKV7a82Pb4JVOaqEw==
+        integrity: sha512-bEj9yTEdWyewJFOhEREZF+mXuAgOq27etuJZT6DZSp+J3XpQstXMJc5piSVwhZBtuj8OfA0iXy+jdP1c71KMYQ==
       }
     hasBin: true
     peerDependencies:

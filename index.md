@@ -10,8 +10,8 @@ hero:
       text: Write the FUTURE →
       link: /quickstart
     - theme: alt
-      text: Star us on GitHub
-      link: https://github.com/kitajs
+      text: What is Kita?
+      link: /what-is-kita
   image:
     src: /logo.svg
     alt: Kita brown and white lotus logo

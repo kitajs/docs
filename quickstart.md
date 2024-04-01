@@ -1,5 +1,12 @@
 # Quick Start
 
+::: warning
+
+The `npm create kita` cli command is recommended for most users, since it sets
+up a lot of good defaults for you.
+
+:::
+
 ## Automatic Installation
 
 You can start a new Kita project with a single command:
@@ -7,6 +14,14 @@ You can start a new Kita project with a single command:
 ```bash
 npm create kita
 ```
+
+Currently, you can choose between two templates:
+
+- Kita: A normal backend project using [Fastify](https://fastify.dev/)
+
+- Kita & JSX & Tailwind: A frontend project using
+  [Fastify](https://fastify.dev/) and
+  [@kitajs/html](https://github.com/kitajs/html)
 
 Once done, you should see the nwely created folder in your directory.
 
@@ -26,12 +41,6 @@ Visit `http://localhost:1227/reference` in your browser to see the generated
 OpenAPI documentation.
 
 ## Manual Installation
-
-::: warning
-
-The `npm create kita` cli command
-
-:::
 
 You can always manually install Kita by following these steps:
 

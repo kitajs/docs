@@ -91,6 +91,7 @@ export default defineConfig({
 
     sidebar: [
       {
+        base: '/',
         items: [
           {
             text: 'What is Kita?',
