@@ -7,7 +7,7 @@ plugin to render the content.
 
 ::: warning
 
-This documentation covers the @kitajs/html beta `4.0.0` version. It's
+This documentation covers the @kitajs/html `4.0.0-beta` version. It's
 recommended to wait for the stable release before using it in production.
 
 :::

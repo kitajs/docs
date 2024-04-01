@@ -65,11 +65,10 @@ A good example to demonstrate how hooks can be used is with
 ```ts [src/providers/prisma.ts]
 import { FastifyInstance } from 'fastify';
 import { PrismaClient } from 'prisma-client';
-import { Env } from '../env';
 
 // Singleton is not a problem here
 const prisma = new PrismaClient({
-  datasourceUrl: Env.DATABASE_URL,
+  datasourceUrl: process.env.DATABASE_URL,
   log: [
     { emit: 'event', level: 'query' },
     { emit: 'event', level: 'warn' },

@@ -27,14 +27,9 @@ OpenAPI documentation.
 
 You can always manually install Kita by following these steps:
 
-### Create a new directory and navigate to it:
-
-```bash
-mkdir backend
-cd backend
-```
-
 ### Initialize a new Node.js project:
+
+In a new folder, run:
 
 ```bash
 npm init -y
@@ -42,15 +37,14 @@ npm init -y
 
 ### Install Kita:
 
-```bash
-npm i -D typescript @kitajs/cli @kitajs/ts-plugin
-npm i add @kitajs/runtime fastify
+These are all the basic packages you'll need:
 
-# And commonly used packages
-pnp i @fastify/helmet @fastify/under-pressure dotenv close-with-grace concurrently
+```bash
+npm i -D typescript @kitajs/cli @kitajs/ts-plugin @types/node
+npm i @kitajs/runtime fastify @fastify/helmet @fastify/under-pressure dotenv close-with-grace concurrently
 ```
 
-### Create a basic typescript file:
+### Init your typescript project
 
 ::: details tsconfig.json
 
@@ -183,14 +177,14 @@ pnp i @fastify/helmet @fastify/under-pressure dotenv close-with-grace concurrent
     "start": "node --enable-source-maps dist/index.js",
     "dev": "concurrently --raw --restart-tries 0 \"npm:dev:*\"",
     "dev:kita": "kita watch",
-    "dev:server": "node --env-file=.env -r @swc-node/register --watch --enable-source-maps src/index.ts",
-    "dev:tsc": "tsc -p tsconfig.build.json --watch --preserveWatchOutput"
+    "dev:server": "node --env-file=.env --enable-source-maps --watch dist/index.js",
+    "dev:tsc": "tsc --watch --preserveWatchOutput"
   }
 }
 ```
 
 In development mode, we're using `--raw` to avoid adding prefixes for each
-command, and `--restart-tries 1` to avoid infinite restart loops. `npm:dev:*` is
+command, and `--restart-tries 0` to avoid infinite restart loops. `npm:dev:*` is
 a special syntax that runs all scripts that start with `dev:`. We're using it to
 run `dev:kita`, `dev:server` and `dev:tsc` at the same time.
 
@@ -198,8 +192,8 @@ run `dev:kita`, `dev:server` and `dev:tsc` at the same time.
 
 ::: warning Please use Node.js v20 or higher!
 
-`--enable-source-maps` and other features you'll need are only stable on
-**Node.js 20+**.
+Node's `--enable-source-maps`, `--watch` and other features you'll need are only
+stable on **Node.js 20+**.
 
 Check your version with `node -v` and install the latest version if needed.
 
@@ -298,11 +292,17 @@ globalThis.KITA_PROJECT_ROOT ??= __dirname;
 
 ### Create a `.env` file:
 
+::: code-group
+
 ```env [.env]
 PORT=3000
 ```
 
+:::
+
 ### Create your first route:
+
+::: code-group
 
 ```ts [src/routes/hello.ts]
 export function get() {
@@ -311,6 +311,12 @@ export function get() {
 ```
 
 ### Run your server:
+
+Firstly, run `build` for the first time, then run:
+
+```bash
+npm run build
+```
 
 ```bash
 npm run dev
