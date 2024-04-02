@@ -20,6 +20,7 @@ export interface Environment {
    */
   PORT: number;
 
+  /** @default 'development' */
   NODE_ENV: 'development' | 'production';
 
   /** @format email */
