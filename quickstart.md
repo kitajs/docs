@@ -8,6 +8,20 @@ other useful features.
 
 :::
 
+First of all, make sure you are using **Node.js >= 20**.
+
+_Kita relies on a lot of newer features and APIs that are not available in older
+versions._
+
+::: code-group
+
+```sh
+node -v
+# v20.0.0 ✅
+```
+
+:::
+
 ## Automatic Installation
 
 You can start a new Kita project with a single command:
