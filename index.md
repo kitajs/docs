@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Write the FUTURE →
-      link: /quickstart
+      link: /practical-example
     - theme: alt
       text: What is Kita?
       link: /what-is-kita
