@@ -234,6 +234,7 @@ export default defineConfig({
         text: 'Recipes',
         link: '/',
         base: '/recipes/',
+        collapsed: true,
         items: [
           { text: 'Prisma', link: 'prisma.md' },
           { text: 'Authentication', link: 'authentication.md' },
@@ -250,20 +251,6 @@ export default defineConfig({
           { text: 'Feature your company', link: 'feature-your-company.md' },
           { text: 'Analytics', link: 'analytics.md' },
           { text: 'Branding', link: 'branding.md' }
-        ]
-      },
-
-      {
-        text: 'Learn by building (OUTDATED)',
-        base: '/learn/',
-        collapsed: true,
-        items: [
-          { text: 'What we will build', link: 'index.md' },
-          { text: 'Setting things up', link: 'setup.md' },
-          { text: 'Creating our first route', link: 'first-route.md' },
-          { text: 'Improving the setup', link: 'improving-setup.md' },
-          { text: 'Modelling our data', link: 'modelling-data.md' },
-          { text: 'Adding authentication', link: 'authentication.md' }
         ]
       }
     ],
