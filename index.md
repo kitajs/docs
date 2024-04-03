@@ -98,6 +98,15 @@ const members = [
     ]
   },
   {
+    avatar: 'https://github.com/zmarques.png',
+    name: 'Thiago Marques 🇧🇷',
+    title: 'Core Member',
+    links: [
+      { icon: 'github', link: 'https://github.com/zmarques' },
+      { icon: 'instagram', link: 'https://www.instagram.com/http.thiagomarques' }
+    ]
+  },
+  {
     avatar: 'https://github.com/mesquitaviana.png',
     name: 'Gabriel Mesquita 🇧🇷',
     title: 'Contributor',
