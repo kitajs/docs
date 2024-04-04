@@ -19,7 +19,7 @@ Below is the simplest Fastify server you've ever seen:
 import { Kita } from '@kitajs/runtime';
 import fastify from 'fastify';
 
-fastify({ logger: { level: 'trace' } }) // [!code focus:3]
+fastify() // [!code focus:3]
   .register(Kita)
   .listen({ port: 1227 });
 ```

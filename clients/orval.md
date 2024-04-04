@@ -180,7 +180,7 @@ your `package.json`.
 {
   "scripts": {
     "generate": "orval",
-    "generate:watch": "orval watch"
+    "generate:watch": "orval --watch"
   }
 }
 ```
@@ -195,7 +195,7 @@ choose to add this script to the backend:
 ```json [Backend package.json]
 {
   "scripts": {
-    "dev:orval": "orval watch -c ../frontend/orval.config.js"
+    "dev:orval": "orval --watch -c ../frontend/orval.config.js"
   }
 }
 ```

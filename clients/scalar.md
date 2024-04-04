@@ -23,7 +23,7 @@ For security reasons, you can disable this interface in production by setting
 import { Kita } from '@kitajs/runtime';
 import fastify from 'fastify';
 
-const app = fastify({ logger: { level: 'trace' } });
+const app = fastify();
 
 app.register(Kita, {
   // Disables the UI in production to prevent publicly exposing your API

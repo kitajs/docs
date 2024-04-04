@@ -241,7 +241,8 @@ export default defineConfig({
           { text: 'Environment variables', link: 'env-variables.md' },
           { text: 'Graceful shutdown', link: 'graceful-shutdown.md' },
           { text: 'Migrating existing projects', link: 'migration.md' },
-          { text: 'Development server', link: 'dev-server.md' }
+          { text: 'Development server', link: 'dev-server.md' },
+          { text: 'Logging', link: 'logging.md' }
         ].sort((a, b) => a.text.localeCompare(b.text))
       },
       {

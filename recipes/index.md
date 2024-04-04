@@ -11,6 +11,8 @@ useful too.
 
 - [Graceful Shutdown](./graceful-shutdown.md)
 
+- [Logging](./logging.md)
+
 - [Migration Guide](./migration.md)
 
 - [Prisma](./prisma.md)
