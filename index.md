@@ -80,8 +80,8 @@ const members = [
   },{
     avatar: 'https://github.com/JacopoPatroclo.png',
     name: 'Jacopo Patroclo 🇮🇹',
-    title: 'Core Member',
-    org: 'Kita/Html',
+    title: 'Member',
+    org: 'Html',
     orgLink: 'https://github.com/kitajs/html',
     links: [
       { icon: 'github', link: 'https://github.com/JacopoPatroclo' },
@@ -91,7 +91,7 @@ const members = [
   {
     avatar: 'https://github.com/devzolo.png',
     name: 'Devzolo 🇧🇷',
-    title: 'Core Member',
+    title: ' Member',
     links: [
       { icon: 'github', link: 'https://github.com/devzolo' },
       { icon: 'twitter', link: 'https://twitter.com/devzolo' }
@@ -100,19 +100,10 @@ const members = [
   {
     avatar: 'https://github.com/zmarques.png',
     name: 'Thiago Marques 🇧🇷',
-    title: 'Core Member',
+    title: 'Member',
     links: [
       { icon: 'github', link: 'https://github.com/zmarques' },
       { icon: 'instagram', link: 'https://www.instagram.com/http.thiagomarques' }
-    ]
-  },
-  {
-    avatar: 'https://github.com/mesquitaviana.png',
-    name: 'Gabriel Mesquita 🇧🇷',
-    title: 'Contributor',
-    links: [
-      { icon: 'github', link: 'https://github.com/mesquitaviana' },
-      { icon: 'instagram', link: 'https://www.instagram.com/eummesquita' }
     ]
   }
 ];
