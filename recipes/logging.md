@@ -67,7 +67,8 @@ npm install -D pin-pretty
 Formatting logs requires processing, and one thing we want to avoid is diverting
 processing power that could be used to serve requests to format logs.
 
-Therefore, it is recommended to use `pino-pretty` via pipelines.
+Therefore, it is recommended to use `pino-pretty` via
+[pipelines](<https://en.wikipedia.org/wiki/Pipeline_(Unix)>).
 
 In your development script, after using the `node` command, you can use the
 `pino-pretty` command to format the logs.
