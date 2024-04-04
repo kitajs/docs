@@ -109,7 +109,7 @@ module.exports = {
   backend: {
     output: {
       mode: 'single',
-      // Choose your client here. swt, react-query, axios...
+      // Choose your client here. swr, react-query, axios...
       client: 'axios',
       prettier: true,
       target: path.resolve(__dirname, './src/query.ts'),
