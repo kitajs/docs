@@ -36,7 +36,7 @@ features:
       provide a seamless experience.
 
   - icon: 🧩
-    title: Hassle free
+    title: Hassle-free
     details:
       Good defaults. No magic. Kita does not require any configuration
       whatsoever.
