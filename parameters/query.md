@@ -211,9 +211,13 @@ export function get(names: Query<string[]>) {
 }
 ```
 
-::: When working with complex types, fields cannot be defined as arrays.
-Instead, it's recommended to use [`Body`](./body.md) or [`BodyProp`](./body.md)
-for more complex types.
+::: warning
+
+When working with complex types, fields cannot be defined as arrays. Instead,
+it's recommended to use [`Body`](./body.md) or [`BodyProp`](./body.md) for more
+complex types.
+
+:::
 
 ## Default values
 
