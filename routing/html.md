@@ -41,7 +41,7 @@ The above route simply returns an HTML string with the `Content-Type` header of
 
 ## JSX
 
-A experiencia de desenvolvimento pode ser ainda melhor com o uso de JSX via
+The development experience can be even better with the use of JSX via
 [@kitajs/html](https://github.com/kitajs/html)
 
 ## Installing
@@ -221,4 +221,4 @@ attribute replaces the content of the element with the response from the server.
 The above will swap the `<button>` element with the `<div>` element when the
 button is clicked.
 
-Learn more about [Htmx](https://htmx.org/), **its awesome**!
+Learn more about [Htmx](https://htmx.org/), **it's awesome**!
