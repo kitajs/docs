@@ -147,7 +147,7 @@ const companies = [
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>Our Team</template>
-    <template #lead>The Kita's development team is composed of a diverse group of people from all over the world.</template>
+    <template #lead>Kita's development team is composed of a diverse group of people from all over the world.</template>
   </VPTeamPageTitle>
   
   <VPTeamMembers :members="members" size="small" />
