@@ -8,7 +8,7 @@ loss or corruption, and ensure that the application shuts down cleanly.
 This can be done by using
 [`close-with-grace`](https://github.com/mcollina/close-with-grace)
 
-Firstly, istall the package:
+Firstly, install the package:
 
 ```sh
 npm i close-with-grace
