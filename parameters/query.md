@@ -56,7 +56,9 @@ import type { Query } from '@kitajs/runtime';
 
 // /?option=true
 export function get(option: Query<boolean>) {
-  return option ? "You didn't select the option" : 'You selected the option';
+  return option
+    ? 'You have selected the option'
+    : "You haven't selected the option";
 }
 ```
 
