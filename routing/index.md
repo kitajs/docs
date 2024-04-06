@@ -36,9 +36,7 @@ src/routes
 
 As Kita is only a connector between raw
 [TypeScript](https://www.typescriptlang.org/) files and
-[Fastify](https://fastify.dev).
-
-Kita works with all
+[Fastify](https://fastify.dev), Kita works with all
 [supported methods by Fastify](https://github.com/fastify/fastify/blob/main/lib/httpMethods.js).
 
 ::: code-group
