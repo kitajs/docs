@@ -1,4 +1,4 @@
-# Type Safe HTTP Client
+# Type-Safe HTTP Client
 
 The best part of working with a schematized backend is that you can generate a
 typed HTTP client from your schema.

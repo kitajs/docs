@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 'Kita'
-  text: 'Performant and type safe Fastify router'
+  text: 'Performant and type-safe Fastify router'
   tagline: Build fast end-to-end APIs with ZERO abstraction cost!
   actions:
     - theme: brand
