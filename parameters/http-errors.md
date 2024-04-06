@@ -98,7 +98,6 @@ import type { HttpErrors } from '@fastify/sensible';
 
 export function get(errors: HttpErrors) {
   if (somethingWentWrong) {
-    // This error will be captured by Kita
     throw new Error('This error will NOT be captured by Kita');
   }
 
