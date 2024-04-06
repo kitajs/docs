@@ -395,8 +395,8 @@ export function get() {
 
 ### `@internal`
 
-Marks a route as internal, hiding it from the generated documentation but can
-still be used in the application.
+Marks a route as internal, hiding it from the generated documentation but still
+allowing application usage.
 
 ::: code-group
 
