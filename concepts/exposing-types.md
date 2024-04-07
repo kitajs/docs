@@ -15,7 +15,7 @@ Consider these two example routes:
 
 ::: code-group
 
-```ts {3} [GET]
+```ts {3} [POST]
 import type { Body } from '@kitajs/runtime';
 
 interface PostBody {
@@ -27,7 +27,7 @@ export function post(content: Body<PostBody>) {
 }
 ```
 
-```ts {3} [POST]
+```ts {3} [PUT]
 import type { Body } from '@kitajs/runtime';
 
 export interface PutBody {
