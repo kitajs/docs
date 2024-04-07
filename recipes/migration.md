@@ -1,6 +1,6 @@
 # Migration
 
-Not allways you will start a new project with Kita, sometimes you will need to
+You may not always start a new project with Kita, sometimes you will need to
 migrate an existing project to Kita. This guide will help you to incrementally
 migrate your project to Kita.
 
@@ -44,7 +44,7 @@ use the correct I/O types.
 ::: danger
 
 If you have any existent test suite, it's expected to continue working as before
-because Kita does not changes the Fastify/server behavior, just helps you to
+because Kita does not change the Fastify/server behavior, it just helps you to
 better declare your routes.
 
 :::
@@ -58,8 +58,8 @@ a little more work than migrating from Fastify.
 
 Remember: **This will be a migration across different frameworks.**
 
-First you need to migrate your project from `Express` to `Fastify`. While
-migrating from, its recommended to already register Routes in the Kita way, to
+First you need to migrate your project from `Express` to `Fastify`. While doing
+so, we recommend following Kita's guidelines on registering Routes in order to
 reduce the amount of work needed to migrate to Kita.
 
 ::: tip
@@ -74,8 +74,7 @@ specific code to Fastify over time.
 
 :::
 
-For this migration, there are a lot of useful resources on the internet, some of
-them are:
+For this migration, there are many useful resources on the internet, such as:
 
 - https://sitepoint.com/express-to-fastify-migrate
 - https://blog.appsignal.com/2023/06/28/migrate-your-express-application-to-fastify.html

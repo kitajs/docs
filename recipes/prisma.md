@@ -1,7 +1,7 @@
 # Prisma
 
 Using [Prisma](https://www.prisma.io/) or any other ORM is a perfect example of
-how you can use providers hooks to interact with the lifecycle of Fastify.
+how you can use provider hooks to interact with Fastify's lifecycle.
 
 ::: code-group
 

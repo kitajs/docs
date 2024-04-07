@@ -12,10 +12,10 @@ talk:
 [Fastify](https://fastify.dev/docs/latest/Reference/Validation-and-Serialization/)
 feature, in which Kita takes full advantage of.**
 
-Kita runs at build time, inferring all I/O types for each route and generates
-routes schemas. Enabling Fastify to use a
+Kita runs at build time, inferring all I/O types for each route and generating
+route schemas. This enables Fastify to use a
 [super fast serializer](https://www.npmjs.com/package/fast-json-stringify) and
-[super fast validator](https://www.npmjs.com/package/ajv) .
+[super fast validator](https://www.npmjs.com/package/ajv).
 
 ## Parsing the request
 

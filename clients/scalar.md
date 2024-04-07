@@ -1,8 +1,9 @@
 # Scalar
 
-Scalar lets you generate interactive API documentations from Swagger files.
+Scalar allows you to generate interactive API documentation from Swagger files.
 
-Kita brings it to the next level by automatic configuring everything for you.
+Kita brings it to the next level by automatically configuring everything for
+you.
 
 Simply by using Kita and navigating to `http://localhost:1227/reference`, you
 will see the interactive API documentation.

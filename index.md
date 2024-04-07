@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 'Kita'
-  text: 'Performant and type safe Fastify router'
+  text: 'Performant and type-safe Fastify router'
   tagline: Build fast end-to-end APIs with ZERO abstraction cost!
   actions:
     - theme: brand
@@ -36,7 +36,7 @@ features:
       provide a seamless experience.
 
   - icon: 🧩
-    title: Hassle free
+    title: Hassle-free
     details:
       Good defaults. No magic. Kita does not require any configuration
       whatsoever.
@@ -147,7 +147,7 @@ const companies = [
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>Our Team</template>
-    <template #lead>The Kita's development team is composed of a diverse group of people from all over the world.</template>
+    <template #lead>Kita's development team is composed of a diverse group of people from all over the world.</template>
   </VPTeamPageTitle>
   
   <VPTeamMembers :members="members" size="small" />

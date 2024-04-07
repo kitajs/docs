@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress';
 
-const description = 'Performant and type safe Fastify router';
+const description = 'Performant and type-safe Fastify router';
 const url = 'https://kita.js.org';
 
 // https://vitepress.dev/reference/site-config
@@ -92,7 +92,7 @@ export default defineConfig({
 
     nav: [
       {
-        link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just found @kitajsorg, a performant and type safe Fastify router!\n\nYou should check it out at:\n${url}`)}`,
+        link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just found @kitajsorg, a performant and type-safe Fastify router!\n\nYou should check it out at:\n${url}`)}`,
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/twitter/follow/ktiajsorg?style=flat&logo=x&label=Tweet%20about%20us&labelColor=black">',
         noIcon: true
       },
@@ -226,7 +226,7 @@ export default defineConfig({
         text: 'Clients',
         base: '/clients/',
         items: [
-          { text: 'Type safe HTTP client', link: 'orval.md' },
+          { text: 'Type-safe HTTP client', link: 'orval.md' },
           { text: 'API Reference', link: 'scalar.md' }
         ]
       },

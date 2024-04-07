@@ -95,7 +95,7 @@ npm i -D @swc-node/register @swc/helpers
 
 :::
 
-After that, you just need to add an `-r` flag to your `node` command and change
+After that, you just need to add a `-r` flag to your `node` command and change
 the target from `dist/index.js` to `src/index.ts`.
 
 ::: code-group

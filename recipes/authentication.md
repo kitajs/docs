@@ -10,7 +10,7 @@ Firstly, install the required packages:
 npm i @fastify/jwt argon2
 ```
 
-Then, create a provider that will handle the authentication logic and also a
+Then, create a provider that will handle the authentication logic and also an
 auth service that will handle the token creation and extraction:
 
 ::: code-group

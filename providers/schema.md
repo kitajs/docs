@@ -4,7 +4,7 @@ Another provider that can be widely used is the `Schema` provider.
 
 This provider is a bit different from the others, as it doesn't interact with
 the request or reply directly. Instead, it gets all type exports from the
-`providers/schemas.ts` file and injects it into a `
+`providers/schemas.ts` file and injects it into a
 
 ::: code-group
 

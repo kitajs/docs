@@ -1,4 +1,4 @@
-# Type Safe HTTP Client
+# Type-Safe HTTP Client
 
 The best part of working with a schematized backend is that you can generate a
 typed HTTP client from your schema.
@@ -204,4 +204,4 @@ choose to add this script to the backend:
 
 This way, when you run the `npm run dev` command, `concurrently` will also
 execute Orval and it will automatically update your HTTP client whenever there
-is a change in the OpenAPI schema.
+is a change to the OpenAPI schema.
