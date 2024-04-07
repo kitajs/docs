@@ -99,7 +99,7 @@ Default values can be used with `Header`.
 import type { Header } from '@kitajs/runtime';
 
 export function get(token: Header = 'please let me in') {
-  return `This is your Auth-Token: ${anything}`;
+  return `You used the header 'Token: ${token}'!`;
 }
 ```
 
