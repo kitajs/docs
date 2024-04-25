@@ -137,3 +137,45 @@ export function get(user: Path<'username'>) {
 ```
 
 :::
+
+## Wildcard routes
+
+You can define a wildcard route by naming your file as `[...].ts`.
+
+::: code-group
+
+```ts [src/routes/[...].ts]
+export function get() {
+  return 'Wildcard route';
+}
+```
+
+```json [Route Schema]
+{
+  "paths": {
+    "/{*}": {
+      "get": {
+        "operationId": "getWildcard",
+        "parameters": [
+          {
+            "schema": { "type": "string" },
+            "in": "path",
+            "name": "*",
+            "required": true
+          }
+        ],
+        "responses": {
+          "2XX": {
+            "description": "Default Response",
+            "content": {
+              "application/json": { "schema": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+:::
