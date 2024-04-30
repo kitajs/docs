@@ -28,7 +28,7 @@ const app = fastify();
 
 app.register(Kita, {
   // Disables the UI in production to prevent publicly exposing your API
-  fastifyScalarUi: !process.env.isProd
+  fastifyScalarUi: !process.env.isProd as false
 });
 
 app.listen(1227);

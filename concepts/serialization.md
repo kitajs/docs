@@ -91,6 +91,14 @@ You can use the above interface inside a route handler:
 ::: code-group
 
 ```ts [Example route]
+import type { Body } from '@kitajs/runtime';
+
+interface CreateUser {
+  name: string;
+  email: string;
+  age: number;
+}
+
 export function post(data: Body<CreateUser>) {
   return true;
 }

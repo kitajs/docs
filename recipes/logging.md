@@ -115,7 +115,7 @@ There you go, you automatically have correlated logs for each request:
 
 ::: code-group
 
-```js [Log]
+```sh [Log]
 [20:25:48.786] INFO (1060221): incoming request
     reqId: "req-1"
     req: {

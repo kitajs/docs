@@ -49,8 +49,8 @@ registered in your Fastify instance:
 
 ```ts {5,15} [src/routes/index.ts]
 import type { File } from '@kitajs/runtime';
-import { createWriteStream } from 'fs';
-import { createBrotliCompress } from 'zlib';
+import { createWriteStream } from 'node:fs';
+import { createBrotliCompress } from 'node:zlib';
 
 export async function post(file: File) {
   await file.file

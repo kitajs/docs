@@ -110,3 +110,7 @@
     format('woff2');
   font-display: swap;
 }
+
+.twoslash-popup-docs.twoslash-popup-docs-tags.vp-doc {
+  display: none;
+}

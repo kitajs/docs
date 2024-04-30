@@ -5,5 +5,5 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
   },
-  "include": ["**/*.ts"]
+  "include": ["fake-project"]
 }

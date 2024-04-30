@@ -139,6 +139,7 @@ layout while fetching data from the database or other services.
 
 ```tsx [src/routes/index.tsx]
 import { Suspense } from '@kitajs/html/suspense';
+import type { FastifyRequest } from 'fastify';
 import { MyAsyncComponent } from '../components/MyAsyncComponent';
 
 export function get({ id }: FastifyRequest) {

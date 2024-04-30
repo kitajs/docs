@@ -55,7 +55,7 @@ npm dev
 Visit `http://localhost:1227/reference` in your browser to see the generated
 OpenAPI documentation.
 
-[Read our code recipes for more information on how to customize your project.](./recipes/index.md)
+[Read our code recipes for more information on how to customize your project.](./recipes/authentication.md)
 
 ## Minimal Installation
 
@@ -192,7 +192,7 @@ npm start
 Visit `http://localhost:3000/reference` in your browser to see the
 documentation.
 
-[Read our code recipes for more information on how to customize your project.](./recipes/index.md)
+[Read our code recipes for more information on how to customize your project.](./recipes/authentication.md)
 
 ::: tip
 

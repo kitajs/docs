@@ -6,8 +6,8 @@ how you can use provider hooks to interact with Fastify's lifecycle.
 ::: code-group
 
 ```ts [src/providers/prisma.ts]
+import { PrismaClient } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { PrismaClient } from 'prisma-client';
 
 // Singleton is not a problem here
 const prisma = new PrismaClient({

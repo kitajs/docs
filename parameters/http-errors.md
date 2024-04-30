@@ -25,7 +25,8 @@ the potential error thrown in the OpenAPI schema of the route.
 import type { HttpErrors } from '@fastify/sensible';
 
 export function get(errors: HttpErrors) {
-  if (somethingWentWrong) {
+  // Something went wrong
+  if (Math.random() > 0.5) {
     throw errors.notFound('Something went wrong');
   }
 
@@ -97,14 +98,16 @@ won't be captured.
 import type { HttpErrors } from '@fastify/sensible';
 
 export function get(errors: HttpErrors) {
-  if (somethingWentWrong) {
-  // This error will NOT be captured by Kita
+  // Something went wrong
+  if (Math.random() > 0.5) {
+    // This error will NOT be captured by Kita
     throw new Error('This error will NOT be captured by Kita');
   }
 
-  if (somethingWentWrong2) {
+  // Something went wrong again
+  if (Math.random() > 0.5) {
     // Anything thrown inside `myFnThatThrows` will NOT be captured by Kita
-    myFnThatThrows(errors);
+    return myFnThatThrows(errors);
   }
 
   return 'Success!';

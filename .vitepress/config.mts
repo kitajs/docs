@@ -1,3 +1,5 @@
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
+import ts from 'typescript';
 import { defineConfig } from 'vitepress';
 
 const description = 'Performant and type-safe Fastify router';
@@ -16,10 +18,26 @@ export default defineConfig({
   markdown: {
     lineNumbers: true,
     typographer: true,
+
     theme: {
       dark: 'rose-pine-moon',
       light: 'rose-pine-dawn'
-    }
+    },
+
+    codeTransformers: [
+      transformerTwoslash({
+        jsdoc: true,
+        throws: false,
+        explicitTrigger: false,
+        twoslashOptions: {
+          compilerOptions: {
+            types: ['@fastify/swagger', '@kitajs/runtime', '@kitajs/html'],
+            jsx: ts.JsxEmit.ReactJSX,
+            jsxImportSource: '@kitajs/html'
+          }
+        }
+      })
+    ]
   },
 
   head: [
@@ -92,7 +110,9 @@ export default defineConfig({
 
     nav: [
       {
-        link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`I just found @kitajsorg, a performant and type-safe Fastify router!\n\nYou should check it out at:\n${url}`)}`,
+        link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          `I just found @kitajsorg, a performant and type-safe Fastify router!\n\nYou should check it out at:\n${url}`
+        )}`,
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/twitter/follow/ktiajsorg?style=flat&logo=x&label=Tweet%20about%20us&labelColor=black">',
         noIcon: true
       },
@@ -168,7 +188,6 @@ export default defineConfig({
       {
         text: 'Parameters',
         base: '/parameters/',
-        collapsed: true,
         items: [
           {
             text: 'Body',
@@ -215,7 +234,6 @@ export default defineConfig({
       {
         text: 'Providers',
         base: '/providers/',
-        collapsed: true,
         items: [
           { text: 'What is a provider', link: 'index.md' },
           { text: 'Provider Hooks', link: 'hooks.md' },
@@ -232,9 +250,7 @@ export default defineConfig({
       },
       {
         text: 'Recipes',
-        link: '/',
         base: '/recipes/',
-        collapsed: true,
         items: [
           { text: 'Prisma', link: 'prisma.md' },
           { text: 'Authentication', link: 'authentication.md' },

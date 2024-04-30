@@ -66,6 +66,7 @@ import type { Body } from '@kitajs/runtime';
 
 interface CreateUserRequest {
   name: string;
+  age: number;
 }
 
 export function post(content: Body<CreateUserRequest>) {
