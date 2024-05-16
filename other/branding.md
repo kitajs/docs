@@ -29,23 +29,22 @@ projects to show your support for the project.
 
 ## Logo
 
-[SVG](../public/logo.svg) and [PNG](../public/logo.png) available
+[SVG](/logo.svg) and [PNG](/logo.png) available
 
-<img src="../public/logo.png" alt="Kita logo" style="border: 1px solid var(--vp-c-text-1)" />
+<img src="/logo.png" alt="Kita logo" style="border: 1px solid var(--vp-c-text-1)" />
 
 ## Banner
 
-[With buttons](../public/banner-btn.png) and
-[without buttons](../public/banner.png):
+[With buttons](/banner-btn.png) and [without buttons](/banner.png):
 
-<img src="../public/banner.png" alt="Kita banner" style="border: 1px solid var(--vp-c-text-1)" />
+<img src="/banner.png" alt="Kita banner" style="border: 1px solid var(--vp-c-text-1)" />
 
 ## Logo Dark background
 
-[SVG](../public/logo-fadeless.svg), [PNG](../public/logo-fadeless.png) and with
-[Fade](../public/logo-bg.png) available
+[SVG](/logo-fadeless.svg), [PNG](/logo-fadeless.png) and with
+[Fade](/logo-bg.png) available
 
-<img src="../public/logo-bg.png" alt="Kita logo dark background" style="border: 1px solid var(--vp-c-text-1)" />
+<img src="/logo-bg.png" alt="Kita logo dark background" style="border: 1px solid var(--vp-c-text-1)" />
 
 ## All assets
 
