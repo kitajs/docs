@@ -142,11 +142,13 @@ export function get(user: Path<'username'>) {
 
 You can define a wildcard route by naming your file as `[...].ts`.
 
+You can use `Path<string, '*'>` to capture the remaining path.
+
 ::: code-group
 
 ```ts [src/routes/[...].ts]
-export function get() {
-  return 'Wildcard route';
+export function get(remaining: Path<string, '*'>) {
+  return `Wildcard route of: ${remaining}`;
 }
 ```
 
