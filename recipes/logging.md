@@ -46,7 +46,7 @@ To achieve this, it is recommended to use
 ::: code-group
 
 ```sh [Terminal]
-npm install -D pin-pretty
+npm install -D pino-pretty
 ```
 
 :::
