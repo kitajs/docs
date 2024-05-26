@@ -1,10 +1,15 @@
-# Jsx
+# JSX
 
 After all, JSX is just another way to write HTML. JSX is a syntax extension for
 JavaScript that looks similar to XML.
 
 Learning some syntax gotchas and how to extend types will make your life easier
 when working with JSX.
+
+Firstly, it's recommended to read the
+[React JSX in depth](https://react.dev/learn/writing-markup-with-jsx) and
+[Javascript in JSX with curly braces](https://react.dev/learn/jsx-in-depth#javascript-in-jsx-with-curly-braces)
+articles from the Official React documentation.
 
 ## Fragments
 
@@ -112,6 +117,86 @@ not recommend using it**.
 
 Just add this triple slash directive to the top of your file:
 
-```html
+```tsx
 /// <reference types="@kitajs/html/all-types.d.ts" />
 ```
+
+## How it works
+
+This package just aims to be a drop in replacement syntax for JSX, and it works
+because you [tell tsc to transpile](./configuration.md#tsconfig) JSX syntax to
+calls to our own JSX-runtime.
+
+```tsx
+<ol start={2}>
+  {[1, 2].map((i) => (
+    <li>{i}</li>
+  ))}
+</ol>
+```
+
+Gets transpiled by tsc to plain javascript:
+
+```js
+const runtime = require('@kitajs/html/jsx-runtime');
+
+runtime.jsx('ol', {
+  start: 2,
+  children: [1, 2].map((i) => jsx('li', { children: i }))
+});
+```
+
+Which, when called, returns this string:
+
+```xml
+<ol start="2"><li>1</li><li>2</li></ol>
+```
+
+## Format HTML output
+
+This package emits HTML as a compact string, useful for over the wire
+environments. However, if your use case really needs the output HTML to be
+pretty printed, you can use an external JS library to do so, like
+[html-prettify](https://www.npmjs.com/package/html-prettify).
+
+```tsx
+import prettify from 'html-prettify';
+
+const html = (
+  <div>
+    <div>1</div>
+    <div>2</div>
+  </div>
+);
+
+console.log(html);
+// <div><div>1</div><div>2</div></div>
+
+console.log(prettify(html));
+// <div>
+//   <div>1</div>
+//   <div>2</div>
+// </div>
+```
+
+## Serialization table
+
+Here is the table that explains how this library handles different types of
+children, describing the inputs and outputs.
+
+> [!IMPORTANT]
+>
+> Arrays are simply concatenated with no separator.
+
+| Input Type                 | Output Type           |
+| -------------------------- | --------------------- |
+| `<div>{"abc"}</div>`       | `<div>abc</div>`      |
+| `<div>{10}</div>`          | `<div>10</div>`       |
+| `<div>{NaN}</div>`         | `<div>NaN</div>`      |
+| `<div>{Infinity}</div>`    | `<div>Infinity</div>` |
+| `<div>{true}</div>`        | `<div>true</div>`     |
+| `<div>{false}</div>`       | `<div>false</div>`    |
+| `<div>{null}</div>`        | `<div></div>`         |
+| `<div>{undefined}</div>`   | `<div></div>`         |
+| `<div>{[1, 2, 3]}</div>`   | `<div>123</div>`      |
+| `<div>{BigInt(123)}</div>` | `<div>123</div>`      |

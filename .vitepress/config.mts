@@ -243,7 +243,9 @@ export default defineConfig({
             { text: 'Sanitization', link: 'sanitization.md' },
             { text: 'Async Components', link: 'async.md' },
             { text: 'Integrations', link: 'integrations.md' },
-            { text: 'Jsx', link: 'jsx.md' }
+            { text: 'JSX', link: 'jsx.md' },
+            { text: 'Deprecations', link: 'deprecations.md' },
+            { text: 'Benchmark', link: 'benchmark.md' }
           ]
         }
       ]
