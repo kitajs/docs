@@ -3,7 +3,7 @@
 Kita (`/ˈkitə/`) is a [meta](https://en.wikipedia.org/wiki/Metaprogramming)
 router for Fastify.
 
-::: tip Just want to try it by yourself?
+::: tip Just want to try it yourself?
 
 Skip to the [Quickstart](./quickstart) or head over to our
 [Migration Guide](./recipes/migration.md) to migrate your existing project to
@@ -12,7 +12,7 @@ Kita.
 :::
 
 Kita is a tool that analyzes your TypeScript source code for functions named
-after an HTTP method (`get`, `post`, ...) within the `src/routes` folder and
+after an HTTP method (`get`, `post`, etc.) within the `src/routes` folder and
 automatically generates all the necessary configurations to register your routes
 in Fastify.
 
@@ -23,8 +23,8 @@ and output data**.
 ## Why use Kita?
 
 Kita was created to facilitate the creation of APIs in TypeScript, allowing you
-to focus on what really matters: **the code**. With Kita, you don't worry about
-input validation, output, documentation, routing, and so on.
+to focus on what really matters: **the code**. With Kita, you don't have to
+worry about input validation, output, documentation, routing, and so on.
 
 Its philosophy is as follows:
 
@@ -32,11 +32,11 @@ Its philosophy is as follows:
 
 ---
 
-Normally you define an interface for the body of your endpoint, then define a
+Normally, you define an interface for the body of your endpoint, then define a
 schema to validate it, then write documentation about the route, and then
-register the body parse in the route. Repeat the above for `Query`, `Body`,
-`Params`, `Headers`, `Response`, and `Plugins` and **before you know it you have
-10 different files for just a single HTTP endpoint.**
+register the body parser in the route. Repeat the above for `Query`, `Body`,
+`Params`, `Headers`, `Response`, and `Plugins`, and **before you know it, you
+have 10 different files for just a single HTTP endpoint.**
 
 With Kita, you do all this with **just** one exported function for each
 endpoint.
@@ -81,5 +81,5 @@ OpenAPI documentation:
 By using code generators for the client _(like [Orval.dev](https://orval.dev/)
 or [Swagger Codegen](https://swagger.io/tools/swagger-codegen/))_, when making a
 simple design change in the API, you can regenerate the client and ensure that
-the frontend is always in sync with the backend, **showing all the lines of code
-that need to be changed**.
+the frontend is always in sync with the backend, **highlighting all the lines of
+code that need to be changed**.
