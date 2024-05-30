@@ -147,6 +147,8 @@ You can use `Path<string, '*'>` to capture the remaining path.
 ::: code-group
 
 ```ts [src/routes/[...].ts]
+import type { Path } from '@kitajs/runtime';
+
 export function get(remaining: Path<string, '*'>) {
   return `Wildcard route of: ${remaining}`;
 }

@@ -14,24 +14,24 @@
   },
   "dependencies": {
     "@arthurfiorette/prettier-config": "^1.0.12",
-    "@shikijs/vitepress-twoslash": "^1.3.0",
+    "@shikijs/vitepress-twoslash": "^1.6.0",
     "@vueuse/core": "^10.9.0",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
-    "vitepress": "1.1.4",
-    "vue": "^3.4.22"
+    "vitepress": "1.2.2",
+    "vue": "^3.4.27"
   },
   "devDependencies": {
-    "@fastify/jwt": "^8.0.0",
+    "@fastify/jwt": "^8.0.1",
     "@fastify/multipart": "^8.2.0",
     "@fastify/sensible": "^5.6.0",
     "@fastify/swagger": "^8.14.0",
     "@kitajs/cli": "^1.1.36",
     "@kitajs/html": "^4.1.0",
     "@kitajs/runtime": "^1.1.19",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.12",
     "close-with-grace": "^1.3.0",
-    "fastify": "^4.26.2",
+    "fastify": "^4.27.0",
     "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@9.1.1",
