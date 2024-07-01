@@ -29,7 +29,7 @@
     "@kitajs/cli": "^1.1.36",
     "@kitajs/html": "^4.1.0",
     "@kitajs/runtime": "^1.1.19",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.14.9",
     "close-with-grace": "^1.3.0",
     "fastify": "^4.26.2",
     "typescript": "^5.4.5"
