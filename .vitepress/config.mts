@@ -111,7 +111,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/favicon.svg',
 
     outline: 'deep',
 
@@ -120,6 +120,14 @@ export default defineConfig({
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/github/stars/kitajs/kitajs?style=flat&logo=github&label=Star%20us!&color=%23b58d88">',
         link: 'https://github.com/kitajs/kitajs',
         noIcon: true
+      },
+      {
+        text: '',
+        link: '#'
+      },
+      {
+        text: 'Router',
+        link: '../what-is-kita.md'
       },
       {
         text: 'Html Engine',
@@ -235,7 +243,6 @@ export default defineConfig({
       ],
       '/html/': [
         {
-          text: 'Html Engine',
           base: '/html/',
           items: [
             { text: 'Introduction', link: 'index.md' },
@@ -254,8 +261,7 @@ export default defineConfig({
     socialLinks: [
       { icon: 'discord', link: 'https://kita.js.org/discord' },
       { icon: 'github', link: 'https://github.com/kitajs' },
-      { icon: 'twitter', link: 'https://twitter.com/kitajsorg' },
-      { icon: { svg: '🇧🇷' }, link: 'https://github.com/orgs/kitajs/people' }
+      { icon: 'twitter', link: 'https://twitter.com/kitajsorg' }
     ],
 
     externalLinkIcon: true,

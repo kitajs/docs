@@ -87,7 +87,7 @@ In your development script, after using the `node` command, you can use the
 :::
 
 In production, it is still recommended to store logs as JSON, and if necessary,
-you can use `pino-pretty` later to format logs in a development environment.
+you can use `pino-pretty` later to format logs in a post processing step.
 
 Read more about [Pino](https://github.com/pinojs/pino#usage) and
 [Pino Pretty](https://github.com/pinojs/pino-pretty#usage).

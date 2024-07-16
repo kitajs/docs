@@ -12,8 +12,11 @@ hero:
     - theme: alt
       text: What is Kita?
       link: /what-is-kita
+    - theme: alt
+      text: Html engine
+      link: ./html/index.md
   image:
-    src: /logo.svg
+    src: /doug.svg
     alt: Kita brown and white lotus logo
 
 features:

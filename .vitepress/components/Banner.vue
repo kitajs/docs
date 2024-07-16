@@ -30,8 +30,8 @@ const dismiss = () => {
 <template>
   <div ref="el" class="banner">
     <div class="text">
-      🎉 <b>Kita</b> is officially Stable!
-      <a href="/quickstart#automatic-installation">Try it out today</a>!
+      <b style="font-size: 1.3rem">Kita</b> is undergoing <b>major</b> changes
+      and is unready for production use until <b>v2</b> is released.
     </div>
 
     <button type="button" @click="dismiss">
@@ -81,8 +81,8 @@ html {
   z-index: var(--vp-z-index-layout-top);
   padding: 8px;
   text-align: center;
-  background-color: var(--vp-c-brand-2);
-  color: var(--vp-button-brand-text);
+  background-color: #ffd101;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
