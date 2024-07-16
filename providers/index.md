@@ -94,9 +94,9 @@ See this example below that extends the route schema with a description.
 ```ts [src/providers/description.ts]
 import { RouteSchema } from '@kitajs/runtime';
 
-export type RouteSchema = string;
+export type MyProvider = string;
 
-export default function (): RouteSchema {
+export default function (): MyProvider {
   return 'Hello World';
 }
 
@@ -107,10 +107,8 @@ export function transformSchema(schema: RouteSchema): RouteSchema {
 ```
 
 ```ts [src/routes/index.ts]
-import { RouteSchema } from '../providers/description';
-
-export function get(schema: RouteSchema) {
-  return schema;
+export function get(provider: MyProvider) {
+  return provider;
 }
 ```
 
@@ -147,7 +145,7 @@ See this example:
 ::: code-group
 
 ```ts [src/providers/MyProvider.ts]
-import { ProviderGenerics } from '@kitajs/runtime';
+import { ProviderGenerics, RouteSchema } from '@kitajs/runtime';
 
 export interface GenericTest<
   Num extends number = number,

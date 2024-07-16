@@ -48,7 +48,7 @@ features:
       generation.
 
   - icon: 🚀
-    title: Fastify serialization
+    title: Safe and Fast I/O
     details:
       All routes are automatically serialized using Fastify's super fast
       serialization and deserialization flow.

@@ -1,4 +1,5 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
+import { resolve } from 'node:path';
 import ts from 'typescript';
 import { defineConfig } from 'vitepress';
 
@@ -31,9 +32,15 @@ export default defineConfig({
         explicitTrigger: false,
         twoslashOptions: {
           compilerOptions: {
-            types: ['@fastify/swagger', '@kitajs/runtime', '@kitajs/html'],
+            types: [
+              '@fastify/swagger',
+              '@kitajs/runtime',
+              '@kitajs/html',
+              resolve('.vitepress/fake-project/globals.d.ts')
+            ],
             jsx: ts.JsxEmit.ReactJSX,
-            jsxImportSource: '@kitajs/html'
+            jsxImportSource: '@kitajs/html',
+            strict: false
           }
         }
       })
@@ -110,21 +117,13 @@ export default defineConfig({
 
     nav: [
       {
-        link: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-          `I just found @kitajsorg, a performant and type-safe Fastify router!\n\nYou should check it out at:\n${url}`
-        )}`,
-        text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/twitter/follow/ktiajsorg?style=flat&logo=x&label=Tweet%20about%20us&labelColor=black">',
-        noIcon: true
-      },
-      {
         text: '<img alt="github.com/kitajs Org stars" src="https://img.shields.io/github/stars/kitajs/kitajs?style=flat&logo=github&label=Star%20us!&color=%23b58d88">',
         link: 'https://github.com/kitajs/kitajs',
         noIcon: true
       },
       {
-        text: '🇧🇷',
-        link: 'https://github.com/arthurfiorette',
-        noIcon: true
+        text: 'Html Engine',
+        link: '../html/index.md'
       }
     ],
 
@@ -148,135 +147,115 @@ export default defineConfig({
         'Copyright (c) 2022-present Arthur Fiorette & Kita Contributors'
     },
 
-    sidebar: [
-      {
-        base: '/',
-        items: [
-          {
-            text: 'What is Kita?',
-            link: 'what-is-kita.md'
-          },
-          {
-            text: 'Practical example',
-            link: 'practical-example.md'
-          },
-          {
-            text: 'Quick start',
-            link: 'quickstart.md'
-          }
-        ]
-      },
-      {
-        text: 'Principal concepts',
-        base: '/concepts/',
-        items: [
-          { text: 'Routing', link: 'routing.md' },
-          { text: 'Serialization', link: 'serialization.md' },
-          { text: 'Exposing types', link: 'exposing-types.md' },
-          { text: 'JSDocs', link: 'jsdocs.md' }
-        ]
-      },
-      {
-        text: 'Routing',
-        base: '/routing/',
-        items: [
-          { text: 'Rest Routes', link: 'index.md' },
-          { text: 'Html Routes', link: 'html.md' },
-          { text: 'Configuration', link: 'configuration.md' }
-        ]
-      },
-      {
-        text: 'Parameters',
-        base: '/parameters/',
-        items: [
-          {
-            text: 'Body',
-            link: 'body.md'
-          },
-          {
-            text: 'FastifyInstance',
-            link: 'fastify.md'
-          },
-          {
-            text: 'FastifyRequest',
-            link: 'request-reply.md'
-          },
-          {
-            text: 'FastifyReply',
-            link: 'request-reply.md'
-          },
-          {
-            text: 'Http Errors',
-            link: 'http-errors.md'
-          },
-          {
-            text: 'Cookie',
-            link: 'cookie.md'
-          },
-          {
-            text: 'File',
-            link: 'file.md'
-          },
-          {
-            text: 'Header',
-            link: 'header.md'
-          },
-          {
-            text: 'Path',
-            link: 'path.md'
-          },
-          {
-            text: 'Query',
-            link: 'query.md'
-          }
-        ].sort((a, b) => a.text.localeCompare(b.text))
-      },
-      {
-        text: 'Providers',
-        base: '/providers/',
-        items: [
-          { text: 'What is a provider', link: 'index.md' },
-          { text: 'Provider Hooks', link: 'hooks.md' },
-          { text: 'Schema Provider', link: 'schema.md' }
-        ]
-      },
-      {
-        text: 'Clients',
-        base: '/clients/',
-        items: [
-          { text: 'Type-safe HTTP client', link: 'orval.md' },
-          { text: 'API Reference', link: 'scalar.md' }
-        ]
-      },
-      {
-        text: 'Recipes',
-        base: '/recipes/',
-        items: [
-          { text: 'Prisma', link: 'prisma.md' },
-          { text: 'Authentication', link: 'authentication.md' },
-          { text: 'Environment variables', link: 'env-variables.md' },
-          { text: 'Graceful shutdown', link: 'graceful-shutdown.md' },
-          { text: 'Migrating existing projects', link: 'migration.md' },
-          { text: 'Development server', link: 'dev-server.md' },
-          { text: 'Logging', link: 'logging.md' }
-        ].sort((a, b) => a.text.localeCompare(b.text))
-      },
-      {
-        text: 'Other',
-        base: '/other/',
-        items: [
-          { text: 'Feature your company', link: 'feature-your-company.md' },
-          { text: 'Analytics', link: 'analytics.md' },
-          { text: 'Branding', link: 'branding.md' }
-        ]
-      }
-    ],
+    sidebar: {
+      '/': [
+        {
+          base: '/',
+          items: [
+            { text: 'What is Kita?', link: 'what-is-kita.md' },
+            { text: 'Practical example', link: 'practical-example.md' },
+            { text: 'Quick start', link: 'quickstart.md' }
+          ]
+        },
+        {
+          text: 'Principal concepts',
+          base: '/concepts/',
+          items: [
+            { text: 'Routing', link: 'routing.md' },
+            { text: 'Serialization', link: 'serialization.md' },
+            { text: 'Exposing types', link: 'exposing-types.md' },
+            { text: 'JSDocs', link: 'jsdocs.md' },
+            { text: 'Html Engine', link: '../html/index.md' }
+          ]
+        },
+        {
+          text: 'Routing',
+          base: '/routing/',
+          items: [
+            { text: 'Rest Routes', link: 'index.md' },
+            { text: 'Html Routes', link: 'html.md' },
+            { text: 'Configuration', link: 'configuration.md' }
+          ]
+        },
+        {
+          text: 'Parameters',
+          base: '/parameters/',
+          items: [
+            { text: 'Body', link: 'body.md' },
+            { text: 'FastifyInstance', link: 'fastify.md' },
+            { text: 'FastifyRequest', link: 'request-reply.md' },
+            { text: 'FastifyReply', link: 'request-reply.md' },
+            { text: 'Http Errors', link: 'http-errors.md' },
+            { text: 'Cookie', link: 'cookie.md' },
+            { text: 'File', link: 'file.md' },
+            { text: 'Header', link: 'header.md' },
+            { text: 'Path', link: 'path.md' },
+            { text: 'Query', link: 'query.md' }
+          ].sort((a, b) => a.text.localeCompare(b.text))
+        },
+        {
+          text: 'Providers',
+          base: '/providers/',
+          items: [
+            { text: 'What is a provider', link: 'index.md' },
+            { text: 'Provider Hooks', link: 'hooks.md' },
+            { text: 'Schema Provider', link: 'schema.md' }
+          ]
+        },
+        {
+          text: 'Clients',
+          base: '/clients/',
+          items: [
+            { text: 'Type-safe HTTP client', link: 'orval.md' },
+            { text: 'API Reference', link: 'scalar.md' }
+          ]
+        },
+        {
+          text: 'Recipes',
+          base: '/recipes/',
+          items: [
+            { text: 'Prisma', link: 'prisma.md' },
+            { text: 'Authentication', link: 'authentication.md' },
+            { text: 'Environment variables', link: 'env-variables.md' },
+            { text: 'Graceful shutdown', link: 'graceful-shutdown.md' },
+            { text: 'Migrating existing projects', link: 'migration.md' },
+            { text: 'Development server', link: 'dev-server.md' },
+            { text: 'Logging', link: 'logging.md' }
+          ].sort((a, b) => a.text.localeCompare(b.text))
+        },
+        {
+          text: 'Other',
+          base: '/other/',
+          items: [
+            { text: 'Feature your company', link: 'feature-your-company.md' },
+            { text: 'Analytics', link: 'analytics.md' },
+            { text: 'Branding', link: 'branding.md' }
+          ]
+        }
+      ],
+      '/html/': [
+        {
+          text: 'Html Engine',
+          base: '/html/',
+          items: [
+            { text: 'Introduction', link: 'index.md' },
+            { text: 'Configuration', link: 'configuration.md' },
+            { text: 'Sanitization', link: 'sanitization.md' },
+            { text: 'Async Components', link: 'async.md' },
+            { text: 'Integrations', link: 'integrations.md' },
+            { text: 'JSX', link: 'jsx.md' },
+            { text: 'Deprecations', link: 'deprecations.md' },
+            { text: 'Benchmark', link: 'benchmark.md' }
+          ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'discord', link: 'https://kita.js.org/discord' },
       { icon: 'github', link: 'https://github.com/kitajs' },
       { icon: 'twitter', link: 'https://twitter.com/kitajsorg' },
-      { icon: 'npm', link: 'https://www.npmjs.com/package/@kitajs/cli' }
+      { icon: { svg: '🇧🇷' }, link: 'https://github.com/orgs/kitajs/people' }
     ],
 
     externalLinkIcon: true,
