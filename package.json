@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@arthurfiorette/prettier-config": "^1.0.12",
-    "@shikijs/vitepress-twoslash": "^1.6.0",
+    "@shikijs/vitepress-twoslash": "^1.11.0",
     "@vueuse/core": "^10.9.0",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
