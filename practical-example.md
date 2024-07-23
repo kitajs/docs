@@ -15,13 +15,11 @@ Below is the simplest Fastify server you've ever seen:
 
 ::: code-group
 
-```ts [src/index.ts]
+```ts {4,5,6} [src/index.ts]
 import { Kita } from '@kitajs/runtime';
 import fastify from 'fastify';
 
-fastify() // [!code focus:3]
-  .register(Kita)
-  .listen({ port: 1227 });
+fastify().register(Kita).listen({ port: 1227 });
 ```
 
 :::

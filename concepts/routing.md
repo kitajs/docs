@@ -68,8 +68,6 @@ the root of your application.
 ```ts [src/index.ts]
 // This is required to be executed before any import or require // [!code focus:2]
 globalThis.KITA_PROJECT_ROOT ??= __dirname;
-
-//...
 ```
 
 :::
@@ -85,11 +83,9 @@ main file:
 ::: code-group
 
 ```ts [src/index.ts]
-// This is required to be executed before any import or require // [!code --:2] // [!code focus:3]
+// This is required to be executed before any import or require // [!code --:2]
 globalThis.KITA_PROJECT_ROOT ??= __dirname;
 import './prelude'; // [!code ++]
-
-// ...
 ```
 
 ```ts [src/prelude.ts]
