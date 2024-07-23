@@ -16,7 +16,7 @@ hero:
       text: Html engine
       link: ./html/index.md
   image:
-    src: /doug.svg
+    src: /doug-pc-glasses.svg
     alt: Kita brown and white lotus logo
 
 features:
@@ -94,7 +94,7 @@ const members = [
   {
     avatar: 'https://github.com/devzolo.png',
     name: 'Devzolo 🇧🇷',
-    title: ' Member',
+    title: 'Member',
     links: [
       { icon: 'github', link: 'https://github.com/devzolo' },
       { icon: 'twitter', link: 'https://twitter.com/devzolo' }
@@ -123,11 +123,22 @@ const companies = [
     link: 'https://home.kascosys.com.br'
   }
 ];
+
+const doug = [
+  {
+   avatar: '/doug-head-glasses.svg',
+    name: 'Doug 🐢',
+    title: 'Mascot',
+    links: [
+      { icon: 'twitter', link: 'https://twitter.com/kitajsorg' }
+    ]
+  }
+];
 </script>
 
 <VPTeamPage>
   <VPTeamPageTitle>
-    <template #title id="asd">Trusted by companies</template>
+    <template #title>Trusted by companies</template>
     <template #lead>Kita is proudly powering a large ecosystem of organizations and products worldwide.</template>
   </VPTeamPageTitle>
 
@@ -152,7 +163,7 @@ const companies = [
     <template #title>Our Team</template>
     <template #lead>Kita's development team is composed of a diverse group of people from all over the world.</template>
   </VPTeamPageTitle>
-  
+
   <VPTeamMembers :members="members" size="small" />
 
   <small id="small-text">
@@ -160,4 +171,13 @@ const companies = [
     <br />
     Contributing to a feature to <a href="https://github.com/kitajs/kitajs" target="_blank">our repository</a> makes you eligible for a spotlight in this space.
   </small>
+</VPTeamPage>
+
+<VPTeamPage>
+  <VPTeamPageTitle>
+    <template #title>Meet doug!</template>
+    <template #lead>Doug is the Kita's mascot, he is a friendly and curious turtle that loves to learn new things.</template>
+  </VPTeamPageTitle>
+
+  <VPTeamMembers :members="doug" />
 </VPTeamPage>

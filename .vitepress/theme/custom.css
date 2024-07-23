@@ -1,18 +1,22 @@
 :root {
-  --vp-c-brand-1: #e4c8c5;
-  --vp-c-brand-2: #ad4336;
   --vp-c-brand-3: #e4c8c5;
+  --vp-c-brand-1: #bd695e;
+  --vp-c-brand-2: #ad4336;
 
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    135deg,
-    #012169,
-    #012169,
+  --vp-home-hero-name-background: linear-gradient(
+    -45deg,
+    #0050a6,
+    #0050a6,
+    #0050a6,
+    #fedd00,
     #fedd00,
     #fedd00,
     #009739,
+    #009739,
     #009739
   );
+
   --vp-home-hero-image-background-image: -webkit-linear-gradient(
     125deg,
     var(--vp-c-brand-2),
@@ -118,4 +122,9 @@
 
 .twoslash-popup-docs.twoslash-popup-docs-tags.vp-doc {
   display: none;
+}
+
+.VPTeamMembers.medium.count-1 {
+  display: flex;
+  justify-content: center;
 }

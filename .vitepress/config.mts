@@ -111,7 +111,7 @@ export default defineConfig({
   },
 
   themeConfig: {
-    logo: '/favicon.svg',
+    logo: '/logo.svg',
 
     outline: 'deep',
 
@@ -150,9 +150,9 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Made with ❤️ by Arthur Fiorette',
+      message: 'Released under the MIT License',
       copyright:
-        'Copyright (c) 2022-present Arthur Fiorette & Kita Contributors'
+        'Copyright © 2022-present - Arthur Fiorette & Kita Contributors'
     },
 
     sidebar: {

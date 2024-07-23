@@ -30,7 +30,7 @@ const dismiss = () => {
 <template>
   <div ref="el" class="banner">
     <div class="text">
-      <b style="font-size: 1.3rem">Kita</b> is undergoing <b>major</b> changes
+      <b style="font-size: 1.12rem">Kita</b> is undergoing <b>major</b> changes
       and is unready for production use until <b>v2</b> is released.
     </div>
 
@@ -77,12 +77,12 @@ html {
   top: 0;
   right: 0;
   left: 0;
-  font-size: 1.1rem;
+  font-size: 1rem;
   z-index: var(--vp-z-index-layout-top);
   padding: 8px;
   text-align: center;
-  background-color: #ffd101;
-  color: black;
+  background-color: var(--vp-c-brand-2);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
