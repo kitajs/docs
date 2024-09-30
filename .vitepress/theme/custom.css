@@ -1,20 +1,60 @@
+/* Support for flag emojis */
+@font-face {
+  font-family: 'Twemoji Country Flags';
+  unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067,
+    U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
+  src: url('https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill/dist/TwemojiCountryFlags.woff2')
+    format('woff2');
+  font-display: swap;
+}
+
 :root {
-  --vp-c-brand-3: #e4c8c5;
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+
+  --vp-c-brand-1: #36996b;
+  --vp-c-brand-2: #41a679;
+  --vp-c-brand-3: #5eb77f;
+
   --vp-c-brand-1: #bd695e;
   --vp-c-brand-2: #ad4336;
+  --vp-c-brand-3: #e4c8c5;
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-font-family-base: 'Twemoji Country Flags', sans-serif;
+
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
 
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(
-    -45deg,
-    #0050a6,
-    #0050a6,
-    #0050a6,
-    #fedd00,
-    #fedd00,
-    #fedd00,
-    #009739,
-    #009739,
-    #009739
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    #ad4336 30%,
+    #bd695e
   );
 
   --vp-home-hero-image-background-image: -webkit-linear-gradient(
@@ -23,7 +63,26 @@
     var(--vp-c-brand-2),
     var(--vp-c-brand-3)
   );
+  --vp-home-hero-image-filter: blur(44px);
+}
 
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+
+:root {
   --vp-home-hero-image-filter: blur(4rem);
 
   --vp-button-brand-active-bg: var(--vp-c-brand-2);
@@ -35,18 +94,6 @@
     'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans',
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
     'Noto Color Emoji';
-}
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(5rem);
-  }
-}
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(6rem);
-  }
 }
 
 #trusted-by-wrapper {
@@ -108,20 +155,6 @@
   #trusted-by {
     margin: 0 48px;
   }
-}
-
-/* Support for flag emojis */
-@font-face {
-  font-family: 'Twemoji Country Flags';
-  unicode-range: U+1F1E6-1F1FF, U+1F3F4, U+E0062-E0063, U+E0065, U+E0067,
-    U+E006C, U+E006E, U+E0073-E0074, U+E0077, U+E007F;
-  src: url('https://cdn.jsdelivr.net/npm/country-flag-emoji-polyfill/dist/TwemojiCountryFlags.woff2')
-    format('woff2');
-  font-display: swap;
-}
-
-.twoslash-popup-docs.twoslash-popup-docs-tags.vp-doc {
-  display: none;
 }
 
 .VPTeamMembers.medium.count-1 {

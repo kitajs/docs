@@ -1,5 +1,7 @@
 # Async
 
+## Async await
+
 `async`/`await` inside components are 100% supported.
 
 When any child or sub child of a component tree is a `Promise<string>`, the

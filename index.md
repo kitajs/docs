@@ -9,12 +9,15 @@ hero:
     - theme: brand
       text: Write the FUTURE →
       link: /practical-example.md
+
+    - theme: alt
+      text: Html Engine
+      link: html/index.md
+
     - theme: alt
       text: What is Kita?
       link: /what-is-kita.md
-    - theme: alt
-      text: Html engine
-      link: html/index.md
+
   image:
     src: /doug-pc-glasses.svg
     alt: Doug, Kita's turtle mascot, with glasses looking at a computer screen
