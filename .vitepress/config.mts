@@ -4,7 +4,7 @@ import ts from 'typescript';
 import { defineConfig } from 'vitepress';
 
 const description = 'Performant and type-safe Fastify router';
-const url = 'https://kita.js.org';
+const url = 'https://kitajs.org';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -54,10 +54,10 @@ export default defineConfig({
       'script',
       {
         defer: '',
-        'data-domain': 'kita.js.org',
+        'data-domain': 'kitajs.org',
         src: 'https://plausible.io/js/script.js'
       },
-      '/* This site metrics are public available at https://plausible.io/kita.js.org */'
+      '/* This site metrics are public available at https://plausible.io/kitajs.org */'
     ],
 
     [
@@ -259,7 +259,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'discord', link: 'https://kita.js.org/discord' },
+      { icon: 'discord', link: 'https://kitajs.org/discord' },
       { icon: 'github', link: 'https://github.com/kitajs' },
       { icon: 'twitter', link: 'https://twitter.com/kitajsorg' }
     ],

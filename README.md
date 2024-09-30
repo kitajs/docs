@@ -9,15 +9,15 @@
 <br />
 
 <p align="center" >
-  <a href="https://kita.js.org" target="_blank" rel="noopener noreferrer">
-    <img src="https://kita.js.org/logo.png" width="180" alt="Kita JS logo" />
+  <a href="https://kitajs.org" target="_blank" rel="noopener noreferrer">
+    <img src="https://kitajs.org/logo.png" width="180" alt="Kita JS logo" />
   </a>
 </p>
 
 <br />
 
 <div align="center">
-  <a href="https://kita.js.org/discord"><img src="https://img.shields.io/discord/1216165027774595112?logo=discord&logoColor=white&color=%237289da" alt="Discord"></a>
+  <a href="https://kitajs.org/discord"><img src="https://img.shields.io/discord/1216165027774595112?logo=discord&logoColor=white&color=%237289da" alt="Discord"></a>
   <a title="MIT license" target="_blank" href="https://github.com/kitajs/docs/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/kitajs/docs"></a>
   <a title="Last Commit" target="_blank" href="https://github.com/kitajs/docs/commits/master"><img alt="Last commit" src="https://img.shields.io/github/last-commit/kitajs/docs"></a>
   <a href="https://github.com/kitajs/docs/stargazers"><img src="https://img.shields.io/github/stars/kitajs/docs?logo=github&label=Stars" alt="Stars"></a>
@@ -29,7 +29,7 @@
 <h1>📚 KitaJS Docs</h1>
 
 <p align="center">
-  <code>@kitajs/docs</code> is a where the documentation for the <a href="https://kita.js.org" target="_blank">KitaJS</a> lives.
+  <code>@kitajs/docs</code> is a where the documentation for the <a href="https://kitajs.org" target="_blank">KitaJS</a> lives.
   <br />
   <br />
 </p>

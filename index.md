@@ -8,16 +8,16 @@ hero:
   actions:
     - theme: brand
       text: Write the FUTURE →
-      link: /practical-example
+      link: /practical-example.md
     - theme: alt
       text: What is Kita?
-      link: /what-is-kita
+      link: /what-is-kita.md
     - theme: alt
       text: Html engine
-      link: ./html/index.md
+      link: html/index.md
   image:
     src: /doug-pc-glasses.svg
-    alt: Kita brown and white lotus logo
+    alt: Doug, Kita's turtle mascot, with glasses looking at a computer screen
 
 features:
   - icon: 🔎

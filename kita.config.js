@@ -1,4 +1,4 @@
-// Documentation: https://kita.js.org
+// Documentation: https://kitajs.org
 
 /** @type {import('@kitajs/cli').KitaConfig} */
 module.exports = {
