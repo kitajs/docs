@@ -55,9 +55,9 @@ export default defineConfig({
       {
         defer: '',
         'data-domain': 'kitajs.org',
-        src: 'https://plausible.io/js/script.js'
+        src: 'https://metrics.arthur.one/js/script.js'
       },
-      '/* This site metrics are public available at https://plausible.io/kitajs.org */'
+      '/* This site metrics are public available at https://metrics.arthur.one/kitajs.org */'
     ],
 
     [
