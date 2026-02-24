@@ -131,7 +131,7 @@ export default defineConfig({
       },
       {
         text: 'Html Engine',
-        link: '../html/index.md'
+        link: 'https://html.kitajs.org/'
       }
     ],
 
@@ -173,7 +173,7 @@ export default defineConfig({
             { text: 'Serialization', link: 'serialization.md' },
             { text: 'Exposing types', link: 'exposing-types.md' },
             { text: 'JSDocs', link: 'jsdocs.md' },
-            { text: 'Html Engine', link: '../html/index.md' }
+            { text: 'Html Engine', link: 'https://html.kitajs.org/' }
           ]
         },
         {
@@ -181,7 +181,7 @@ export default defineConfig({
           base: '/routing/',
           items: [
             { text: 'Rest Routes', link: 'index.md' },
-            { text: 'Html Routes', link: 'html.md' },
+            { text: 'Html Routes', link: 'https://html.kitajs.org/' },
             { text: 'Configuration', link: 'configuration.md' }
           ]
         },
@@ -238,21 +238,6 @@ export default defineConfig({
             { text: 'Feature your company', link: 'feature-your-company.md' },
             { text: 'Analytics', link: 'analytics.md' },
             { text: 'Branding', link: 'branding.md' }
-          ]
-        }
-      ],
-      '/html/': [
-        {
-          base: '/html/',
-          items: [
-            { text: 'Introduction', link: 'index.md' },
-            { text: 'Configuration', link: 'configuration.md' },
-            { text: 'Sanitization', link: 'sanitization.md' },
-            { text: 'Async Components', link: 'async.md' },
-            { text: 'Integrations', link: 'integrations.md' },
-            { text: 'JSX', link: 'jsx.md' },
-            { text: 'Deprecations', link: 'deprecations.md' },
-            { text: 'Benchmark', link: 'benchmark.md' }
           ]
         }
       ]
