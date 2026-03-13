@@ -16,7 +16,7 @@
     "@arthurfiorette/prettier-config": "^1.0.12",
     "@shikijs/vitepress-twoslash": "^1.11.1",
     "@vueuse/core": "^10.11.0",
-    "husky": "^9.1.1",
+    "husky": "^9.1.4",
     "prettier": "^3.3.3",
     "vitepress": "1.3.1",
     "vue": "^3.4.33"
